@@ -1,13 +1,394 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'SFPro Regular';
+  src: url('./assets/fonts/SF-Pro-Display-Regular.otf') format('woff2');
+  font-weight: 500;
+  font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'SFPro Regular Italic';
+  src: url('./assets/fonts/SF-Pro-Display-RegularItalic.otf') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SFPro Bold';
+  src: url('./assets/fonts/SF-Pro-Display-Bold.otf') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFPro Bold Italic';
+  src: url('./assets/fonts/SF-Pro-Display-BoldItalic.otf') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SFPro Black';
+  src: url('./assets/fonts/SF-Pro-Display-Black.otf') format('woff2');
+  font-weight: 1200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFPro Black Italic';
+  src: url('./assets/fonts/SF-Pro-Display-BlackItalic.otf') format('woff2');
+  font-weight: 1200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'LinhAvantgarde';
+  src: url('./assets/fonts/LINH\ AVANTGARDE\ REGULAR.TTF') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LinhAvantgarde SemiBold';
+  src: url('./assets/fonts/LINH\ AVANTGARDE\ DEMIBOLD.TTF') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LinhAvantgarde Bold';
+  src: url('./assets/fonts/LINH\ AVANTGARDE\ BOLD.TTF') format('woff2');
+  font-weight: 1200;
+  font-style: normal;
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+  z-index: 101;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #001B4C;;
+  border-radius: 20px;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'SFPro Regular', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: 'SFPro Bold';
+  cursor: pointer;
+}
+
+header {
+  background-color: #001B4C;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, .12);
+  display: flex;
+}
+
+.page-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#hess-header {
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 50px;
+  top: 0;
+  z-index: 10;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+  .logo {
+      margin: 10px;
+  }
+
+  .title {
+      margin: 20px;
+  }
+}
+
+.right-header-section {
+  margin-right: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-login-header {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 10px 35px;
+  text-transform: uppercase;
+  margin-left: 3px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+
+
+.container {
+  width: 100%;
+  margin-top: -100px;
+  margin-left: auto;
+  box-sizing: border-box;
+  margin-right: auto;
+  display: block;
+}
+
+.banner-page {
+  position: relative;
+}
+
+.about-page {
+  padding-top: 48px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.toplist-title {
+  font-size: 25px;
+  font-family: 'SFPro Bold';
+  font-weight: 400;
+  line-height: 36.05px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 0 15px 0;
+}
+
+.columns-listcourse {
+  display: flex;
+  width: 100%;
+  position: relative;
+  gap: 20px;
+  
+}
+
+.single-column {
+  flex-shrink: 0;
+  position: relative;
+  min-height: 1px;
+  border-radius: 15px;
+  background-color: #E0ECFF;
+  height: 100%;
+}
+
+.image-course-course1 {
+  display: flex;
+  width: 100%;
+  aspect-ratio: 2/1;
+  border-radius: 15px 15px 0px 0px;
+  background: url(./assets/images/dts_banner.png);
+  background-size: 100%;
+}
+
+.image-course-course2 {
+  display: flex;
+  width: 100%;
+  aspect-ratio: 2/1;
+  border-radius: 15px 15px 0px 0px;
+  background: url(./assets/images/dsa_banner.png);
+  background-size: 100%;
+}
+
+.image-course-course3 {
+  display: flex;
+  width: 100%;
+  aspect-ratio: 2/1;
+  border-radius: 15px 15px 0px 0px;
+  background: url(./assets/images/dttt1_banner.png);
+  background-size: 100%;
+}
+
+
+.title-course {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+.text-course-title {
+  font-family: 'SFPro Bold';
+  font-size: 20px;
+  overflow: hidden;
+}
+
+.is-premium {
+  height: 18px;
+  padding-left: 10px;
+}
+
+/* .column-left {
+  margin-right: 10px;
+}
+
+.column-center {
+  margin: 0 10px;
+}
+
+.column-right {
+  margin-left: 10px;
+} */
+
+.about-page .absolute-img {
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.about-page .img01 {
+  width: 290px;
+  height: 664px;
+  top: 37%;
+  left: 0;
+}
+
+.about-page .img02 {
+  width: 310px;
+  height: 570px;
+  top: 5%;
+  right: 0;
+}
+
+.banner {
+  width: 100%;
+}
+
+.mui-style {
+  margin-left: auto;
+  box-sizing: border-box;
+  margin-right: auto;
+  display: block;
+}
+
+#hess-footer {
+  margin: 0;
+  padding: 10px 100px;
+  background-color: #F2F6FC;
+
+  .footer-container {
+      padding-top: 48px;
+      padding-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+  }
+}
+
+.footer-row {
+  display: flex;
+  flex-flow: row wrap;
+  min-width: 0;
+  padding: 10px;
+}
+
+.footer-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 0 0 75%;
+  max-width: 75%;
+  .footer-logo-seee {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      .text-slogan {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          .text-modile {
+              font-family: 'LinhAvantgarde Bold';
+              font-size: 24px;
+              color: #AA1D2B;
+          }
+          .text-sub-slogan {
+              font-family: 'LinhAvantgarde SemiBold';
+              font-size: 20px;
+              color: #AA1D2B;
+          }
+      }
+  }
+}
+
+.info-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  .item-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .content-info {
+          font-family: 'SFPro Bold';
+          font-size: 18px;
+      }
+  }
+}
+
+.footer-right-col {
+  display: flex;
+  justify-content: flex-end;
+  flex: 0 0 25%;
+  max-width: 25%;
+  .column-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+      .title-column-panel {
+          font-size: 20px;
+          font-family: 'LinhAvantgarde Bold';
+          color: #000;
+      }
+      .column-panel-divider {
+          margin-top: 10px;
+          width: 100%;
+          height: 3px;
+          background-color: #CE1628;
+      }
+  }
+}
+
+.bottom-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  border-top: 1px solid #CCCCCC;
+  .copyright-bottom {
+      font-size: 17px;
+      font-family: 'SFPro Regular';
+      color: #646a7c;
+      text-align: justify;
+      padding-right: 20px;
+  }
 }
