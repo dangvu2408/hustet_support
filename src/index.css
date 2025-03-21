@@ -131,6 +131,18 @@ header {
 
   .title {
       margin: 20px;
+      .bold-text {
+        font-family: 'LinhAvantgarde Bold'; 
+        font-size: 26px; 
+        color: #fff; 
+        margin-bottom: 10px;
+      }
+
+      .semi-bold-text {
+        font-family: 'LinhAvantgarde SemiBold'; 
+        font-size: 20px; 
+        color: #fff;
+      }
   }
 }
 

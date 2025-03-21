@@ -1,5 +1,5 @@
 import React from "react";
-import hustLogo from "../assets/images/hust.png"; // Cập nhật đường dẫn hình ảnh
+import hustLogo from "../assets/images/hust.png"; // Đường dẫn ảnh giữ nguyên
 
 function Header() {
   return (
@@ -8,7 +8,7 @@ function Header() {
         <a href="/">
           <div className="left-section">
             <div className="logo">
-              <img src={hustLogo} alt="Logo HUST" className="hess-logo" height="100px" />
+              <img src={hustLogo} alt="HUST Logo" className="hess-logo" height="100px" />
             </div>
             <div className="title">
               <p className="bold-text">HỆ THỐNG HỖ TRỢ CƠ SỞ VÀ CỐT LÕI NGÀNH</p>
