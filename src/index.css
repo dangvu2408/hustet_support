@@ -150,6 +150,7 @@ header {
   margin-right: 100px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .btn-login-header {
@@ -198,19 +199,19 @@ header {
 
 .columns-listcourse {
   display: flex;
-  width: 100%;
   position: relative;
   gap: 20px;
+  padding: 20px 0 20px 0;
   
 }
 
 .single-column {
-  flex-shrink: 0;
   position: relative;
   min-height: 1px;
   border-radius: 15px;
   background-color: #E0ECFF;
   height: 100%;
+  width: 33.333333333333333333333333%;
 }
 
 .image-course-course1 {
@@ -248,9 +249,13 @@ header {
 }
 
 .text-course-title {
+  display: -webkit-box;
   font-family: 'SFPro Bold';
   font-size: 20px;
   overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  flex-grow: 1;
 }
 
 .is-premium {
@@ -300,6 +305,7 @@ header {
   box-sizing: border-box;
   margin-right: auto;
   display: block;
+  padding: 10px 110px 10px 110px;
 }
 
 #hess-footer {

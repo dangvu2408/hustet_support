@@ -1,5 +1,5 @@
 import React from "react";
-import hustLogo from "../assets/images/hust.png"; // Đường dẫn ảnh giữ nguyên
+import hustLogo from "../assets/images/hust.png"; 
 
 function Header() {
   return (
