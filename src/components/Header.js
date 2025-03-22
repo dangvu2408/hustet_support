@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import hustLogo from "../assets/images/hust.png"; 
 
 function Header() {
+  const navigate = useNavigate();
   return (
     <header id="hess-header">
       <div className="left-header-section">
@@ -22,9 +25,7 @@ function Header() {
       </div>
 
       <div className="right-header-section">
-        <a href="/">
-          <button type="button" className="btn-login-header">ĐĂNG NHẬP</button>
-        </a>
+        <button type="button" className="btn-login-header" onClick={() => navigate("/login")}>ĐĂNG NHẬP</button>
       </div>
     </header>
   );

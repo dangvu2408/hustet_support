@@ -1,7 +1,6 @@
 import React from "react";
 import CourseList from "./CourseList";
-import bannerImage from "../assets/images/hust-banner-web.png"; // Cập nhật đường dẫn
-
+import bannerImage from "../assets/images/c7_building.jpg"; 
 function Main() {
   return (
     <main id="main">
