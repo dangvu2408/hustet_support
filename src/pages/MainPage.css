@@ -1,80 +1,4 @@
-@font-face {
-    font-family: 'SFPro Regular';
-    src: url('../assets/fonts/SF-Pro-Display-Regular.otf') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'SFPro Regular Italic';
-    src: url('../assets/fonts/SF-Pro-Display-RegularItalic.otf') format('woff2');
-    font-weight: 500;
-    font-style: italic;
-  }
-  
-  @font-face {
-    font-family: 'SFPro Bold';
-    src: url('../assets/fonts/SF-Pro-Display-Bold.otf') format('woff2');
-    font-weight: 900;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'SFPro Bold Italic';
-    src: url('../assets/fonts/SF-Pro-Display-BoldItalic.otf') format('woff2');
-    font-weight: 900;
-    font-style: italic;
-  }
-  
-  @font-face {
-    font-family: 'SFPro Black';
-    src: url('../assets/fonts/SF-Pro-Display-Black.otf') format('woff2');
-    font-weight: 1200;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'SFPro Black Italic';
-    src: url('../assets/fonts/SF-Pro-Display-BlackItalic.otf') format('woff2');
-    font-weight: 1200;
-    font-style: italic;
-  }
-  
-  @font-face {
-    font-family: 'LinhAvantgarde';
-    src: url('../assets/fonts/LINH\ AVANTGARDE\ REGULAR.TTF') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'LinhAvantgarde SemiBold';
-    src: url('../assets/fonts/LINH\ AVANTGARDE\ DEMIBOLD.TTF') format('woff2');
-    font-weight: 900;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'LinhAvantgarde Bold';
-    src: url('../assets/fonts/LINH\ AVANTGARDE\ BOLD.TTF') format('woff2');
-    font-weight: 1200;
-    font-style: normal;
-  }
-  
-  
-  ::-webkit-scrollbar {
-    width: 8px;
-    z-index: 101;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background-color: #001B4C;;
-    border-radius: 20px;
-  }
+
   
   body {
     width: 100%;
@@ -100,7 +24,7 @@
   }
   
   header {
-    background-color: #001B4C;
+    background-color: #003366;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, .12);
     display: flex;
   }
@@ -221,6 +145,13 @@
     border-radius: 15px 15px 0px 0px;
     background: url(../assets/images/dts_banner.png);
     background-size: 100%;
+    background-position: center;
+    transition: background-size 0.4s ease-in-out;
+    transform-origin: center;
+  }
+
+  .image-course-course1:hover {
+    background-size: 105%; 
   }
   
   .image-course-course2 {
@@ -230,6 +161,13 @@
     border-radius: 15px 15px 0px 0px;
     background: url(../assets/images/dsa_banner.png);
     background-size: 100%;
+    background-position: center;
+    transition: background-size 0.4s ease-in-out;
+    transform-origin: center;
+  }
+
+  .image-course-course2:hover {
+    background-size: 105%; 
   }
   
   .image-course-course3 {
@@ -239,8 +177,14 @@
     border-radius: 15px 15px 0px 0px;
     background: url(../assets/images/dttt1_banner.png);
     background-size: 100%;
+    background-position: center;
+    transition: background-size 0.4s ease-in-out;
+    transform-origin: center;
   }
   
+  .image-course-course3:hover {
+    background-size: 105%; 
+  }
   
   .title-course {
     display: flex;
