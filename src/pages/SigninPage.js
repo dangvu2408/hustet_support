@@ -1,10 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import "./LoginPage.css";
+import "./SigninPage.css";
 import hustLogo from "../assets/images/logo_hust_heading.png"; 
 
-export default function LoginPage() {
+export default function SigninPage() {
     const navigate = useNavigate();
-
     return(
         <div className="fullPageLogin">
             <div className="branding">
@@ -18,7 +17,7 @@ export default function LoginPage() {
 
                     <div className="workArea">
                         <div className="loginArea">
-                            <div className="loginMessage">Đăng nhập vào Hệ thống hỗ trợ Cơ sở và Cốt lõi ngành</div>
+                            <div className="loginMessage">Đăng ký Hệ thống hỗ trợ Cơ sở và Cốt lõi ngành</div>
                             <form method="post" id="loginForm" >
                                 <div className="formArea">
                                     <div className="usernameData">
@@ -39,7 +38,7 @@ export default function LoginPage() {
 
                                     <div className="txt1">
                                         <span> Chưa có tài khoản? </span>
-                                        <a onClick={() => navigate("/signin")}>Đăng ký</a>
+                                        <a href="">Đăng ký</a>
                                     </div>
                                 </div>
                             </form>
