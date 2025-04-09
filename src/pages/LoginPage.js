@@ -18,12 +18,12 @@ export default function LoginPage() {
 
                     <div className="workArea">
                         <div className="loginArea">
-                            <div className="loginMessage">Đăng nhập vào Hệ thống hỗ trợ Cơ sở và Cốt lõi ngành</div>
+                            <div className="loginMessage">Đăng nhập Hệ thống hỗ trợ Cơ sở và Cốt lõi ngành</div>
                             <form method="post" id="loginForm" >
                                 <div className="formArea">
                                     <div className="usernameData">
-                                        <label id="usernameDataLabel">Nhập tên người dùng</label>
-                                        <input id="usernameDataInput" name="username" type="email" placeholder="xyz@example.com"></input>
+                                        <label id="usernameDataLabel">Nhập mã số sinh viên</label>
+                                        <input id="usernameDataInput" name="username" type="email" placeholder="Vui lòng nhập mã số sinh viên"></input>
                                     </div>
 
                                     <div className="passwordData">

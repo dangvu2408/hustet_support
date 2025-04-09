@@ -1,3 +1,7 @@
+label {
+    display: inline-block;
+}
+
 .fullPageLogin {
     position: fixed;
     top: 0;
@@ -63,18 +67,21 @@
 
 .loginMessage {
     display: block;
-    width: 400px;
+    width: 540px;
     font-family: 'SFPro Bold', sans-serif;
     font-size: 24px;
     line-height: 28px;
     margin: 15px 0px 30px 0px;
     padding: 0px;
-    text-align: left;
+    text-align: center;
     text-size-adjust: 100%;
     background-color: transparent;
 }
 
-.usernameData, .passwordData {
+.userFullnameData, 
+.usernameData, 
+.passwordData, 
+.confirmPasswordData {
     display: block;
     box-sizing: border-box;
     color: rgb(38, 38, 38);
@@ -87,16 +94,27 @@
     width: 400px;
 }
 
-.passwordDataLabel, .usernameDataLabel {
-    margin: 10px 0px;
+.userFullnameDataLabel,
+.passwordDataLabel,
+.usernameDataLabel,
+.confirmPassworDataLabel {
+
+    ::after {
+        content: ' *';
+        color: red;
+    }
 }
 
-#usernameDataInput, #passwordDataInput {
+
+#userFullnameDataInput, 
+#usernameDataInput, 
+#passwordDataInput, 
+#confirmPasswordDataInput {
     width: 100%;
     margin: 10px 0px;
     padding: 10px 0px;
     font-size: 20px;
-    width: 400px;
+    width: 540px;
     font-family: 'SFPro Regular', sans-serif;
     outline: none; border: none; 
     border-bottom: 1px solid black;
@@ -125,7 +143,7 @@
 .form_btn {
     font-size: 20px;
     font-family: 'SFPro Bold', sans-serif;
-    background-color: #003366;
+    background-color: #CD1628;
     color: #fff;
     line-height: 1.2;
     text-transform: uppercase;
@@ -143,5 +161,6 @@
     margin: 15px 0px;
     a {
         font-family: 'SFPro Bold';
+        color: #CD1628;
     }
 }

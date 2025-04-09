@@ -88,7 +88,7 @@
 }
 
 .passwordDataLabel, .usernameDataLabel {
-    margin: 10px 0px;
+    margin: 0px;
 }
 
 #usernameDataInput, #passwordDataInput {
@@ -125,7 +125,7 @@
 .form_btn {
     font-size: 20px;
     font-family: 'SFPro Bold', sans-serif;
-    background-color: #003366;
+    background-color: #CD1628;
     color: #fff;
     line-height: 1.2;
     text-transform: uppercase;
