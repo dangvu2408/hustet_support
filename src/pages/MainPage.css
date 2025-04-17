@@ -1,5 +1,25 @@
+@keyframes dropdownSlideDown {
+  from {
+    opacity: 0;
+    transform: scaleY(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
 
-  
+@keyframes dropdownSlideUp {
+  from {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  to {
+    opacity: 0;
+    transform: scaleY(0.8);
+  }
+}
+
   body {
     width: 100%;
     height: 100%;
@@ -92,6 +112,60 @@
     font-size: 17px;
   }
   
+  .user-button {
+    font-family: 'SFPro Bold';
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    border: none;           /* Xoá viền */
+    outline: none;          /* Xoá đường viền khi focus */
+    background: none;       /* Nếu có nền mặc định */
+    box-shadow: none;       /* Xoá shadow nếu có */
+    cursor: pointer;        /* Giữ cho trỏ chuột là pointer */
+    padding: 10px 0px;      /* Có thể điều chỉnh padding nếu cần */
+    transition: none; 
+  }
+
+  .dropdown-menu {
+    position: absolute;       
+    right: 150px;               
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 999;                /* đảm bảo nổi lên trên */
+    padding: 0.5rem 0;
+    min-width: 200px;
+    transform-origin: top;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+  }
+
+  .dropdown-menu.show {
+    animation-name: dropdownSlideDown;
+  }
+  
+  .dropdown-menu.hide {
+    animation-name: dropdownSlideUp;
+  }
+  
+  .dropdown-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dropdown-menu li {
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #000;
+    transition: background 0.2s ease;
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: #f1f1f1;
+  }
   
   
   .container {

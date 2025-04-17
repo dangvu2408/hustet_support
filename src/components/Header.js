@@ -7,6 +7,17 @@ function Header() {
     const [user, setUser] = useState(null);
     const [showDropdown, setShowDropdown] = useState(false); // Khai báo state cho dropdown
     const navigate = useNavigate();
+    const [dropdownVisible, setDropdownVisible] = useState(false);
+
+    const toggleDropdown = () => {
+      if (showDropdown) {
+        setShowDropdown(false);
+      } else {
+        setDropdownVisible(true);
+        setShowDropdown(true);
+      }
+    };
+
 
     useEffect(() => {
       const storedUser = localStorage.getItem("user");
@@ -19,6 +30,8 @@ function Header() {
         }
       }
     }, []);
+
+    
     
 
     return (
@@ -43,36 +56,41 @@ function Header() {
             <div className="right-header-section">
                 {user ? (
                   <div>
-                    <button className="user-button" onClick={() => setShowDropdown(!showDropdown)}>
+                    <button className="user-button" onClick={toggleDropdown}>
                       Xin chào, {user.fullname}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
+                        width="24"
+                        height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        style={{ marginLeft: "5px", verticalAlign: "middle" }}
+                        style={{
+                          marginLeft: "5px",
+                          verticalAlign: "middle",
+                          transition: "transform 0.3s ease",
+                          transform: showDropdown ? "rotate(180deg)" : "rotate(0deg)"
+                        }}
                       >
                         <polyline points="6 9 12 15 18 9"></polyline>
                       </svg>
                     </button>
-                    {showDropdown && (
-                      <div className="dropdown-menu">
-                        <button onClick={() => navigate("/profile")}>Thông tin cá nhân</button>
-                        <button onClick={() => navigate("/change-password")}>Đổi mật khẩu</button>
-                        <button
+                    {dropdownVisible  && (
+                      <div className={`dropdown-menu ${showDropdown ? "show" : "hide"}`}>
+                      <ul>
+                        <li onClick={() => navigate("/profile")}>Thông tin cá nhân</li>
+                        <li onClick={() => navigate("/change-password")}>Đổi mật khẩu</li>
+                        <li
                           onClick={() => {
                             localStorage.removeItem("user");
                             navigate("/login", { replace: true });
                           }}
-                        >
-                          Đăng xuất
-                        </button>
-                      </div>
+                        >Đăng xuất</li>
+                      </ul>
+                    </div>
                     )}
                   </div>
                 ) : (
