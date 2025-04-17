@@ -39,20 +39,30 @@ export default function SigninPage() {
             },
             body: JSON.stringify(userData)
         })
+        .then(async (res) => {
+            const contentType = res.headers.get("content-type");
+            if (contentType && contentType.includes("application/json")) {
+                const data = await res.json();
+                console.log("Server response:", data);
         
-        .then((res) => res.json())
-        .then((data) => {
-            console.log("Server response:", data);
-            if (data.success) {
-                navigate("/login");
+                if (data.success) {
+                    navigate("/login");
+                } else {
+                    alert("Đăng ký thất bại: " + data.message);
+                }
             } else {
-                alert("Đăng ký thất bại: " + data.message);
+                const text = await res.text(); // để log nếu server không trả JSON
+                console.error("Server did not return JSON. Raw response:", text);
+                alert("Server không trả về dữ liệu JSON hợp lệ!");
             }
         })
         .catch((error) => {
             console.error("Lỗi khi gửi dữ liệu:", error);
         });
+        
+        console.log("User data sent to backend:", userData);
     };
+    
     
     
 

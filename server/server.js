@@ -13,20 +13,18 @@ const db = mysql.createConnection({
     database: 'hust_et_support_system'
 });
 
-
-
+app.use((req, res, next) => {
+    console.log("Incoming request body:", req.body);
+    next();
+});
 
 app.post('/register', (req, res) => {
-    console.log("Request body:", req.body);  // Log để kiểm tra dữ liệu đầu vào
+    console.log("Request body:", req.body);  // Kiểm tra dữ liệu nhận được
+
     const { fullname, username, password } = req.body;
-
-    const query = "INSERT INTO users (`username`, `password`, `fullname`) VALUES (?, ?, ?)";
-
-    console.log("Query:", query);  // Kiểm tra câu truy vấn
-    console.log("fullname:", req.body.fullname);
-    console.log("username:", req.body.username);
-    console.log("password:", req.body.password);
-
+    const query = "INSERT INTO users (username, password, fullname) VALUES (?, ?, ?)";
+    console.log("Query about to run:", query);
+    console.log("Values:", [username, password, fullname]);
 
     db.query(query, [username, password, fullname], (err, result) => {
         if (err) {
@@ -35,8 +33,8 @@ app.post('/register', (req, res) => {
         }
         return res.json({ success: true });
     });
-    
 });
+
 
 
 app.listen(3001, () => {
