@@ -25,8 +25,36 @@ export default function SigninPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate("/login"); 
+    
+        const userData = {
+            fullname: fullname,
+            username: username,
+            password: password
+        };
+    
+        fetch("http://localhost:3001/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userData)
+        })
+        
+        .then((res) => res.json())
+        .then((data) => {
+            console.log("Server response:", data);
+            if (data.success) {
+                navigate("/login");
+            } else {
+                alert("Đăng ký thất bại: " + data.message);
+            }
+        })
+        .catch((error) => {
+            console.error("Lỗi khi gửi dữ liệu:", error);
+        });
     };
+    
+    
 
 
     return(
@@ -43,7 +71,7 @@ export default function SigninPage() {
                     <div className="workArea">
                         <div className="loginArea">
                             <div className="loginMessage">Đăng ký Hệ thống hỗ trợ Cơ sở và Cốt lõi ngành</div>
-                            <form method="post" id="loginForm" >
+                            <form method="post" id="loginForm" onSubmit={handleSubmit}>
                                 <div className="formArea">
                                     <div className="userFullnameData">
                                         <label className="userFullnameDataLabel">Nhập họ tên đầy đủ</label>

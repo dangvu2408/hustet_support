@@ -23,7 +23,7 @@ export default function LoginPage() {
                                 <div className="formArea">
                                     <div className="usernameData">
                                         <label id="usernameDataLabel">Nhập mã số sinh viên</label>
-                                        <input id="usernameDataInput" name="username" type="email" placeholder="Vui lòng nhập mã số sinh viên"></input>
+                                        <input id="usernameDataInput" name="username" placeholder="Vui lòng nhập mã số sinh viên"></input>
                                     </div>
 
                                     <div className="passwordData">
