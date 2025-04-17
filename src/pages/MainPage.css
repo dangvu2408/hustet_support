@@ -75,6 +75,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'SFPro Bold';
+    font-size: 20px;
+    color: white
   }
   
   .btn-login-header {

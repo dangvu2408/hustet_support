@@ -43,7 +43,6 @@ export default function SigninPage() {
             const contentType = res.headers.get("content-type");
             if (contentType && contentType.includes("application/json")) {
                 const data = await res.json();
-                console.log("Server response:", data);
         
                 if (data.success) {
                     navigate("/login");
@@ -52,7 +51,6 @@ export default function SigninPage() {
                 }
             } else {
                 const text = await res.text(); 
-                console.error("Server did not return JSON. Raw response:", text);
                 alert("Server không trả về dữ liệu JSON hợp lệ!");
             }
         })
@@ -60,7 +58,6 @@ export default function SigninPage() {
             console.error("Lỗi khi gửi dữ liệu:", error);
         });
         
-        console.log("User data sent to backend:", userData);
     };
     
     

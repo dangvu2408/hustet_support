@@ -13,6 +13,7 @@ const db = mysql.createConnection({
     database: 'hust_et_support_system'
 });
 
+
 app.use((req, res, next) => {
     console.log("Incoming request body:", req.body);
     next();
@@ -23,8 +24,6 @@ app.post('/register', (req, res) => {
 
     const { fullname, username, password } = req.body;
     const query = "INSERT INTO users (username, password, fullname) VALUES (?, ?, ?)";
-    console.log("Query about to run:", query);
-    console.log("Values:", [username, password, fullname]);
 
     db.query(query, [username, password, fullname], (err, result) => {
         if (err) {
@@ -33,7 +32,34 @@ app.post('/register', (req, res) => {
         }
         return res.json({ success: true });
     });
+}); //signin properties
+
+app.post("/login", (req, res) => {
+    const { username, password } = req.body;
+
+    const query = "SELECT * FROM users WHERE username = ? AND password = ?";
+    db.query(query, [username, password], (err, results) => {
+        if (err) {
+            console.error("Lỗi truy vấn:", err);
+            return res.status(500).json({ success: false, message: "Lỗi server" });
+        }
+
+        if (results.length > 0) {
+            const user = results[0];
+            const userData = {
+                username: user.username,
+                password: user.password,
+                fullname: user.fullname,
+                dob: user.dob,
+                gender: user.gender
+            };
+            return res.json({ success: true, userData });
+        } else {
+            return res.json({ success: false, message: "Sai tài khoản hoặc mật khẩu" });
+        }
+    });
 });
+ //login properties
 
 app.listen(3001, () => {
     console.log("Server is running on port 3001");
