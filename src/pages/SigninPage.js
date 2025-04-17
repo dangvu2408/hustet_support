@@ -27,9 +27,9 @@ export default function SigninPage() {
         e.preventDefault();
     
         const userData = {
-            fullname: fullname,
             username: username,
-            password: password
+            password: password,
+            fullname: fullname
         };
     
         fetch("http://localhost:3001/register", {
@@ -51,7 +51,7 @@ export default function SigninPage() {
                     alert("Đăng ký thất bại: " + data.message);
                 }
             } else {
-                const text = await res.text(); // để log nếu server không trả JSON
+                const text = await res.text(); 
                 console.error("Server did not return JSON. Raw response:", text);
                 alert("Server không trả về dữ liệu JSON hợp lệ!");
             }
