@@ -1,6 +1,24 @@
 import React from "react";
+import { useState } from "react";
 
 function ET3220CourseMain () {
+    const [openPanels, setOpenPanels] = useState([false, false, false, false]);
+
+    const togglePanel = (index) => {
+        setOpenPanels(prev => {
+            const newPanels = [...prev];
+            newPanels[index] = !newPanels[index];
+            return newPanels;
+        });
+    };
+
+    const toggleAllPanels = () => {
+        setOpenPanels(prev => {
+            const allOpen = prev.every(isOpen => isOpen);
+            return prev.map(() => !allOpen);
+        });
+    };
+
     return (
         <main id="main">
             <div className="container_et">
@@ -31,19 +49,19 @@ function ET3220CourseMain () {
                                             <ul>
                                                 <li class="chapter_sub"><strong>4 </strong> chương</li>
                                                 <li class="dot_sub">•</li>
-                                                <li><strong>35 </strong> bài học</li>
+                                                <li><strong>34 </strong> bài học</li>
                                             </ul>
-                                            <div className="toggle_more">
-                                                Mở rộng tất cả
+                                            <div className="toggle_more" onClick={toggleAllPanels}>
+                                                {openPanels.every(isOpen => isOpen) ? 'Thu gọn tất cả' : 'Mở rộng tất cả'}
                                             </div>
                                         </div>
                                     </div>
                                     <div className="cirriculum_panel">
                                         <div className="panel_group">
                                             <div className="panel">
-                                                <div className="panel_heading">
+                                                <div className="panel_heading" onClick={() => togglePanel(0)}>
                                                     <h5 className="panel_title">
-                                                        <div className="head_line_title">
+                                                        <div className={`head_line_title ${openPanels[0] ? 'open' : ''}`}>
                                                             1. Cơ bản điện tử số
                                                             <span className="time_section">
                                                                 6 bài học
@@ -51,13 +69,59 @@ function ET3220CourseMain () {
                                                         </div>
                                                     </h5>
                                                 </div>
-                                                <div className="panel_collapse"></div>
+                                                <div className="panel_collapse" style={{ display: openPanels[0] ? "block" : "none" }}>
+                                                    <div className="panel_body">
+                                                        <div>
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">1. Hệ thống số và tương tự</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">2. Các hệ cơ số đếm và biểu diễn</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">3. Các mã nhị phân</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">4. Các cổng logic cơ bản (AND, OR, NOT, NOR, NAND, XOR, XNOR)</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">5. Đại số Boolean và hàm logic</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">6. Định lý mở rộng Shannon</div>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
 
                                             <div className="panel">
-                                                <div className="panel_heading">
+                                                <div className="panel_heading" onClick={() => togglePanel(1)}>
                                                     <h5 className="panel_title">
-                                                        <div className="head_line_title">
+                                                        <div className={`head_line_title ${openPanels[1] ? 'open' : ''}`}>
                                                             2. Hệ logic tổ hợp
                                                             <span className="time_section">
                                                                 8 bài học
@@ -65,13 +129,73 @@ function ET3220CourseMain () {
                                                         </div>
                                                     </h5>
                                                 </div>
-                                                <div className="panel_collapse"></div>
+                                                <div className="panel_collapse" style={{ display: openPanels[1] ? "block" : "none" }}>
+                                                    <div className="panel_body">
+                                                        <div>
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">1. Định nghĩa mạch tổ hợp</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">2. Tối thiểu hoá các hàm logic</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">3. Các phương pháp tối thiểu hóa có hỗ trợ bởi máy tính</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">4. Các ví dụ tối ưu hóa hàm logic</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">5. Công nghệ thực hiện mạch số</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">6. Tổng hợp các mạch logic tổ hợp</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">7. Hazard trong hệ logic tổ hợp</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">8. Các khối mạch logic tổ hợp cơ bản</div>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
 
                                             <div className="panel">
-                                                <div className="panel_heading">
+                                                <div className="panel_heading" onClick={() => togglePanel(2)}>
                                                     <h5 className="panel_title">
-                                                        <div className="head_line_title">
+                                                        <div className={`head_line_title ${openPanels[2] ? 'open' : ''}`}>
                                                             3. Hệ mạch logic dãy
                                                             <span className="time_section">
                                                                 6 bài học
@@ -79,28 +203,189 @@ function ET3220CourseMain () {
                                                         </div>
                                                     </h5>
                                                 </div>
-                                                <div className="panel_collapse"></div>
+                                                <div className="panel_collapse" style={{ display: openPanels[2] ? "block" : "none" }}>
+                                                    <div className="panel_body">
+                                                        <div>
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">1. Mô hình mạch logic dãy</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">2. Các loại phần tử nhớ</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">3. Các mạch dãy cơ bản</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">4. Thiết kế mạch dãy đồng bộ</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">5. Thiết kế mạch logic dãy không đồng bộ</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">6. Phân tích mạch dãy đồng bộ</div>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
 
                                             <div className="panel">
-                                                <div className="panel_heading">
+                                                <div className="panel_heading" onClick={() => togglePanel(3)}>
                                                     <h5 className="panel_title">
-                                                        <div className="head_line_title">
+                                                        <div className={`head_line_title ${openPanels[3] ? 'open' : ''}`}>
                                                             4. Thiết kế mạch trên máy tính (CAD)
                                                             <span className="time_section">
-                                                                15 bài học
+                                                                14 bài học
                                                             </span>
                                                         </div>
                                                     </h5>
                                                 </div>
-                                                <div className="panel_collapse"></div>
+                                                <div className="panel_collapse" style={{ display: openPanels[3] ? "block" : "none" }}>
+                                                    <div className="panel_body">
+                                                        <div>
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">1. Các bước thiết kế</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">2. Công cụ hỗ trợ thiết kế</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">3. Một số ví dụ thiết kế dùng CAD</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">4. Giới thiệu về ngôn ngữ mô tả phần cứng</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">5. Cấu trúc của một chương trình</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">6. Các kiểu dữ liệu và tín hiệu</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">7. Các toán tử</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">8. Các ví dụ về một chương trình</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">9. Các cấu trúc điều khiển if, case, for</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">10. Các khai báo trong chương trình</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">11. Cách tổ chức chương trình, thủ tục và hàm</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">12. Chương trình mô tả mạch tổ hợp</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">13. Chương trình mô tả các mạch tuần tự</div>
+                                                                </span>
+                                                            </div>
+
+                                                            <div className="lesson_item">
+                                                                <span className="icon_link">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                                    <div className="lesson_name">14. Chương trình mô tả FSM</div>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="col_wrapper col_right"></div>
+                        <div className="col_wrapper col_right">
+                            <div className="purchase_badge">
+                                <div className="img_preview">
+                                    <div className="background_igm_prv"></div>
+                                    <p>Xem thông tin về học phần</p>
+                                </div>
+                                <h5>299.000 VND</h5>
+                                <button type="button" href="" class="wrapper_button">
+                                    <span class="inner_button">
+                                        <span class="title_inner_btn">ĐĂNG KÍ KHÓA HỌC</span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signin" element={<SigninPage />} />
-        <Route path="/et3220" element={<ET3220 />} />
+        <Route path="/courses/et3220" element={<ET3220 />} />
       </Routes>
     </Router>
   );
