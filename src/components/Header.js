@@ -18,7 +18,6 @@ function Header() {
       }
     };
 
-
     useEffect(() => {
       const storedUser = localStorage.getItem("user");
       if (storedUser) {
@@ -30,9 +29,6 @@ function Header() {
         }
       }
     }, []);
-
-    
-    
 
     return (
         <header id="hess-header">
@@ -79,10 +75,11 @@ function Header() {
                       </svg>
                     </button>
                     {dropdownVisible  && (
-                      <div className={`dropdown-menu ${showDropdown ? "show" : "hide"}`}>
+                      <div className={`dropdown-menu ${showDropdown ? "show" : ""}`}>
                       <ul>
                         <li onClick={() => navigate("/profile")}>Thông tin cá nhân</li>
                         <li onClick={() => navigate("/change-password")}>Đổi mật khẩu</li>
+                        <li onClick={() => navigate("/change-password")}>Khóa học của tôi</li>
                         <li
                           onClick={() => {
                             localStorage.removeItem("user");

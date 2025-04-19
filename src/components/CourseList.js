@@ -1,13 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function CourseList() {
+  const navigate = useNavigate();
+
   return (
     <div className="about-page">
       <div className="mui-style">
         <div className="toplist-title">Danh sách môn học</div>
         <div className="columns-listcourse">
           <div className="single-column">
-            <div className="single-course">
+            <div className="single-course" id="first-course" onClick={() => navigate("/et3220")}>
               <div className="image-course-course1"></div>
               <div className="title-course">
                 <div className="text-course-title">ĐIỆN TỬ SỐ - ET3220</div>
@@ -30,7 +33,7 @@ function CourseList() {
           </div>
 
           <div className="single-column">
-            <div className="single-course">
+            <div className="single-course" id="second-course" onClick={() => navigate("/et3220")}>
               <div className="image-course-course2"></div>
               <div className="title-course">
                 <div className="text-course-title">CẤU TRÚC DỮ LIỆU VÀ GIẢI THUẬT - ET2100</div>
@@ -53,7 +56,7 @@ function CourseList() {
           </div>
 
           <div className="single-column">
-            <div className="single-course">
+            <div className="single-course" id="third-course" onClick={() => navigate("/et3220")}>
               <div className="image-course-course3"></div>
               <div className="title-course">
                 <div className="text-course-title">ĐIỆN TỬ TƯƠNG TỰ I - ET3230</div>
