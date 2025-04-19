@@ -1,5 +1,81 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const digitArray = Array.from({ length: 10 }, (_, i) => i.toString());
+
+
+function DigitScroller({ digit, delay }) {
+    const [targetPos, setTargetPos] = useState(0);
+
+    useEffect(() => {
+        const isDigit = /\d/.test(digit);
+        if (!isDigit) return; 
+
+        const timeout = setTimeout(() => {
+            setTargetPos(parseInt(digit) * 28); 
+        }, delay); 
+
+        return () => clearTimeout(timeout);
+    }, [digit, delay]);
+
+    const isDigit = /\d/.test(digit);
+
+    if (!isDigit) {
+        return (
+            <span style={{ display: "inline-block", textAlign: "center" }}>
+                {digit}
+            </span>
+        );
+    }
+
+    return (
+        <div
+            style={{
+                display: "inline-block",
+                width: 20,
+                height: 28,
+                overflow: "hidden",
+                lineHeight: "28px",
+                fontFamily: "SFPro Black",
+                textAlign: "center",
+            }}
+        >
+            <div
+                style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    transform: `translateY(-${targetPos}px)`,
+                    transition: "transform 0.5s ease-out",
+                }}
+            >
+                {[...Array(10).keys()].map((num) => (
+                    <div key={num}>{num}</div>
+                ))}
+            </div>
+        </div>
+    );
+}
+
+function ScrollingNumber({ value = "299.000" }) {
+    return (
+        <h5
+            style={{
+                fontSize: 28,
+                fontFamily: "SFPro Black",
+                margin: 0,
+                padding: 0,
+                display: "inline-flex",
+                alignItems: "center",
+                color: "#003366",
+            }}
+        >
+            {value.split("").map((char, i) => (
+                <DigitScroller key={i} digit={char} delay={i * 50} />
+            ))}
+            <span style={{ marginLeft: 6, fontFamily: 'SFPro Black' }}>VND</span>
+        </h5>
+    );
+}
 
 function ET3220CourseMain () {
     const [openPanels, setOpenPanels] = useState([false, false, false, false]);
@@ -18,6 +94,7 @@ function ET3220CourseMain () {
             return prev.map(() => !allOpen);
         });
     };
+
 
     return (
         <main id="main">
@@ -378,7 +455,7 @@ function ET3220CourseMain () {
                                     <div className="background_igm_prv"></div>
                                     <p>Xem thông tin về học phần</p>
                                 </div>
-                                <h5>299.000 VND</h5>
+                                <ScrollingNumber value="299.000" />
                                 <button type="button" href="" class="wrapper_button">
                                     <span class="inner_button">
                                         <span class="title_inner_btn">ĐĂNG KÍ KHÓA HỌC</span>
@@ -390,7 +467,6 @@ function ET3220CourseMain () {
                 </div>
             </div>
         </main>
-
     );
 }
 

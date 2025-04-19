@@ -1,5 +1,5 @@
 
-  body {
+body {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -7,44 +7,44 @@
     font-family: 'SFPro Regular', sans-serif;
     position: relative;
     overflow-x: hidden;
-  }
+}
   
-  a {
+a {
     text-decoration: none;
-  }
+}
   
-  p {
+p {
     margin: 0;
-  }
+}
   
-  button {
+button {
     font-family: 'SFPro Bold';
     cursor: pointer;
-  }
+}
   
-  header {
+header {
     background-color: #003366;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, .12);
     display: flex;
-  }
+}
   
-  .page-container {
+.page-container {
     position: relative;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
   
-  #hess-header {
+#hess-header {
     position: sticky;
     display: flex;
     justify-content: space-between;
     padding: 0px 50px;
     top: 0;
     z-index: 10;
-  }
+}
   
-  .left-section {
+.left-section {
     display: flex;
     align-items: center;
     margin-left: 50px;
@@ -55,21 +55,21 @@
     .title {
         margin: 20px;
         .bold-text {
-          font-family: 'LinhAvantgarde Bold'; 
-          font-size: 26px; 
-          color: #fff; 
-          margin-bottom: 10px;
+            font-family: 'LinhAvantgarde Bold'; 
+            font-size: 26px; 
+            color: #fff; 
+            margin-bottom: 10px;
         }
   
         .semi-bold-text {
-          font-family: 'LinhAvantgarde SemiBold'; 
-          font-size: 20px; 
-          color: #fff;
+            font-family: 'LinhAvantgarde SemiBold'; 
+            font-size: 20px; 
+            color: #fff;
         }
     }
-  }
+}
   
-  .right-header-section {
+.right-header-section {
     margin-right: 100px;
     display: flex;
     justify-content: center;
@@ -77,9 +77,9 @@
     font-family: 'SFPro Bold';
     font-size: 20px;
     color: white
-  }
+}
   
-  .btn-login-header {
+.btn-login-header {
     background: transparent;
     border: 1px solid white;
     color: white;
@@ -89,9 +89,9 @@
     border-radius: 10px;
     font-weight: 500;
     font-size: 17px;
-  }
+}
   
-  .user-button {
+.user-button {
     font-family: 'SFPro Bold';
     background-color: transparent;
     color: white;
@@ -103,9 +103,9 @@
     cursor: pointer;        /* Giữ cho trỏ chuột là pointer */
     padding: 10px 0px;      /* Có thể điều chỉnh padding nếu cần */
     transition: none; 
-  }
+}
 
-  .dropdown-menu {
+.dropdown-menu {
     position: absolute;       
     right: 150px;               
     background: white;
@@ -120,54 +120,54 @@
     visibility: hidden;
     pointer-events: none;
     transition: all 0.3s ease;
-  }
+}
 
-  .dropdown-menu.show {
+.dropdown-menu.show {
     transform: scaleY(1);
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-  }
+}
   
-  .dropdown-menu ul {
+.dropdown-menu ul {
     list-style: none;
     margin: 0;
     padding: 0;
-  }
+}
   
-  .dropdown-menu li {
+.dropdown-menu li {
     padding: 10px 16px;
     cursor: pointer;
     font-size: 18px;
     color: #000;
     transition: background 0.2s ease;
-  }
+}
   
-  .dropdown-menu li:hover {
+.dropdown-menu li:hover {
     background-color: #f1f1f1;
-  }
+}
   
   
-  .container {
+.container {
     width: 100%;
     margin-top: -150px;
     margin-left: auto;
     box-sizing: border-box;
     margin-right: auto;
     display: block;
-  }
+}
   
-  .banner-page {
+.banner-page {
     position: relative;
-  }
+}
   
-  .about-page {
+.about-page {
     padding-top: 48px;
     position: relative;
     margin-bottom: 20px;
-  }
+}
   
-  .toplist-title {
+.toplist-title {
     font-size: 25px;
     font-family: 'SFPro Bold';
     font-weight: 400;
@@ -176,17 +176,17 @@
     align-items: center;
     cursor: pointer;
     margin: 0 0 15px 0;
-  }
+}
   
-  .columns-listcourse {
+.columns-listcourse {
     display: flex;
     position: relative;
     gap: 20px;
     padding: 20px 0 20px 0;
     
-  }
+}
   
-  .single-column {
+.single-column {
     position: relative;
     min-height: 1px;
     border-radius: 15px;
@@ -194,9 +194,9 @@
     height: 100%;
     width: 33.333333333333333333333333%;
     cursor: pointer;
-  }
+}
   
-  .image-course-course1 {
+.image-course-course1 {
     display: flex;
     width: 100%;
     aspect-ratio: 2/1;
@@ -206,13 +206,13 @@
     background-position: center;
     transition: background-size 0.4s ease-in-out;
     transform-origin: center;
-  }
+}
 
-  .image-course-course1:hover {
+.image-course-course1:hover {
     background-size: 105%; 
-  }
+}
   
-  .image-course-course2 {
+.image-course-course2 {
     display: flex;
     width: 100%;
     aspect-ratio: 2/1;
@@ -222,13 +222,13 @@
     background-position: center;
     transition: background-size 0.4s ease-in-out;
     transform-origin: center;
-  }
+}
 
-  .image-course-course2:hover {
+.image-course-course2:hover {
     background-size: 105%; 
-  }
+}
   
-  .image-course-course3 {
+.image-course-course3 {
     display: flex;
     width: 100%;
     aspect-ratio: 2/1;
@@ -238,19 +238,19 @@
     background-position: center;
     transition: background-size 0.4s ease-in-out;
     transform-origin: center;
-  }
+}
   
-  .image-course-course3:hover {
+.image-course-course3:hover {
     background-size: 105%; 
-  }
+}
   
-  .title-course {
+.title-course {
     display: flex;
     align-items: center;
     padding: 15px;
-  }
+}
   
-  .text-course-title {
+.text-course-title {
     display: -webkit-box;
     font-family: 'SFPro Bold';
     font-size: 20px;
@@ -258,12 +258,12 @@
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     flex-grow: 1;
-  }
+}
   
-  .is-premium {
+.is-premium {
     height: 18px;
     padding-left: 10px;
-  }
+}
   
   /* .column-left {
     margin-right: 10px;
@@ -277,40 +277,40 @@
     margin-left: 10px;
   } */
   
-  .about-page .absolute-img {
+.about-page .absolute-img {
     position: absolute;
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
-  }
+}
   
-  .about-page .img01 {
+.about-page .img01 {
     width: 290px;
     height: 664px;
     top: 37%;
     left: 0;
-  }
+}
   
-  .about-page .img02 {
+.about-page .img02 {
     width: 310px;
     height: 570px;
     top: 5%;
     right: 0;
-  }
+}
   
-  .banner {
+.banner {
     width: 100%;
-  }
+}
   
-  .mui-style {
+.mui-style {
     margin-left: auto;
     box-sizing: border-box;
     margin-right: auto;
     display: block;
     padding: 10px 110px 10px 110px;
-  }
+}
   
-  #hess-footer {
+#hess-footer {
     margin: 0;
     padding: 10px 100px;
     background-color: #F2F6FC;
@@ -322,16 +322,16 @@
         flex-direction: column;
         gap: 48px;
     }
-  }
+}
   
-  .footer-row {
+.footer-row {
     display: flex;
     flex-flow: row wrap;
     min-width: 0;
     padding: 10px;
-  }
+}
   
-  .footer-left-col {
+.footer-left-col {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -357,9 +357,9 @@
             }
         }
     }
-  }
+}
   
-  .info-footer {
+.info-footer {
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -372,9 +372,9 @@
             font-size: 18px;
         }
     }
-  }
+}
   
-  .footer-right-col {
+.footer-right-col {
     display: flex;
     justify-content: flex-end;
     flex: 0 0 25%;
@@ -396,18 +396,18 @@
             background-color: #CE1628;
         }
     }
-  }
+}
   
-  .field-app-install {
+.field-app-install {
     display: flex; 
     flex-direction: column; 
     gap: 12px;
     .app-install {
       max-height: 50px;
     }
-  }
+}
   
-  .bottom-footer {
+.bottom-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -420,4 +420,4 @@
         text-align: justify;
         padding-right: 20px;
     }
-  }
+}
