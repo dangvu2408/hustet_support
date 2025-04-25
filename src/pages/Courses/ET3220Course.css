@@ -265,7 +265,8 @@ button {
     background-position: center center;
 }
 
-.img_preview p {
+
+.showMoreCourse {
     position: absolute;
     left: 0;
     right: 0;

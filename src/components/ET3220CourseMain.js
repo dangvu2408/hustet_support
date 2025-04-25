@@ -1,7 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import Dialog from './dialog/CourseDialog';
 
-const digitArray = Array.from({ length: 10 }, (_, i) => i.toString());
+// const digitArray = Array.from({ length: 10 }, (_, i) => i.toString());
 
 
 function DigitScroller({ digit, delay }) {
@@ -38,16 +39,14 @@ function DigitScroller({ digit, delay }) {
                 lineHeight: "28px",
                 fontFamily: "SFPro Black",
                 textAlign: "center",
-            }}
-        >
+            }}>
             <div
                 style={{
                     display: "flex",
                     flexDirection: "column",
                     transform: `translateY(-${targetPos}px)`,
                     transition: "transform 0.5s ease-out",
-                }}
-            >
+                }}>
                 {[...Array(10).keys()].map((num) => (
                     <div key={num}>{num}</div>
                 ))}
@@ -72,10 +71,11 @@ function ScrollingNumber({ value = "299.000" }) {
             {value.split("").map((char, i) => (
                 <DigitScroller key={i} digit={char} delay={i * 50} />
             ))}
-            <span style={{ marginLeft: 6, fontFamily: 'SFPro Black' }}>VND</span>
+            <span style={{ marginLeft: 6, fontFamily: 'SFPro Black' }}>VNĐ</span>
         </h5>
     );
 }
+
 
 function ET3220CourseMain () {
     const [openPanels, setOpenPanels] = useState([false, false, false, false]);
@@ -94,6 +94,10 @@ function ET3220CourseMain () {
             return prev.map(() => !allOpen);
         });
     };
+
+    const[showDialog, setShowDialog] = useState(false);
+    const openDialog = () => setShowDialog(true);
+    const closeDialog = () => setShowDialog(false);
 
 
     return (
@@ -453,7 +457,40 @@ function ET3220CourseMain () {
                             <div className="purchase_badge">
                                 <div className="img_preview">
                                     <div className="background_igm_prv"></div>
-                                    <p>Xem thông tin về học phần</p>
+                                    <p className="showMoreCourse" onClick={openDialog} style={{ cursor: 'pointer'}}>Xem thông tin về học phần</p>
+                                    <Dialog show={showDialog} onClose={closeDialog} title="Thông tin học phần">
+                                        <div className="group_items_info">
+                                            <div className="custom_item_info">
+                                                <div className="item_info_title">Đơn vị:</div>
+                                                <span className="item_info_value">Trường Điện - Điện tử</span>
+                                            </div>
+
+                                            <div className="custom_item_info">
+                                                <div className="item_info_title">Đơn vị con:</div>
+                                                <span className="item_info_value">Khoa Điện tử, Trung tâm Đào tạo thực hành Điện - Điện tử</span>
+                                            </div>
+
+                                            <div className="custom_item_info">
+                                                <div className="item_info_title">Mã học phần:</div>
+                                                <span className="item_info_value">ET3220</span>
+                                            </div>
+
+                                            <div className="custom_item_info">
+                                                <div className="item_info_title">Tên học phần:</div>
+                                                <span className="item_info_value">Điện tử số</span>
+                                            </div>
+
+                                            <div className="custom_item_info">
+                                                <div className="item_info_title">Tên tiếng anh:</div>
+                                                <span className="item_info_value">Digital Electronics</span>
+                                            </div>
+
+                                            <div className="custom_item_info">
+                                                <div className="item_info_title">Phân bổ:</div>
+                                                <span className="item_info_value">3(3-0-1-6)</span>
+                                            </div>
+                                        </div>
+                                    </Dialog>
                                 </div>
                                 <ScrollingNumber value="299.000" />
                                 <button type="button" href="" class="wrapper_button">

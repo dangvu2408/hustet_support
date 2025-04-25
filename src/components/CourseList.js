@@ -10,7 +10,7 @@ function CourseList() {
         <div className="toplist-title">Danh sách môn học</div>
         <div className="columns-listcourse">
           <div className="single-column">
-            <div className="single-course" id="first-course" onClick={() => navigate("/courses/et3220")}>
+            <div className="single-course" id="first-course" onClick={() => window.location.href = "/courses/et3220"}>
               <div className="image-course-course1"></div>
               <div className="title-course">
                 <div className="text-course-title">ĐIỆN TỬ SỐ - ET3220</div>
@@ -33,7 +33,7 @@ function CourseList() {
           </div>
 
           <div className="single-column">
-            <div className="single-course" id="second-course" onClick={() => navigate("/courses/et3220")}>
+            <div className="single-course" id="second-course" onClick={() => window.location.href = "/courses/et3220"}>
               <div className="image-course-course2"></div>
               <div className="title-course">
                 <div className="text-course-title">CẤU TRÚC DỮ LIỆU VÀ GIẢI THUẬT - ET2100</div>
@@ -56,7 +56,7 @@ function CourseList() {
           </div>
 
           <div className="single-column">
-            <div className="single-course" id="third-course" onClick={() => navigate("/courses/et3220")}>
+            <div className="single-course" id="third-course" onClick={() => window.location.href = "/courses/et3220"}>
               <div className="image-course-course3"></div>
               <div className="title-course">
                 <div className="text-course-title">ĐIỆN TỬ TƯƠNG TỰ I - ET3230</div>
