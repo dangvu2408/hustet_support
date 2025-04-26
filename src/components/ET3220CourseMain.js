@@ -8,6 +8,8 @@ import Dialog from './dialog/CourseDialog';
 function DigitScroller({ digit, delay }) {
     const [targetPos, setTargetPos] = useState(0);
 
+    
+
     useEffect(() => {
         const isDigit = /\d/.test(digit);
         if (!isDigit) return; 
@@ -79,6 +81,8 @@ function ScrollingNumber({ value = "299.000" }) {
 
 function ET3220CourseMain () {
     const [openPanels, setOpenPanels] = useState([false, false, false, false]);
+
+
 
     const togglePanel = (index) => {
         setOpenPanels(prev => {
@@ -488,6 +492,11 @@ function ET3220CourseMain () {
                                             <div className="custom_item_info">
                                                 <div className="item_info_title">Phân bổ:</div>
                                                 <span className="item_info_value">3(3-0-1-6)</span>
+                                            </div>
+
+                                            <div className="custom_item_info">
+                                                <div className="item_info_title">Đề cương chi tiết:</div>
+                                                <span className="item_info_value" onClick={() => window.open("/assets/et3220_-_dien_tu_so_73.0k.pdf", "_blank")} style={{ cursor: "pointer" }}>et3220_-_dien_tu_so_73.0k.pdf</span>
                                             </div>
                                         </div>
                                     </Dialog>

@@ -56,6 +56,10 @@
     cursor: pointer;
 }
 
+.file-viewer iframe {
+    border-radius: 8px;
+}
+
 .ant-btn-icon {
     box-sizing: border-box;
 }
