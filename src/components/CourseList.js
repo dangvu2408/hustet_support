@@ -7,7 +7,7 @@ function CourseList() {
   return (
     <div className="about-page">
       <div className="mui-style">
-        <div className="toplist-title">Danh sách môn học</div>
+        <div className="toplist-title" onClick={() => window.location.href = "/courses"}>Danh sách môn học</div>
         <div className="columns-listcourse">
           <div className="single-column">
             <div className="single-course" id="first-course" onClick={() => window.location.href = "/courses/et3220"}>
