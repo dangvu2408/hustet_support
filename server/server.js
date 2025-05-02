@@ -46,13 +46,16 @@ app.post("/login", (req, res) => {
 
         if (results.length > 0) {
             const user = results[0];
+            console.log("User query result:", user); 
             const userData = {
                 username: user.username,
                 password: user.password,
                 fullname: user.fullname,
                 dob: user.dob,
-                gender: user.gender
+                gender: user.gender,
+                role: user.role
             };
+            console.log("Dữ liệu gửi về client:", userData);
             return res.json({ success: true, userData });
         } else {
             return res.json({ success: false, message: "Sai tài khoản hoặc mật khẩu" });

@@ -24,6 +24,7 @@ function Header() {
         try {
           const parsedUser = JSON.parse(storedUser);  // dòng gây lỗi nếu storedUser là undefined hoặc chuỗi sai định dạng
           setUser(parsedUser);
+          console.log("User loaded:", parsedUser);
         } catch (error) {
           console.error("Lỗi parse JSON:", error);
         }

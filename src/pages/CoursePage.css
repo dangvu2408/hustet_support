@@ -1,0 +1,29 @@
+.add_course_level {
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.add_course {
+    color: #003366;
+    background-color: #E0ECFF;
+    border-radius: 999px;
+    position: relative;
+}
+
+.add_course_btn {
+    display: flex;
+    padding: 10px 24px;
+    align-items: center;
+    font-family: 'SFPro Bold';
+    font-size: 18px;
+    border-radius: 999px;
+    border: 0;
+    text-transform: none;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.add_course_btn svg {
+    margin-right: 5px;
+}

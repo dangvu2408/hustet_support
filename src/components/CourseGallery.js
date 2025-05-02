@@ -1,9 +1,11 @@
+import { colors } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
 function CourseGallery() {
     const navigate = useNavigate();
-    
+    const user = JSON.parse(localStorage.getItem("user") || "null");
+    console.log(user);
     return (
         <main id="main">
             <div className="container_et">
@@ -89,6 +91,17 @@ function CourseGallery() {
                             </div>
                         </div>
                     </div>
+
+                    {user && user.role === 1 && (
+                        <div className="add_course_level">
+                            <div className="add_course">
+                                <a className="add_course_btn" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder-plus"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
+                                    <span>Thêm môn học</span>
+                                </a>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
 
