@@ -7,7 +7,10 @@ function CourseList() {
   return (
     <div className="about-page">
       <div className="mui-style">
-        <div className="toplist-title" onClick={() => window.location.href = "/courses"}>Danh sách môn học</div>
+        <div className="toplist-title" onClick={() => window.location.href = "/courses"}>
+          <span>Danh sách môn học</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-right"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg>
+        </div>
         <div className="columns-listcourse">
           <div className="single-column">
             <div className="single-course" id="first-course" onClick={() => window.location.href = "/courses/et3220"}>

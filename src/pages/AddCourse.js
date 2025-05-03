@@ -1,17 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Content from "../components/CourseGallery"
+import FormAdder from "../components/AddCourseField";
 import "./MainPage.css";
-import "./CoursePage.css";
+import "./AddCourse.css";
 
-export default function CoursePage() {
+export default function AddCourse() {
     const negative = useNavigate();
 
     return (
         <div className="page-container">
             <Header />
-            <Content />
+            <FormAdder />
             <Footer />
         </div>
     );

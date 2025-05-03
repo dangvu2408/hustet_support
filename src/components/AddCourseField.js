@@ -1,0 +1,230 @@
+import { colors } from "@mui/material";
+import React, { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+const childManagement = [
+    "Khoa Điện tử",
+    "Khoa Kỹ thuật truyền thông",
+    "Trung tâm Đào tạo thực hành Điện - Điện tử"
+];
+
+function AddCourseField() {
+    const navigate = useNavigate();
+    const user = JSON.parse(localStorage.getItem("user") || "null");
+
+    const [value, setValue] = useState("");
+    const textareaRef = useRef(null);
+
+    const [open, setOpen] = useState(false);
+    const [selected, setSelected] = useState([]);
+    const handleToggle = (item) => {
+        setSelected((prev) =>
+          prev.includes(item)
+            ? prev.filter((i) => i !== item)
+            : [...prev, item]
+        );
+    };
+
+    const handleInput = () => {
+        const textarea = textareaRef.current;
+        textarea.style.height = "auto"; // reset chiều cao về auto trước
+        textarea.style.height = textarea.scrollHeight + "px"; // set chiều cao đúng bằng nội dung
+    };
+
+    const [credit, setCredit] = useState("");
+    const [timeLT, setTimeLT] = useState("");
+    const [timeTH, setTimeTH] = useState("");
+    const [timeBT, setTimeBT] = useState("");
+    const [timeTU, setTimeTU] = useState("");
+    const [weight, setWeight] = useState("0(0-0-0-0)");
+
+    useEffect(() => {
+        const c = credit || 0;
+        const lt = timeLT || 0;
+        const bt = timeBT || 0;
+        const th = timeTH || 0;
+        const tu = timeTU || 0;
+        setWeight(`${c}(${lt}-${bt}-${th}-${tu})`);
+    }, [credit, timeLT, timeTH, timeBT, timeTU]);
+    
+    return(
+        <main id="main">
+            <div className="container_et">
+                <div className="container_heading">
+                    <a href="#" className="back_home" onClick={(e) => { e.preventDefault(); window.history.back(); }}>
+                        <span className="subtitle_back">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                            <span>Quay lại</span>
+                        </span>
+                    </a>
+                </div>
+
+                <div className="wrapper_container">
+                    <h1 className="course_name_heading">Thêm môn học mới</h1>
+                    <div style={{ height: '20px' }}></div>
+                    <div className="row_wrapper">
+                        <div className="col_wrapper col_left">
+                            <div className="course_content">
+                                <div className="form_group ">
+                                    <label for="title">Tên học phần <span class="required">(bắt buộc)</span>
+                                        <span class="tooltip" title="Nhập tên học phần.">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                        </span>
+                                    </label>
+                                    <input type="text" id="course_name_input" maxlength="100" placeholder="Nhập tên học phần..."></input>
+                                    <span class="char-count" id="char-count">0/100</span>
+                                </div>
+
+                                <div className="form_group ">
+                                    <label for="title">Mã học phần <span class="required">(bắt buộc)</span>
+                                        <span class="tooltip" title="Nhập mã học phần.">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                        </span>
+                                    </label>
+                                    <input type="text" id="course_id_input" maxlength="10" placeholder="Nhập mã học phần..."></input>
+                                    <span class="char-count" id="char-count">0/10</span>
+                                </div>
+
+                                <div className="form_group ">
+                                    <label for="title">Tên tiếng Anh <span class="required">(bắt buộc)</span>
+                                        <span class="tooltip" title="Nhập tên học phần bằng tiếng Anh.">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                        </span>
+                                    </label>
+                                    <input type="text" id="course_enname_input" maxlength="100" placeholder="Nhập tên học phần bằng tiếng Anh..."></input>
+                                    <span class="char-count" id="char-count">0/100</span>
+                                </div>
+
+                                <div className="form_group course_des_input">
+                                    <label for="title">Mô tả học phần
+                                        <span class="tooltip" title="Nhập mô tả học phần">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                        </span>
+                                    </label>
+                                    <textarea ref={textareaRef} value={value} onChange={(e) => { setValue(e.target.value); handleInput(); }} type="text" id="course_des_input" maxlength="5000" placeholder="Nhập mô tả học phần..."></textarea>
+                                    <span class="char-count" id="char-count">0/5000</span>
+                                </div>
+
+                                <div className="form_group read_only_group">
+                                    <label for="title">Đơn vị quản lý <span class="required">(bắt buộc)</span>
+                                        <span class="tooltip" title="Tên đơn vị quản lý học phần">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                        </span>
+                                    </label>
+                                    <input type="text" id="course_enname_input" maxlength="100" placeholder="Trường Điện - Điện tử" readOnly></input>
+                                </div>
+
+                                <div className="form_group">
+                                    <label for="title">Đơn vị con <span class="required">(bắt buộc)</span>
+                                        <span class="tooltip" title="Tên đơn vị con quản lý học phần">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                        </span>
+                                    </label>
+                                    <div className="dropdown-container">
+                                        <button onClick={() => setOpen(!open)} className="dropdown-button">
+                                            {selected.length > 0 ? `${selected.length} đơn vị con` : "Chọn đơn vị con..."}
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className={`feather feather-chevron-down ${open ? "rotate" : ""}`}><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                        </button>
+                                        {open && (
+                                            <div className="dropdown_menu">
+                                                <div className="checkbox-list">
+                                                    {childManagement.map((item) => (
+                                                        <label key={item} className="checkbox-item">
+                                                            <input
+                                                                type="checkbox"
+                                                                checked={selected.includes(item)}
+                                                                onChange={() => handleToggle(item)} />
+                                                            {item}
+                                                        </label>
+                                                    ))}
+                                                </div>
+
+                                                <div className="dropdown-footer">
+                                                    <button onClick={() => setOpen(false)} className="done-btn">
+                                                        Xong
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+
+                                <span className="course_weight">Khối lượng học phần</span>
+
+                                <div className="two_columns_child">
+                                    <div className="col_wrapper col_left_5">
+                                        <div className="form_content_left">
+                                            <div className="form_group">
+                                                <label for="title">Số tín chỉ <span class="required">(bắt buộc)</span>
+                                                    <span class="tooltip" title="Nhập số tín chỉ của học phần.">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                                    </span>
+                                                </label>
+                                                <input type="text" id="course_credit_input" maxlength="10" placeholder="Nhập số tín chỉ học phần..." value={credit} onChange={(e) => setCredit(e.target.value)}></input>
+                                            </div>
+
+                                            <div className="form_group">
+                                                <label for="title">Số giờ LT <span class="required">(bắt buộc)</span>
+                                                    <span class="tooltip" title="Nhập số giờ học lý thuyết của học phần.">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                                    </span>
+                                                </label>
+                                                <input type="text" id="course_time1_input" maxlength="10" placeholder="Nhập số giờ LT của học phần..." value={timeLT} onChange={(e) => setTimeLT(e.target.value)}></input>
+                                            </div>
+
+                                            <div className="form_group">
+                                                <label for="title">Số giờ TH/TN <span class="required">(bắt buộc)</span>
+                                                    <span class="tooltip" title="Nhập số giờ thực hành và thí nghiệm của học phần.">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                                    </span>
+                                                </label>
+                                                <input type="text" id="course_time3_input" maxlength="10" placeholder="Nhập số giờ TH/TN của học phần..." value={timeTH} onChange={(e) => setTimeTH(e.target.value)}></input>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col_wrapper col_right_5">
+                                        <div className="form_content_right">
+                                            <div className="form_group read_only_group">
+                                                <label for="title">Phân bổ khối lượng
+                                                    <span class="tooltip" title="Khối lượng của học phần x(y-z-t-m).">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                                    </span>
+                                                </label>
+                                                <input type="text" id="course_weight_input" maxlength="10" placeholder="Phân bổ khối lượng học phần..." readOnly value={weight}></input>
+                                            </div>
+
+                                            <div className="form_group">
+                                                <label for="title">Số giờ BT <span class="required">(bắt buộc)</span>
+                                                    <span class="tooltip" title="Nhập số giờ học bài tập của học phần.">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                                    </span>
+                                                </label>
+                                                <input type="text" id="course_time2_input" maxlength="10" placeholder="Nhập số giờ BT của học phần..." value={timeBT} onChange={(e) => setTimeBT(e.target.value)}></input>
+                                            </div>
+
+                                            <div className="form_group">
+                                                <label for="title">Số giờ tự học <span class="required">(bắt buộc)</span>
+                                                    <span class="tooltip" title="Nhập số giờ tự học của học phần.">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                                    </span>
+                                                </label>
+                                                <input type="text" id="course_time4_input" maxlength="10" placeholder="Nhập số giờ tự học của học phần..." value={timeTU} onChange={(e) => setTimeTU(e.target.value)}></input>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>            
+
+                            </div>
+                        </div>
+                        <div className="col_wrapper col_right">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    );
+
+}
+
+export default AddCourseField;

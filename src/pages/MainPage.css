@@ -177,6 +177,10 @@ header {
     cursor: pointer;
     margin: 0 0 15px 0;
 }
+
+.toplist-title svg {
+    margin-left: 10px;
+}
   
 .columns-listcourse {
     display: flex;

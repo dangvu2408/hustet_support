@@ -7,6 +7,7 @@ import LoginPage from "./pages/LoginPage";
 import SigninPage from "./pages/SigninPage";
 import ET3220 from "./pages/Courses/ET3220Course";
 import CoursePage from "./pages/CoursePage";
+import AddCourse from "./pages/AddCourse";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/signin" element={<SigninPage />} />
         <Route path="/courses/et3220" element={<ET3220 />} />
         <Route path="/courses" element={<CoursePage />} />
+        <Route path="/add-course" element={<AddCourse />} />
       </Routes>
     </Router>
   );
