@@ -27,8 +27,8 @@ function AddCourseField() {
 
     const handleInput = () => {
         const textarea = textareaRef.current;
-        textarea.style.height = "auto"; // reset chiều cao về auto trước
-        textarea.style.height = textarea.scrollHeight + "px"; // set chiều cao đúng bằng nội dung
+        textarea.style.height = "auto"; 
+        textarea.style.height = textarea.scrollHeight + "px"; 
     };
 
     const [credit, setCredit] = useState("");
@@ -70,11 +70,10 @@ function AddCourseField() {
                 </div>
 
                 <div className="wrapper_container">
-                    <h1 className="course_name_heading">Thêm môn học mới</h1>
-                    <div style={{ height: '20px' }}></div>
                     <div className="row_wrapper">
                         <div className="col_wrapper col_left">
                             <div className="course_content">
+                                <h1 className="course_name_heading">Thêm môn học mới</h1>
                                 <div className="form_group ">
                                     <label for="title">Tên học phần <span class="required">(bắt buộc)</span>
                                         <span class="tooltip" title="Nhập tên học phần.">
@@ -227,7 +226,34 @@ function AddCourseField() {
                             </div>
                         </div>
                         <div className="col_wrapper col_right">
+                            <div className="purchase_badge">
+                                <div className="img_preview">
+                                    <div className="background_igm_prv" style={{backgroundImage: 'none'}}></div>
+                                    <p className="showMoreCourse" style={{ cursor: 'pointer'}}>Tải hình thu nhỏ mô tả học phần</p>
+                                    <div className="upload_button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                    </div>
+                                </div>
 
+                                <div class="radio_group">
+                                    <label class="radio_option">
+                                        <input type="radio" name="kid_content" defaultChecked={true}/>
+                                        <span class="custom_radio"></span>
+                                        Khóa học miễn phí
+                                    </label>
+
+                                    <label class="radio_option">
+                                        <input type="radio" name="kid_content"  />
+                                        <span class="custom_radio"></span>
+                                        Khóa học có tính phí (299.000 VNĐ)
+                                    </label>
+                                </div>
+
+                                <div class="info_box_container">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                                    <span aria-hidden className="text_info_box">Đối với những khóa học có tính phí, phí khóa học mặc định luôn là 299.000 VNĐ</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
