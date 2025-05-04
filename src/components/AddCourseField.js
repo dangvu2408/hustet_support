@@ -46,6 +46,16 @@ function AddCourseField() {
         const tu = timeTU || 0;
         setWeight(`${c}(${lt}-${bt}-${th}-${tu})`);
     }, [credit, timeLT, timeTH, timeBT, timeTU]);
+
+    const [charCounts, setCharCounts] = useState({});
+
+    const handleInputChange = (e) => {
+        const { id, value } = e.target;
+        setCharCounts(prev => ({
+            ...prev,
+            [id]: value.length
+        }));
+    };
     
     return(
         <main id="main">
@@ -71,8 +81,8 @@ function AddCourseField() {
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                                         </span>
                                     </label>
-                                    <input type="text" id="course_name_input" maxlength="100" placeholder="Nhập tên học phần..."></input>
-                                    <span class="char-count" id="char-count">0/100</span>
+                                    <input type="text" id="course_name_input" maxlength="100" placeholder="Nhập tên học phần..." onChange={handleInputChange}></input>
+                                    <span class="char-count" id="char-count-name">{charCounts['course_name_input'] || 0}/100</span>
                                 </div>
 
                                 <div className="form_group ">
@@ -81,8 +91,8 @@ function AddCourseField() {
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                                         </span>
                                     </label>
-                                    <input type="text" id="course_id_input" maxlength="10" placeholder="Nhập mã học phần..."></input>
-                                    <span class="char-count" id="char-count">0/10</span>
+                                    <input type="text" id="course_id_input" maxlength="10" placeholder="Nhập mã học phần..." onChange={handleInputChange}></input>
+                                    <span class="char-count" id="char-count">{charCounts['course_id_input'] || 0}/10</span>
                                 </div>
 
                                 <div className="form_group ">
@@ -91,8 +101,8 @@ function AddCourseField() {
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                                         </span>
                                     </label>
-                                    <input type="text" id="course_enname_input" maxlength="100" placeholder="Nhập tên học phần bằng tiếng Anh..."></input>
-                                    <span class="char-count" id="char-count">0/100</span>
+                                    <input type="text" id="course_enname_input" maxlength="100" placeholder="Nhập tên học phần bằng tiếng Anh..." onChange={handleInputChange}></input>
+                                    <span class="char-count" id="char-count">{charCounts['course_enname_input'] || 0}/100</span>
                                 </div>
 
                                 <div className="form_group course_des_input">
@@ -101,8 +111,8 @@ function AddCourseField() {
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                                         </span>
                                     </label>
-                                    <textarea ref={textareaRef} value={value} onChange={(e) => { setValue(e.target.value); handleInput(); }} type="text" id="course_des_input" maxlength="5000" placeholder="Nhập mô tả học phần..."></textarea>
-                                    <span class="char-count" id="char-count">0/5000</span>
+                                    <textarea ref={textareaRef} value={value} onChange={(e) => { setValue(e.target.value); handleInput(); handleInputChange(e); }} type="text" id="course_des_input" maxlength="5000" placeholder="Nhập mô tả học phần..." ></textarea>
+                                    <span class="char-count" id="char-count">{charCounts['course_des_input'] || 0}/5000</span>
                                 </div>
 
                                 <div className="form_group read_only_group">
