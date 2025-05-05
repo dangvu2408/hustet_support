@@ -56,6 +56,25 @@ function AddCourseField() {
             [id]: value.length
         }));
     };
+
+    const fileInputRef = useRef(null);
+    const [backgroundImage, setBackgroundImage] = useState(null);
+
+    const handleUploadClick = () => {
+        fileInputRef.current.click();
+    };
+
+    const handleFileChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                setBackgroundImage(event.target.result);
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+
     
     return(
         <main id="main">
@@ -228,11 +247,18 @@ function AddCourseField() {
                         <div className="col_wrapper col_right">
                             <div className="purchase_badge">
                                 <div className="img_preview">
-                                    <div className="background_igm_prv" style={{backgroundImage: 'none'}}></div>
-                                    <p className="showMoreCourse" style={{ cursor: 'pointer'}}>Tải hình thu nhỏ mô tả học phần</p>
-                                    <div className="upload_button">
+                                    <div className="background_igm_prv" style={{backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none"}}></div>
+                                    <p className="showMoreCourse" style={{ cursor: 'pointer'}} onClick={handleUploadClick}>Tải hình thu nhỏ mô tả học phần</p>
+                                    <div className="upload_button" onClick={handleUploadClick}>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
                                     </div>
+                                    <input
+                                        type="file"
+                                        accept="image/*"
+                                        ref={fileInputRef}
+                                        style={{ display: "none" }}
+                                        onChange={handleFileChange}
+                                    />
                                 </div>
 
                                 <div class="radio_group">
@@ -255,6 +281,10 @@ function AddCourseField() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div className="footer_level">
+                        <a className="add_course_button" target="_blank">Thêm môn học</a>
                     </div>
                 </div>
             </div>

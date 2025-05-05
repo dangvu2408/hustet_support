@@ -265,8 +265,8 @@ button {
     width: 100%;
     padding-top: 56.25%;
     background-repeat: no-repeat;
-    background-size: auto 100%;
-    background-position: center center;
+    background-size: cover;
+    background-position: center;
 }
 
 .img_preview .upload_button {

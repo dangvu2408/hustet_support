@@ -292,3 +292,28 @@ label {
     flex-shrink: 0;
     margin-right: 8px;
 }
+
+.footer_level {
+    display: flex;
+    justify-content: center;
+}
+
+.add_course_button {
+    margin: 12px;
+    padding: 10px 25px;
+    border-radius: 100px;
+    background-color: #003366;
+    color: #FFFFFF;
+    border: 2px solid #003366;
+    font-size: 18px;
+    font-family: 'SFPro Bold';
+    line-height: 20px;
+    cursor: pointer;
+    letter-spacing: .1px;
+}
+
+.add_course_button:hover {
+    color: #003366;
+    background-color: #FFFFFF;
+    transition: all 0.2s;
+}
