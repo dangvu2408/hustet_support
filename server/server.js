@@ -34,7 +34,7 @@ app.post('/register', (req, res) => {
     });
 }); //signin properties
 
-app.post("/login", (req, res) => {
+app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
     const query = "SELECT * FROM users WHERE username = ? AND password = ?";
@@ -53,7 +53,8 @@ app.post("/login", (req, res) => {
                 fullname: user.fullname,
                 dob: user.dob,
                 gender: user.gender,
-                role: user.role
+                role: user.role,
+                status: user.status
             };
             console.log("Dữ liệu gửi về client:", userData);
             return res.json({ success: true, userData });
@@ -64,6 +65,20 @@ app.post("/login", (req, res) => {
 });
  //login properties
 
+app.get('/users', (req, res) => {
+    const sql = "SELECT * FROM users";
+    db.query(sql, (err, result) => {
+        if (err) {
+            return res.status(500).json({ error: "Lỗi server khi lấy users" });
+        }
+        res.json(result);
+    });
+});
+
 app.listen(3001, () => {
     console.log("Server is running on port 3001");
 });
+
+
+  
+  
