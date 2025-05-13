@@ -1,10 +1,28 @@
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
+const multer = require("multer");
+const path = require("path");
 
 const app = express();
 app.use(cors());
 app.use(express.json()); // Để parse JSON body từ fetch()
+
+// Cho phép truy cập ảnh tĩnh
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+// Cấu hình multer
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, "uploads/"); // Thư mục đích
+    },
+    filename: function (req, file, cb) {
+        const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1E9);
+        const ext = path.extname(file.originalname);
+        cb(null, file.fieldname + "-" + uniqueSuffix + ext);
+    }
+});
+const upload = multer({ storage: storage });
 
 const db = mysql.createConnection({
     host: 'localhost',
@@ -74,6 +92,62 @@ app.get('/users', (req, res) => {
         res.json(result);
     });
 });
+//get full user info
+
+// Endpoint upload-thumbnail
+app.post("/upload-thumbnail", upload.single("file"), (req, res) => {
+    if (!req.file) {
+        return res.status(400).json({ error: "Không có file nào được upload." });
+    }
+
+    // Trả về đường dẫn ảnh
+    const fileUrl = `http://localhost:3001/uploads/${req.file.filename}`;
+    res.json({ url: fileUrl });
+});
+
+// API thêm khóa học
+app.post("/add-course", (req, res) => {
+    const {
+        course_id,
+        course_name,
+        english_name,
+        child_management,
+        managing_department,
+        weight,
+        description,
+        price,
+        thumbnail
+    } = req.body;
+
+    const query = `INSERT INTO courses (course_id, course_name, english_name, child_management, managing_department, weight, description, price, thumbnail) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+    const values = [
+        course_id,
+        course_name,
+        english_name,
+        child_management,
+        managing_department,
+        weight,
+        description,
+        price,
+        thumbnail
+    ];
+
+    db.query(query, values, (err, result) => {
+        if (err) {
+        console.error("Lỗi khi thêm khóa học:", err);
+        return res.status(500).json({ error: "Lỗi khi thêm khóa học." });
+        }
+        res.json({ success: true, message: "Đã thêm học phần thành công!", courseId: result.insertId });
+    });
+});
+
+
+
+
+
+
+
 
 app.listen(3001, () => {
     console.log("Server is running on port 3001");

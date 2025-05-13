@@ -30,17 +30,17 @@ function CourseGallery() {
                             course_id="ET3220"
                             course_name="Điện tử số"
                             english_name="Digital Electronics"
-                            child_management="Khối Kỹ thuật"
-                            managing_department="Bộ môn Điện tử"
-                            weight="3"
-                            description="Học phần về logic số, mạch số cơ bản."
-                            price="299.000"
-                            old_price="399.000"
+                            child_management="Khoa Điện tử, Trung tâm Đào tạo thực hành Điện - Điện tử"
+                            managing_department="Trường Điện - Điện tử"
+                            weight="3(3-0-1-6)"
+                            description="Môn học này sẽ trang bị cho sinh viên năm thứ 3 ngành kỹ thuật các kiến thức cơ bản về điện tử số và thiết kế mạch số ở mức cổng. Cụ thể là sinh viên hiểu về đại số Boolean ứng dụng trong điện tử số, các hệ cơ số đếm, cách biểu diễn và các phép toán cơ bản bởi mạch số, mô tả mạch điện tử số và tìm lời giải, cấu trúc mạch logic tổ hợp của các mạch chức năng cơ bản và nâng cao, hiểu về các mạch dãy để thiết kế và phân tích chức năng của mạch dãy. Môn học cũng cung cấp cho sinh viên kỹ năng thực hành và thái độ cần thiết khi làm thực nghiệm, giới thiệu các bước thiết kế và thực hiện mạch điện tử số trên bo mạch cũng như trên phần mềm CAD, và phát triển kỹ năng làm việc nhóm và báo cáo."
+                            price="399.000"
+                            old_price="599.000"
                             thumbnail={Course1}
                             progress={80} />
 
                         <CourseItemVerB
-                            course_id="ET3220"
+                            course_id="ET3230"
                             course_name="Điện tử số"
                             english_name="Digital Electronics"
                             child_management="Khối Kỹ thuật"

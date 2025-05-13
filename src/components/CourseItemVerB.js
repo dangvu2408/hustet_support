@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import Premium from './Premium';
 import Plus from './Plus';
 import Basic from './Basic';
@@ -16,12 +17,33 @@ function CourseItemVerB({
     thumbnail,
     progress = 0, // % tiến độ học
 }) {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate(`/courses/${course_id}`, {
+            state: {
+                course_id,
+                course_name,
+                english_name,
+                child_management,
+                managing_department,
+                weight,
+                description,
+                price,
+                old_price,
+                thumbnail,
+                progress,
+            },
+        });
+    };
+
+
+
     const parsePrice = (str) => parseFloat(str.replace(/\./g, ''));
     const discount = Math.round(((parsePrice(old_price) - parsePrice(price)) / parsePrice(old_price)) * 100);
 
     return (
         <div className="single-column">
-            <div className="single-course" onClick={() => window.location.href = "/courses/et3220"}>
+            <div className="single-course" onClick={handleClick}>
                 <div className="image-course-course">
                     <img className="course_thumb_img" src={thumbnail} />
                     <Premium/>

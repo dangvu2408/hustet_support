@@ -261,7 +261,6 @@ button {
 }
 
 .img_preview .background_igm_prv {
-    background-image: url('../../assets/images/dts_banner.png');
     width: 100%;
     padding-top: 56.25%;
     background-repeat: no-repeat;
