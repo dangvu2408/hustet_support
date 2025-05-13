@@ -196,62 +196,55 @@ header {
     border-radius: 15px;
     background-color: #E0ECFF;
     height: 100%;
+    overflow: hidden;
     width: 33.333333333333333333333333%;
     cursor: pointer;
 }
   
-.image-course-course1 {
-    display: flex;
-    width: 100%;
-    aspect-ratio: 2/1;
-    border-radius: 15px 15px 0px 0px;
-    background: url(../assets/images/dts_banner.png);
-    background-size: 100%;
-    background-position: center;
-    transition: background-size 0.4s ease-in-out;
-    transform-origin: center;
+.image-course-course {
+    position: relative;
+    z-index: 0;
 }
 
-.image-course-course1:hover {
-    background-size: 105%; 
-}
-  
-.image-course-course2 {
-    display: flex;
+.course_thumb_img {
+    display: block;
     width: 100%;
-    aspect-ratio: 2/1;
-    border-radius: 15px 15px 0px 0px;
-    background: url(../assets/images/dsa_banner.png);
-    background-size: 100%;
-    background-position: center;
-    transition: background-size 0.4s ease-in-out;
-    transform-origin: center;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    border-radius: 15px 15px 0 0;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out;
 }
 
-.image-course-course2:hover {
-    background-size: 105%; 
+.course_thumb_img:hover {
+    transform: scale(1.05);
 }
-  
-.image-course-course3 {
-    display: flex;
-    width: 100%;
-    aspect-ratio: 2/1;
-    border-radius: 15px 15px 0px 0px;
-    background: url(../assets/images/dttt1_banner.png);
-    background-size: 100%;
-    background-position: center;
-    transition: background-size 0.4s ease-in-out;
-    transform-origin: center;
+
+.image-course-course .text_status {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 10px;
 }
-  
-.image-course-course3:hover {
-    background-size: 105%; 
-}
+
+
   
 .title-course {
+    padding: 15px;
     display: flex;
     align-items: center;
-    padding: 15px;
+    background-color: #E0ECFF;
+    border-radius: 0px 0px 15px 15px;
+    z-index: 2;
+    position: relative;
+    /*  */
+}
+
+.title_context_verB {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 10px;
 }
   
 .text-course-title {
@@ -262,6 +255,12 @@ header {
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     flex-grow: 1;
+}
+
+.course-title_verB {
+    display: flex;
+    align-items: end;
+    gap: 10px;
 }
   
 .is-premium {

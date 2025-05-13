@@ -65,6 +65,13 @@
     font-weight: 1200;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Panton Rust Black';
+    src: url('./assets/fonts/PantonRustBlack-Base.ttf') format('woff2');
+    font-weight: 1200;
+    font-style: normal;
+}
   
   
 ::-webkit-scrollbar {
@@ -90,4 +97,29 @@ body {
     position: relative;
     overflow-x: hidden;
 }
+
+.text_status {
+    width: fit-content;
+    color: #FFFFFF;
+    padding: 2px 6px 2px 8px;
+    border-radius: 4px;
+    font-family: 'Panton Rust Black';
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.plus_p {
+    background-color: #9457FF;
+}
+
+.premium_p {
+    background-color: #E5AC1A;
+}
+
+.basic_p {
+    background-color: #A1A1A1;
+}
+
+
 

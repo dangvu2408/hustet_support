@@ -138,11 +138,14 @@
     position: relative;
 }
 
-.course_main_thumbnail svg {
+.course_main_thumbnail .text_status {
     position: absolute;
     right: 0;
+    top: 0;
     margin: 10px;
 }
+
+
 
 .list_thumbnail {
     width: 100%;
@@ -155,8 +158,13 @@
 }
 
 .course_title {
+    display: -webkit-box;
     font-family: 'SFPro Bold';
-    font-size: 20px
+    font-size: 20px;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    flex-grow: 1;
 }
 
 .course_price {
