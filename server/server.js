@@ -142,7 +142,15 @@ app.post("/add-course", (req, res) => {
     });
 });
 
-
+app.get("/courses", (req, res) => {
+    db.query("SELECT * FROM courses", (err, results) => {
+        if (err) {
+            console.error("Lỗi truy vấn courses:", err);
+            return res.status(500).json({ error: "Lỗi server" });
+        }
+        res.json(results);
+    });
+});
 
 
 

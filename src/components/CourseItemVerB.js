@@ -39,22 +39,33 @@ function CourseItemVerB({
 
 
     const parsePrice = (str) => parseFloat(str.replace(/\./g, ''));
-    const discount = Math.round(((parsePrice(old_price) - parsePrice(price)) / parsePrice(old_price)) * 100);
+    const discount = price === "Miễn phí" ? 100 : Math.round(((parsePrice(old_price) - parsePrice(price)) / parsePrice(old_price)) * 100);
+
 
     return (
         <div className="single-column">
             <div className="single-course" onClick={handleClick}>
                 <div className="image-course-course">
                     <img className="course_thumb_img" src={thumbnail} />
-                    <Premium/>
+                    {price === "Miễn phí" ? <Basic/> : <Premium/>}
                 </div>
                 <div className="title-course">
                     <div className="title_context_verB">
                         <span className="text-course-title">{course_name} - {course_id}</span>
                         <div className="course-title_verB">
-                            <span class="new_course_price">{price}đ</span>
-                            <span class="old_course_price">{old_price}đ</span>
-                            <p class="expense_price">Tiết kiệm {discount}%</p>
+                            {price === "Miễn phí" ? (
+                                <>
+                                    <span className="new_course_price">Miễn phí</span>
+                                    <span className="old_course_price">{old_price}đ</span>
+                                    <p className="expense_price">Ưu đãi 100%</p>
+                                </>
+                            ) : (
+                                <>
+                                    <span className="new_course_price">{price}đ</span>
+                                    <span className="old_course_price">{old_price}đ</span>
+                                    <p className="expense_price">Tiết kiệm {discount}%</p>
+                                </>
+                            )}
                         </div>
                     </div>
 

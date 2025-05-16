@@ -120,20 +120,6 @@
     flex-direction: column;
 }
 
-
-.list_subscribed_course > div {
-    flex: 1 1 calc((100% - 40px) / 3); /* 40px là 2 lần gap (2*20px) */
-}
-
-@media (max-width: 1899px) {
-    .list_subscribed_course > div:nth-child(3) {
-        display: none;
-    }
-    .list_subscribed_course > div {
-        flex: 1 1 calc((100% - 20px) / 2); /* 20px là 1 lần gap */
-    }
-}
-
 .course_main_thumbnail {
     position: relative;
 }
@@ -216,6 +202,25 @@
     gap: 10px;
 }
 
+.more_of_course {
+    width: 20px;
+    height: 20px;
+}
+
+.more_listbox_btn {
+    vertical-align: middle;
+    color: inherit;
+    outline: none;
+    background: none;
+    margin: 0;
+    border: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 0;
+    cursor: pointer;
+}
+
 /* 
 .progress_course {
     border-radius: 999px;
@@ -236,6 +241,167 @@
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
     */
+
+.portal {
+    left: calc(33.33% + 250px);
+    top: 0;
+    z-index: 1000;
+    right: auto;
+    border-radius: 3px;
+    position: absolute;
+    background-color: #231f3b;
+    width: 300px;
+}
+
+.list_subscribed_course > div {
+    flex: 1 1 calc((100% - 40px) / 3);
+}
+
+@media (max-width: 1899px) {
+    /* Ẩn item thứ 3 */
+    .list_subscribed_course > div:nth-child(3) {
+        display: none;
+    }
+
+    /* Còn lại 2 item */
+    .list_subscribed_course > div {
+        flex: 1 1 calc((100% - 20px) / 2);
+    }
+
+    /* Cập nhật vị trí .portal trong item thứ 2 (hiện là cuối cùng) */
+    .list_subscribed_course > div:nth-child(2) .course_context .more_of_course .portal {
+        left: calc(33.33% - 80px);
+    }
+}
+
+/* Với màn hình ≥ 1900px */
+@media (min-width: 1900px) {
+    .list_subscribed_course > div:last-child .course_context .more_of_course .portal {
+        left: calc(33.33% - 80px);
+    }
+}
+
+.contextmenu_list {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 101;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu--list-sub {
+    position: relative;
+}
+
+.course-info-menu {
+    padding: 15px 15px 0;
+    align-items: center;
+    display: flex;
+    text-align: left;
+    border-radius: 5px;
+    user-select: none;
+}
+
+.course-left {
+    margin-right: 10px;
+}
+
+.menu-image-w-80 {
+    border-radius: 5px;
+    overflow: hidden;
+    width: 80px;
+    aspect-ratio: 2 / 1;
+}
+
+.menu-image-w-80 img {
+    width: 80px;
+    background-position: center;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.course-content-w-150 {
+    width: 180px;
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    text-align: left;
+    align-self: center;
+}
+
+.coursetitle-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.listitem-title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    font-size: 18px;
+    line-height: 1.6;
+    text-transform: none;
+    font-family: 'SFPro Bold';
+}
+
+.course__status {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #A0A0A0;
+}
+
+.status__item {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.status__item svg {
+    margin-right: 4px;
+}
+
+.group_button_menu {
+    margin: 15px 0 10px;
+    padding: 0 15px;
+}
+
+.group_button_menu .group_button_list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.05);;
+    border-radius: 8px;
+    line-height: 1.5;
+}
+
+.group_button_menu .group_button_list .button_item {
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    border: none;
+    padding: 8px 0;
+    font-size: 14px;
+    gap: 4px;
+    font-family: 'SFPro Regular';
+    width: 50%;
+    max-width: 50%;
+    line-height: 14px;
+}
+
+.group_button_menu .group_button_list .button_item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+/* seemore */
 
 .see_more_course {
     display: flex;

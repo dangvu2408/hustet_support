@@ -56,6 +56,26 @@ function DigitScroller({ digit, delay }) {
 }
 
 function ScrollingNumber({ value = "299.000" }) {
+    const isFree = value === "Miễn phí";
+
+    if (isFree) {
+        return (
+            <h5
+                style={{
+                    fontSize: 28,
+                    fontFamily: "SFPro Black",
+                    margin: 0,
+                    padding: 0,
+                    display: "inline-flex",
+                    alignItems: "center",
+                    color: "#003366",
+                }}
+            >
+                Miễn phí
+            </h5>
+        );
+    }
+
     return (
         <h5
             style={{
@@ -71,10 +91,11 @@ function ScrollingNumber({ value = "299.000" }) {
             {value.split("").map((char, i) => (
                 <DigitScroller key={i} digit={char} delay={i * 50} />
             ))}
-            <span style={{ marginLeft: 6, fontFamily: 'SFPro Black' }}>VNĐ</span>
+            <span style={{ marginLeft: 6, fontFamily: 'SFPro Black' }}>đ</span>
         </h5>
     );
 }
+
 
 
 function CourseDetails() {
@@ -85,6 +106,10 @@ function CourseDetails() {
     const[showDialog, setShowDialog] = useState(false);
     const openDialog = () => setShowDialog(true);
     const closeDialog = () => setShowDialog(false);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className="page-container">

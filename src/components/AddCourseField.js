@@ -323,13 +323,13 @@ function AddCourseField() {
                                         <label class="radio_option">
                                             <input type="radio" name="kid_content"  />
                                             <span class="custom_radio"></span>
-                                            Khóa học có tính phí (299.000 VNĐ)
+                                            Khóa học có tính phí (499.000đ)
                                         </label>
                                     </div>
 
                                     <div class="info_box_container">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                                        <span aria-hidden className="text_info_box">Đối với những khóa học có tính phí, phí khóa học mặc định luôn là 299.000 VNĐ</span>
+                                        <span aria-hidden className="text_info_box">Đối với những khóa học có tính phí, phí khóa học mặc định luôn là 499.000đ</span>
                                     </div>
                                 </div>
                             </div>

@@ -1,5 +1,6 @@
 import { colors } from "@mui/material";
 import React from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CourseItemVerB from "./CourseItemVerB";
 import Course1 from '../assets/images/dts_banner.png';
@@ -10,6 +11,21 @@ function CourseGallery() {
     const navigate = useNavigate();
     const user = JSON.parse(localStorage.getItem("user") || "null");
     console.log(user);
+
+    const [courses, setCourses] = useState([]);
+    useEffect(() => {
+        fetch("http://localhost:3001/courses")
+            .then(res => res.json())
+            .then(data => {
+                console.log("Danh sách khóa học:", data);
+                setCourses(data);
+            })
+            .catch(err => {
+                console.error("Lỗi khi lấy courses:", err);
+            });
+    }, []);
+
+
     return (
         <main id="main">
             <div className="container_et">
@@ -25,45 +41,23 @@ function CourseGallery() {
                 <div className="wrapper_container">
                     <h1 className="course_name_heading">Danh sách môn học</h1>
 
-                    <div className="columns-listcourse">
-                        <CourseItemVerB
-                            course_id="ET3220"
-                            course_name="Điện tử số"
-                            english_name="Digital Electronics"
-                            child_management="Khoa Điện tử, Trung tâm Đào tạo thực hành Điện - Điện tử"
-                            managing_department="Trường Điện - Điện tử"
-                            weight="3(3-0-1-6)"
-                            description="Môn học này sẽ trang bị cho sinh viên năm thứ 3 ngành kỹ thuật các kiến thức cơ bản về điện tử số và thiết kế mạch số ở mức cổng. Cụ thể là sinh viên hiểu về đại số Boolean ứng dụng trong điện tử số, các hệ cơ số đếm, cách biểu diễn và các phép toán cơ bản bởi mạch số, mô tả mạch điện tử số và tìm lời giải, cấu trúc mạch logic tổ hợp của các mạch chức năng cơ bản và nâng cao, hiểu về các mạch dãy để thiết kế và phân tích chức năng của mạch dãy. Môn học cũng cung cấp cho sinh viên kỹ năng thực hành và thái độ cần thiết khi làm thực nghiệm, giới thiệu các bước thiết kế và thực hiện mạch điện tử số trên bo mạch cũng như trên phần mềm CAD, và phát triển kỹ năng làm việc nhóm và báo cáo."
-                            price="399.000"
-                            old_price="599.000"
-                            thumbnail={Course1}
-                            progress={80} />
-
-                        <CourseItemVerB
-                            course_id="ET3230"
-                            course_name="Điện tử số"
-                            english_name="Digital Electronics"
-                            child_management="Khối Kỹ thuật"
-                            managing_department="Bộ môn Điện tử"
-                            weight="3"
-                            description="Học phần về logic số, mạch số cơ bản."
-                            price="299.000"
-                            old_price="399.000"
-                            thumbnail={Course2}
-                            progress={80} />
-
-                        <CourseItemVerB
-                            course_id="ET3220"
-                            course_name="Điện tử số"
-                            english_name="Digital Electronics"
-                            child_management="Khối Kỹ thuật"
-                            managing_department="Bộ môn Điện tử"
-                            weight="3"
-                            description="Học phần về logic số, mạch số cơ bản."
-                            price="299.000"
-                            old_price="399.000"
-                            thumbnail={Course3}
-                            progress={80} />
+                    <div className="columns-listcourse full_list_gallery">
+                        {courses.map(course => (
+                            <CourseItemVerB
+                                key={course.course_id}
+                                course_id={course.course_id}
+                                course_name={course.course_name}
+                                english_name={course.english_name}
+                                child_management={course.child_management}
+                                managing_department={course.managing_department}
+                                weight={course.weight}
+                                description={course.description}
+                                price={course.price}
+                                old_price="499.000"
+                                thumbnail={course.thumbnail}
+                                progress="80"
+                            />
+                        ))}
                     </div>
 
                     {user && user.role === 1 && (

@@ -27,3 +27,13 @@
 .add_course_btn svg {
     margin-right: 10px;
 }
+
+.full_list_gallery {
+    flex-wrap: wrap; /* Cho phép xuống dòng khi đủ 3 phần tử */
+}
+
+.full_list_gallery .single-column {
+    flex: 1 1 calc(33.333% - 20px); /* 3 cột, trừ khoảng cách */
+    box-sizing: border-box;
+    max-width: calc(33.333% - 20px); /* Bảo vệ tránh vượt kích thước */
+}
