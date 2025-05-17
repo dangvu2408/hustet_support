@@ -72,7 +72,8 @@ app.post('/login', (req, res) => {
                 dob: user.dob,
                 gender: user.gender,
                 role: user.role,
-                status: user.status
+                status: user.status,
+                avatar: user.avatar
             };
             console.log("Dữ liệu gửi về client:", userData);
             return res.json({ success: true, userData });
