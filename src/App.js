@@ -9,21 +9,23 @@ import CoursePage from "./pages/CoursePage";
 import AddCourse from "./pages/AddCourse";
 import Profile from "./pages/ProfiePage";
 import CourseDetails from "./pages/CourseDetails";
+import Account from "./pages/UpdateUserInfo";
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signin" element={<SigninPage />} />
-        <Route path="/courses" element={<CoursePage />} />
-        <Route path="/add-course" element={<AddCourse />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/courses/:course_id" element={<CourseDetails />} />
-      </Routes>
-    </Router>
-  );
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<MainPage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/signin" element={<SigninPage />} />
+                <Route path="/courses" element={<CoursePage />} />
+                <Route path="/add-course" element={<AddCourse />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/update-info" element={<Account />} />
+                <Route path="/courses/:course_id" element={<CourseDetails />} />
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;

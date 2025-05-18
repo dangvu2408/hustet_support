@@ -14,6 +14,10 @@ import Basic from './Basic';
 function ProfileField() {
     const [user, setUser] = useState(null);
     const [users, setUsers] = useState([]);
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate(`/update-info`);
+    }
 
 
     useEffect(() => {
@@ -81,6 +85,8 @@ function ProfileField() {
                                         <span className="full_name_text">{user ? user.fullname : "Chưa đăng nhập"}</span>
                                         <span className="user_id_text">{user ? user.username : "Chưa đăng nhập"}</span>
                                     </div>
+
+                                    <a className="update_data_info" onClick={handleClick}>Cập nhật thông tin cá nhân</a>
                                 </div>
                             </div>
                         </div>

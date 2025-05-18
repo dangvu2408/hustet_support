@@ -79,7 +79,7 @@ function Header() {
                                         <div className="account_info">
                                             <div className="acc_avt_frame">
                                                 <figure className="image_acc_avt">
-                                                    <img src={Logo}></img>
+                                                    <img src={user?.avatar ? user.avatar : Logo} alt="User Avatar" />
                                                 </figure>
                                             </div>
                                             <div className="acc_right">

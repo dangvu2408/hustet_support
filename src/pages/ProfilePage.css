@@ -84,6 +84,21 @@
     text-align: center;
 }
 
+.update_data_info {
+    display: flex;
+    align-items: center;     /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    padding: 10px 20px;
+    margin: 15px 0px;
+    border-radius: 100px;
+    background-color: #6B00D7;
+    color: #FFFFFF;
+    font-size: 17px;
+    font-family: 'SFPro Bold';
+    line-height: 20px;
+    cursor: pointer;
+}
+
 .user_status {
     position: relative !important;
 }

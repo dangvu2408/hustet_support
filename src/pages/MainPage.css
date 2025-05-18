@@ -123,10 +123,6 @@ header {
     border: none;
     color: #FFFFFF;
     padding-left: 10px; 
-    overflow: hidden;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    flex-grow: 1;
 }
 
 

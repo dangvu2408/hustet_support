@@ -1,18 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import ProfileField from "../components/ProfileField";
-import "./MainPage.css";
-import "./AddCourse.css";
-import "./ProfilePage.css";
+import UpdateField from "../components/UpdateUserInfoField";
 
-export default function ProfilePage() {
+export default function UpdateUserInfo() {
     const negative = useNavigate();
 
     return (
         <div className="page-container">
             <Header />
-            <ProfileField/>
+            <UpdateField />
             <Footer />
         </div>
     );
