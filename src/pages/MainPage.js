@@ -4,12 +4,12 @@ import Main from "../components/Main";
 import Footer from "../components/Footer";
 import "./MainPage.css";
 
-export default function MainPage({user}) {
+export default function MainPage() {
     const negative = useNavigate();
 
     return (
         <div className="page-container">
-            <Header user={user} />
+            <Header />
             <Main />
             <Footer />
         </div>

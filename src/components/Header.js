@@ -7,7 +7,8 @@ import Plus from "./Plus";
 import Premium from "./Premium";
 import Logo from '../assets/images/blank_avatar.jpg';
 
-function Header({user}) {
+function Header() {
+    const [user, setUser] = useState(null);
     const [showDropdown, setShowDropdown] = useState(false); // Khai báo state cho dropdown
     const navigate = useNavigate();
     const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -21,6 +22,18 @@ function Header({user}) {
         }
     };
 
+    useEffect(() => {
+        const storedUser = localStorage.getItem("user");
+        if (storedUser) {
+            try {
+                const parsedUser = JSON.parse(storedUser);  
+                setUser(parsedUser);
+                console.log("User loaded:", parsedUser);
+            } catch (error) {
+                console.error("Lỗi parse JSON:", error);
+            }
+        }
+    }, []);
 
     return (
         <header id="hess-header">

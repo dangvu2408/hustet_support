@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./LoginPage.css";
 import hustLogo from "../assets/images/logo_hust_heading.png"; 
 
-export default function LoginPage({ setUser }) {
+export default function LoginPage() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [formValid, setFormValid] = useState(false);
@@ -29,7 +29,7 @@ export default function LoginPage({ setUser }) {
 
             if (data.success) {
                 // Lưu tất cả dữ liệu người dùng vào localStorage
-                setUser(data.userData);
+                localStorage.setItem('user', JSON.stringify(data.userData));
                 navigate("/");  // Điều hướng về trang chính
             } else {
                 alert("Đăng nhập thất bại: " + data.message);

@@ -6,13 +6,13 @@ import "./MainPage.css";
 import "./AddCourse.css";
 import "./ProfilePage.css";
 
-export default function ProfilePage({user}) {
+export default function ProfilePage() {
     const negative = useNavigate();
 
     return (
         <div className="page-container">
-            <Header user={user} />
-            <ProfileField user={user} />
+            <Header />
+            <ProfileField/>
             <Footer />
         </div>
     );

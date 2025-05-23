@@ -11,13 +11,27 @@ import Premium from './Premium';
 import Plus from './Plus';
 import Basic from './Basic';
 
-function ProfileField({user}) {
+function ProfileField() {
+    const [user, setUser] = useState(null);
     const [users, setUsers] = useState([]);
     const navigate = useNavigate();
     const handleClick = () => {
         navigate(`/update-info`);
     }
 
+
+    useEffect(() => {
+        const storedUser = localStorage.getItem("user");
+        if (storedUser) {
+            try {
+                const parsedUser = JSON.parse(storedUser);  // dòng gây lỗi nếu storedUser là undefined hoặc chuỗi sai định dạng
+                setUser(parsedUser);
+                console.log("User loaded:", parsedUser);
+            } catch (error) {
+                console.error("Lỗi parse JSON:", error);
+            }
+        }
+    }, []);
 
     useEffect(() => {
         if (user && user.role === 1) {

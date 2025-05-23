@@ -4,12 +4,12 @@ import Footer from "../components/Footer";
 import UpdateField from "../components/UpdateUserInfoField";
 import "./UpdateUserInfo.css";
 
-export default function UpdateUserInfo({user}) {
+export default function UpdateUserInfo() {
     const negative = useNavigate();
 
     return (
         <div className="page-container">
-            <Header user={user} />
+            <Header />
             <UpdateField />
             <Footer />
         </div>

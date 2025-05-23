@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./index.css"; // Import file CSS
@@ -12,19 +12,17 @@ import CourseDetails from "./pages/CourseDetails";
 import Account from "./pages/UpdateUserInfo";
 
 function App() {
-    const [user, setUser] = useState(null);
-
     return (
         <Router>
             <Routes>
-                <Route path="/login" element={<LoginPage setUser={setUser} />} />
-                <Route path="/" element={<MainPage user={user} />} />
+                <Route path="/" element={<MainPage />} />
+                <Route path="/login" element={<LoginPage />} />
                 <Route path="/signin" element={<SigninPage />} />
-                <Route path="/courses" element={<CoursePage user={user} />} />
-                <Route path="/add-course" element={<AddCourse user={user} />} />
-                <Route path="/profile" element={<Profile user={user} />} />
-                <Route path="/update-info" element={<Account user={user} />} />
-                <Route path="/courses/:course_id" element={<CourseDetails user={user} />} />
+                <Route path="/courses" element={<CoursePage />} />
+                <Route path="/add-course" element={<AddCourse />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/update-info" element={<Account />} />
+                <Route path="/courses/:course_id" element={<CourseDetails />} />
             </Routes>
         </Router>
     );

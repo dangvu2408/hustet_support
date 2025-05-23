@@ -5,12 +5,12 @@ import Content from "../components/CourseGallery"
 import "./MainPage.css";
 import "./CoursePage.css";
 
-export default function CoursePage({user}) {
+export default function CoursePage() {
     const negative = useNavigate();
 
     return (
         <div className="page-container">
-            <Header user={user} />
+            <Header />
             <Content />
             <Footer />
         </div>

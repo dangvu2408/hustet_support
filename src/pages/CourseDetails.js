@@ -98,7 +98,7 @@ function ScrollingNumber({ value = "299.000" }) {
 
 
 
-function CourseDetails({user}) {
+function CourseDetails() {
     const location = useLocation();
     const { course_id } = useParams();
     const courseData = location.state;
@@ -113,7 +113,7 @@ function CourseDetails({user}) {
 
     return (
         <div className="page-container">
-            <Header user={user} />
+            <Header />
             
             <main id="main">
                 <div className="container_et">
