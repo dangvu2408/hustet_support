@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./LoginPage.css";
 import hustLogo from "../assets/images/logo_hust_heading.png"; 
 
-export default function LoginPage() {
+export default function LoginPage({ setUser }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [formValid, setFormValid] = useState(false);
@@ -20,9 +20,7 @@ export default function LoginPage() {
         try {
             const response = await fetch("http://localhost:3001/login", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ username, password })
             });
     
@@ -31,7 +29,7 @@ export default function LoginPage() {
 
             if (data.success) {
                 // Lưu tất cả dữ liệu người dùng vào localStorage
-                localStorage.setItem('user', JSON.stringify(data.userData));
+                setUser(data.userData);
                 navigate("/");  // Điều hướng về trang chính
             } else {
                 alert("Đăng nhập thất bại: " + data.message);

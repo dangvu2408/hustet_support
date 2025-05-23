@@ -153,6 +153,24 @@ app.get("/courses", (req, res) => {
     });
 });
 
+app.get("/user-info", (req, res) => {
+    const username = req.body.username; // hoặc lấy từ req.query hay req.params
+    const sql = "SELECT * FROM users WHERE username = ?";
+
+    db.query(sql, [username], (err, results) => {
+        if (err) {
+            console.error("Lỗi khi truy vấn:", err);
+            return res.status(500).json({ error: "Lỗi server" });
+        }
+        if (results.length === 0) {
+            return res.status(404).json({ message: "Không tìm thấy người dùng" });
+        }
+        return res.status(200).json(results[0]); // hoặc results nếu bạn muốn trả mảng
+    });
+
+});
+
+
 
 
 

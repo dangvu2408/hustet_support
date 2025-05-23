@@ -11,27 +11,13 @@ import Premium from './Premium';
 import Plus from './Plus';
 import Basic from './Basic';
 
-function ProfileField() {
-    const [user, setUser] = useState(null);
+function ProfileField({user}) {
     const [users, setUsers] = useState([]);
     const navigate = useNavigate();
     const handleClick = () => {
         navigate(`/update-info`);
     }
 
-
-    useEffect(() => {
-        const storedUser = localStorage.getItem("user");
-        if (storedUser) {
-            try {
-                const parsedUser = JSON.parse(storedUser);  // dòng gây lỗi nếu storedUser là undefined hoặc chuỗi sai định dạng
-                setUser(parsedUser);
-                console.log("User loaded:", parsedUser);
-            } catch (error) {
-                console.error("Lỗi parse JSON:", error);
-            }
-        }
-    }, []);
 
     useEffect(() => {
         if (user && user.role === 1) {
@@ -72,7 +58,7 @@ function ProfileField() {
                                 <div className="profile_field">
                                     <div className="avatar_field">
                                         <span className="avatar_span_field">
-                                            <img className="main_avatar_img" src={Logo} width={'250px'} height={'250px'}></img>
+                                            <img className="main_avatar_img" src={user?.avatar ? user.avatar : Logo} width={'250px'} height={'250px'}></img>
                                         </span>
                                         <div className="user_status">
                                             <div className="user_status_context">

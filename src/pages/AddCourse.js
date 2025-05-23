@@ -5,12 +5,12 @@ import FormAdder from "../components/AddCourseField";
 import "./MainPage.css";
 import "./AddCourse.css";
 
-export default function AddCourse() {
+export default function AddCourse({user}) {
     const negative = useNavigate();
 
     return (
         <div className="page-container">
-            <Header />
+            <Header user={user} />
             <FormAdder />
             <Footer />
         </div>

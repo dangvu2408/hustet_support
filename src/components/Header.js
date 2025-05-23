@@ -7,8 +7,7 @@ import Plus from "./Plus";
 import Premium from "./Premium";
 import Logo from '../assets/images/blank_avatar.jpg';
 
-function Header() {
-    const [user, setUser] = useState(null);
+function Header({user}) {
     const [showDropdown, setShowDropdown] = useState(false); // Khai báo state cho dropdown
     const navigate = useNavigate();
     const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -22,18 +21,6 @@ function Header() {
         }
     };
 
-    useEffect(() => {
-        const storedUser = localStorage.getItem("user");
-        if (storedUser) {
-            try {
-                const parsedUser = JSON.parse(storedUser);  
-                setUser(parsedUser);
-                console.log("User loaded:", parsedUser);
-            } catch (error) {
-                console.error("Lỗi parse JSON:", error);
-            }
-        }
-    }, []);
 
     return (
         <header id="hess-header">
@@ -69,7 +56,7 @@ function Header() {
                     <div style={{height: '40px'}}>
                         <button className="user-button" onClick={toggleDropdown}>
                             <figure className="image_btn_avt">
-                                <img src={Logo}></img>
+                                <img src={user?.avatar ? user.avatar : Logo}></img>
                             </figure>
                         </button>
                         {dropdownVisible  && (
