@@ -55,7 +55,7 @@ export default function SigninPage() {
             }
         })
         .catch((error) => {
-            console.error("Lỗi khi gửi dữ liệu:", error);
+            console.error("ERR-8:", error);
         });
         
     };

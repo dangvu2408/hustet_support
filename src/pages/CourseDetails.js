@@ -1,5 +1,6 @@
 import { useParams, useLocation } from 'react-router-dom';
 import { useState, useEffect } from "react";
+import axios from "axios";
 import Dialog from '../components/dialog/CourseDialog';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -7,6 +8,8 @@ import "./CourseDetails.css";
 
 function DigitScroller({ digit, delay }) {
     const [targetPos, setTargetPos] = useState(0);
+    
+
 
     useEffect(() => {
         const isDigit = /\d/.test(digit);
@@ -18,6 +21,9 @@ function DigitScroller({ digit, delay }) {
 
         return () => clearTimeout(timeout);
     }, [digit, delay]);
+
+    
+
 
     const isDigit = /\d/.test(digit);
 
@@ -102,6 +108,7 @@ function CourseDetails() {
     const location = useLocation();
     const { course_id } = useParams();
     const courseData = location.state;
+    const [authorInfo, setAuthorInfo] = useState(null);
 
     const[showDialog, setShowDialog] = useState(false);
     const openDialog = () => setShowDialog(true);
@@ -110,6 +117,21 @@ function CourseDetails() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    useEffect(() => {
+        const fetchAuthorInfo = async () => {
+            try {
+                const res = await axios.get("/get-userinfo", {
+                    params: { username: courseData.author }
+                });
+                setAuthorInfo(res.data);
+            } catch (err) {
+                console.error("Lỗi lấy thông tin author:", err);
+            }
+        };
+
+        fetchAuthorInfo();
+    }, [courseData.author]);
 
     return (
         <div className="page-container">
@@ -131,6 +153,21 @@ function CourseDetails() {
                                 <div className="course_content">
                                     <div>
                                         <h1 className="course_name_heading">{courseData.course_name} - {courseData.course_id}</h1>
+                                        <div className="course_author_info">
+                                            {authorInfo ? (
+                                                <>
+                                                    <img
+                                                        src={authorInfo.avatar}
+                                                        alt={authorInfo.fullname}
+                                                        className="author_avatar"
+                                                        style={{ width: "30px", height: "30px", borderRadius: "50%" }}
+                                                    />
+                                                    <span className="author_name">{authorInfo.fullname}</span>
+                                                </>
+                                            ) : (
+                                                <span className="author_name">Đang tải thông tin tác giả...</span>
+                                            )}
+                                        </div>
                                         <div className="course_description">
                                             {courseData.description}
                                         </div>

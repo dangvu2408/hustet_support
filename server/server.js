@@ -117,10 +117,11 @@ app.post("/add-course", (req, res) => {
         weight,
         description,
         price,
-        thumbnail
+        thumbnail,
+        author
     } = req.body;
 
-    const query = `INSERT INTO courses (course_id, course_name, english_name, child_management, managing_department, weight, description, price, thumbnail) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+    const query = `INSERT INTO courses (course_id, course_name, english_name, child_management, managing_department, weight, description, price, thumbnail, author) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     const values = [
         course_id,
@@ -131,7 +132,8 @@ app.post("/add-course", (req, res) => {
         weight,
         description,
         price,
-        thumbnail
+        thumbnail,
+        author
     ];
 
     db.query(query, values, (err, result) => {
@@ -153,22 +155,29 @@ app.get("/courses", (req, res) => {
     });
 });
 
-app.get("/user-info", (req, res) => {
-    const username = req.body.username; // hoặc lấy từ req.query hay req.params
-    const sql = "SELECT * FROM users WHERE username = ?";
+app.get("/get-userinfo", (req, res) => {
+    const { username } = req.query;
 
-    db.query(sql, [username], (err, results) => {
-        if (err) {
-            console.error("Lỗi khi truy vấn:", err);
-            return res.status(500).json({ error: "Lỗi server" });
-        }
-        if (results.length === 0) {
-            return res.status(404).json({ message: "Không tìm thấy người dùng" });
-        }
-        return res.status(200).json(results[0]); // hoặc results nếu bạn muốn trả mảng
+    if (!username) return res.status(400).json({ error: "Thiếu username" });
+
+    const query = "SELECT * FROM users WHERE username = ?";
+    db.query(query, [username], (err, results) => {
+        if (err) return res.status(500).json({ error: "Lỗi server" });
+        if (results.length === 0) return res.status(404).json({ error: "Không tìm thấy user" });
+
+        const user = results[0];
+        return res.json({
+            username: user.username,
+            fullname: user.fullname,
+            dob: user.dob,
+            gender: user.gender,
+            avatar: user.avatar,
+            role: user.role,
+            status: user.status
+        });
     });
-
 });
+
 
 
 

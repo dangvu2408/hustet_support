@@ -112,7 +112,8 @@ function AddCourseField() {
             weight,
             description: value,
             price,
-            thumbnail
+            thumbnail,
+            author: user.username
         };
 
         const res = await fetch("http://localhost:3001/add-course", {
@@ -122,7 +123,6 @@ function AddCourseField() {
         });
 
         const data = await res.json();
-        console.log("Course added:", data);
         navigate("/courses");
     };
 

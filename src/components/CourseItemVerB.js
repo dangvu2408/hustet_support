@@ -15,6 +15,7 @@ function CourseItemVerB({
     price,
     old_price,
     thumbnail,
+    author,
     progress = 0, // % tiến độ học
 }) {
     const navigate = useNavigate();
@@ -31,6 +32,7 @@ function CourseItemVerB({
                 price,
                 old_price,
                 thumbnail,
+                author,
                 progress,
             },
         });

@@ -28,9 +28,8 @@ function Header() {
             try {
                 const parsedUser = JSON.parse(storedUser);  
                 setUser(parsedUser);
-                console.log("User loaded:", parsedUser);
             } catch (error) {
-                console.error("Lỗi parse JSON:", error);
+                console.error("ERR-3:", error);
             }
         }
     }, []);

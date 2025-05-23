@@ -25,7 +25,6 @@ export default function LoginPage() {
             });
     
             const data = await response.json();
-            console.log("Dữ liệu nhận được từ server:", data);
 
             if (data.success) {
                 // Lưu tất cả dữ liệu người dùng vào localStorage
@@ -35,7 +34,7 @@ export default function LoginPage() {
                 alert("Đăng nhập thất bại: " + data.message);
             }
         } catch (error) {
-            console.error("Lỗi khi gửi yêu cầu:", error);
+            console.error("ERR-7:", error);
         }
     };
     

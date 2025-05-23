@@ -90,6 +90,29 @@ button {
     margin-top: 15px
 }
 
+.course_author_info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.author_avatar {
+    height: auto;
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.author_name {
+    font-family: 'SFPro Regular Italic';
+    font-size: 16px;
+}
+
 .course_description {
     margin-top: 15px;
     font-family: 'SFPro Regular';

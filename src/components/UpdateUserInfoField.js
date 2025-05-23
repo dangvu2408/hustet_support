@@ -25,9 +25,8 @@ function UpdateUserInfoField() {
             try {
                 const parsedUser = JSON.parse(storedUser);  // dòng gây lỗi nếu storedUser là undefined hoặc chuỗi sai định dạng
                 setUser(parsedUser);
-                console.log("User loaded:", parsedUser);
             } catch (error) {
-                console.error("Lỗi parse JSON:", error);
+                console.error("ERR-6:", error);
             }
         }
     }, []);
@@ -102,7 +101,6 @@ function UpdateUserInfoField() {
         });
 
         const data = await res.json();
-        console.log("User Info Update:", data);
         navigate("/profile");
     };
 

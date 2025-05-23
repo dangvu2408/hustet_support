@@ -26,9 +26,8 @@ function ProfileField() {
             try {
                 const parsedUser = JSON.parse(storedUser);  // dòng gây lỗi nếu storedUser là undefined hoặc chuỗi sai định dạng
                 setUser(parsedUser);
-                console.log("User loaded:", parsedUser);
             } catch (error) {
-                console.error("Lỗi parse JSON:", error);
+                console.error("ERR-4:", error);
             }
         }
     }, []);
@@ -38,11 +37,10 @@ function ProfileField() {
             fetch("http://localhost:3001/users")
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
                     setUsers(data);
                 })
                 .catch(err => {
-                    console.error("Lỗi users 001:", err);
+                    console.error("ERR-5:", err);
                 });
         }
     }, [user]);

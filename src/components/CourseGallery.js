@@ -10,18 +10,16 @@ import Course3 from '../assets/images/dsa_banner.png';
 function CourseGallery() {
     const navigate = useNavigate();
     const user = JSON.parse(localStorage.getItem("user") || "null");
-    console.log(user);
 
     const [courses, setCourses] = useState([]);
     useEffect(() => {
         fetch("http://localhost:3001/courses")
             .then(res => res.json())
             .then(data => {
-                console.log("Danh sách khóa học:", data);
                 setCourses(data);
             })
             .catch(err => {
-                console.error("Lỗi khi lấy courses:", err);
+                console.error("ERR-2:", err);
             });
     }, []);
 
@@ -55,6 +53,7 @@ function CourseGallery() {
                                 price={course.price}
                                 old_price="499.000"
                                 thumbnail={course.thumbnail}
+                                author={course.author}
                                 progress="80"
                             />
                         ))}
