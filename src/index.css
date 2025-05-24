@@ -121,5 +121,43 @@ body {
     background-color: #A1A1A1 !important;
 }
 
+.mouse_context_menu {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 101;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 250px;
+}
 
+.menulist_ {
+    padding: 10px 0px !important;
+    list-style: none;
+}
 
+.menulist_ li {
+    color: #32323d;
+    background-color: #fff;
+}
+
+.menulist_ li:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #8d22c3;
+}
+
+.menulist_btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px 10px 15px;
+    font-size: 16px;
+    font-family: 'SFPro Regular';
+    line-height: normal;
+    border: none;
+    background-color: transparent;
+}
+
+.menulist_btn svg {
+    margin-right: 15px;
+}

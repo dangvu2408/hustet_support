@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import "./index.css"; // Import file CSS
+import "./index.css";
 import MainPage from "./pages/MainPage";
 import LoginPage from "./pages/LoginPage";
 import SigninPage from "./pages/SigninPage";
@@ -11,9 +11,15 @@ import Profile from "./pages/ProfiePage";
 import CourseDetails from "./pages/CourseDetails";
 import Account from "./pages/UpdateUserInfo";
 
+// 👉 import component menu chuột phải
+import CustomContextMenu from "./components/CustomContextMenu";
+
 function App() {
     return (
         <Router>
+            {/* ✅ Menu context đặt ở đây để luôn hoạt động */}
+            <CustomContextMenu />
+
             <Routes>
                 <Route path="/" element={<MainPage />} />
                 <Route path="/login" element={<LoginPage />} />

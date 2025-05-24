@@ -90,8 +90,6 @@ function Header() {
                                     <div className="line_separator"></div>
                                     <li onClick={() => navigate("/profile")}>Thông tin cá nhân</li>
                                     <li onClick={() => navigate("/change-password")}>Đổi mật khẩu</li>
-                                    <li onClick={() => navigate("/change-password")}>Khóa học của tôi</li>
-                                    <li onClick={() => navigate("/setting")}>Cài đặt</li>
                                     <li
                                         onClick={() => {
                                             localStorage.removeItem("user");
