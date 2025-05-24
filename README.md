@@ -5,7 +5,7 @@
 # HUST Electronics & Telecommunications Support System
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-<img src="./public/assets/bannerREADME.png">
+<img src="./public/assets/banner.png">
 
 ## 1. Introduce
 
