@@ -7,6 +7,7 @@ import Course2 from '../assets/images/dttt1_banner.png';
 import Course3 from '../assets/images/dsa_banner.png';
 import UserItem from "./UserListItem";
 import CourseItemVerA from "./CourseItemVerA";
+import CourseItemVerC from "./CourseItemVerC";
 import Premium from './Premium';
 import Plus from './Plus';
 import Basic from './Basic';
@@ -20,6 +21,7 @@ function ProfileField() {
     }
 
     const [courses, setCourses] = useState([]);
+    const [subCourses, setSubCourses] = useState([]);
 
     useEffect(() => {
         const storedUser = localStorage.getItem("user");
@@ -56,6 +58,29 @@ function ProfileField() {
         }
     }, [user]);
 
+    useEffect(() => {
+        if (user?.username) {
+            fetch(`http://localhost:3001/get-course-subscriber?username=${encodeURIComponent(user.username)}`)
+                .then(res => res.json())
+                .then(data => {
+                    console.log("DEBUG subCourses:", data);
+                    setSubCourses(data);
+                })
+
+                .catch(err => console.error("Lỗi khi load khóa học:", err));
+        }
+    }, [user]);
+
+    const formatDateTimeCustom = (datetimeString) => {
+        const date = new Date(datetimeString);
+        const yyyy = date.getFullYear();
+        const mm = String(date.getMonth() + 1).padStart(2, '0');
+        const dd = String(date.getDate()).padStart(2, '0');
+        const hh = String(date.getHours()).padStart(2, '0');
+        const min = String(date.getMinutes()).padStart(2, '0');
+        const ss = String(date.getSeconds()).padStart(2, '0');
+        return `${yyyy}-${mm}-${dd}, ${hh}:${min}:${ss}`;
+    };
 
     
     return(
@@ -103,45 +128,24 @@ function ProfileField() {
                             <div>
                                 <span className="main_a_title">Danh sách khóa học đã đăng ký</span>
                                 <div className="list_subscribed_course">
-                                    <CourseItemVerA
-                                        course_id="ET3220"
-                                        course_name="Điện tử số"
-                                        english_name="Digital Electronics"
-                                        child_management="Khối Kỹ thuật"
-                                        managing_department="Bộ môn Điện tử"
-                                        weight="3"
-                                        description="Học phần về logic số, mạch số cơ bản."
-                                        price="299.000"
-                                        old_price="399.000"
-                                        thumbnail={Course1}
-                                        progress={80} />
-
-                                    
-                                    <CourseItemVerA
-                                        course_id="ET3230"
-                                        course_name="Điện tử tương tự I"
-                                        english_name="Digital Electronics"
-                                        child_management="Khối Kỹ thuật"
-                                        managing_department="Bộ môn Điện tử"
-                                        weight="3"
-                                        description="Học phần về logic số, mạch số cơ bản."
-                                        price="199.000"
-                                        old_price="299.000"
-                                        thumbnail={Course2}
-                                        progress={80} />
-
-                                    <CourseItemVerA
-                                        course_id="ET2100"
-                                        course_name="Cấu trúc dữ liệu và giải thuật"
-                                        english_name="Digital Electronics"
-                                        child_management="Khối Kỹ thuật"
-                                        managing_department="Bộ môn Điện tử"
-                                        weight="3"
-                                        description="Học phần về logic số, mạch số cơ bản."
-                                        price="259.000"
-                                        old_price="359.000"
-                                        thumbnail={Course3}
-                                        progress={80} />
+                                    {subCourses.slice(0, 3).map(course => (
+                                        <CourseItemVerC
+                                            key={course.course_id}
+                                            course_id={course.course_id}
+                                            course_name={course.course_name}
+                                            english_name={course.english_name}
+                                            child_management={course.child_management}
+                                            managing_department={course.managing_department}
+                                            weight={course.weight}
+                                            description={course.description}
+                                            price={course.price}
+                                            old_price="499.000"
+                                            thumbnail={course.thumbnail}
+                                            author={course.author}
+                                            progress="80"
+                                            subtime={formatDateTimeCustom(course.registered_at)}
+                                        />
+                                    ))}
 
                                 </div>
                                 <div className="see_more_course">

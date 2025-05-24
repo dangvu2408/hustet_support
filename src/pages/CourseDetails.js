@@ -114,6 +114,9 @@ function CourseDetails() {
     const openDialog = () => setShowDialog(true);
     const closeDialog = () => setShowDialog(false);
 
+    const [registered, setRegistered] = useState(false);
+
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -132,6 +135,39 @@ function CourseDetails() {
 
         fetchAuthorInfo();
     }, [courseData.author]);
+
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (user && courseData?.course_id) {
+            fetch(`http://localhost:3001/check-registration?username=${user.username}&course_id=${courseData.course_id}`)
+                .then(res => res.json())
+                .then(data => setRegistered(data.registered))
+                .catch(err => console.error("Lỗi khi kiểm tra đăng ký:", err));
+        }
+    }, [courseData]);
+
+    const handleRegisterToggle = () => {
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (!user || !courseData?.course_id) return;
+
+        const url = registered 
+            ? "http://localhost:3001/unregister-course"
+            : "http://localhost:3001/register-course";
+
+        fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                username: user.username,
+                course_id: courseData.course_id
+            })
+        })
+        .then(res => res.json())
+        .then(() => setRegistered(!registered))
+        .catch(err => console.error("Lỗi khi đăng ký/hủy khóa học:", err));
+    };
+
+
 
     return (
         <div className="page-container">
@@ -214,9 +250,9 @@ function CourseDetails() {
                                         </Dialog>
                                     </div>
                                     <ScrollingNumber value={courseData.price} />
-                                    <button type="button" href="" class="wrapper_button">
+                                    <button type="button" onClick={handleRegisterToggle} class="wrapper_button">
                                         <span class="inner_button">
-                                            <span class="title_inner_btn">ĐĂNG KÍ KHÓA HỌC</span>
+                                            <span class="title_inner_btn">{registered ? "HỦY KHÓA HỌC" : "ĐĂNG KÍ KHÓA HỌC"}</span>
                                         </span>
                                     </button>
                                 </div>

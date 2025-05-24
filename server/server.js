@@ -24,6 +24,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
+// Cấu hình database
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -36,6 +37,7 @@ app.use((req, res, next) => {
     next();
 });
 
+// Đăng kí tài khoản
 app.post('/register', (req, res) => {
 
     const { fullname, username, password } = req.body;
@@ -48,8 +50,9 @@ app.post('/register', (req, res) => {
         }
         return res.json({ success: true });
     });
-}); //signin properties
+}); 
 
+// Đăng nhập
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
@@ -78,8 +81,8 @@ app.post('/login', (req, res) => {
         }
     });
 });
- //login properties
-
+ 
+// Lấy toàn bộ dữ liệu user
 app.get('/users', (req, res) => {
     const sql = "SELECT * FROM users";
     db.query(sql, (err, result) => {
@@ -89,9 +92,8 @@ app.get('/users', (req, res) => {
         res.json(result);
     });
 });
-//get full user info
 
-// Endpoint upload-thumbnail
+// Tạo endpoint upload ảnh vào local
 app.post("/upload-thumbnail", upload.single("file"), (req, res) => {
     if (!req.file) {
         return res.status(400).json({ error: "Không có file nào được upload." });
@@ -102,7 +104,7 @@ app.post("/upload-thumbnail", upload.single("file"), (req, res) => {
     res.json({ url: fileUrl });
 });
 
-// API thêm khóa học
+// Thêm khóa học mới
 app.post("/add-course", (req, res) => {
     const {
         course_id,
@@ -141,6 +143,7 @@ app.post("/add-course", (req, res) => {
     });
 });
 
+// Lấy toàn bộ dữ liệu khóa học
 app.get("/courses", (req, res) => {
     db.query("SELECT * FROM courses", (err, results) => {
         if (err) {
@@ -151,6 +154,7 @@ app.get("/courses", (req, res) => {
     });
 });
 
+// Lấy dữ liệu người dùng cụ thể
 app.get("/get-userinfo", (req, res) => {
     const { username } = req.query;
 
@@ -174,6 +178,7 @@ app.get("/get-userinfo", (req, res) => {
     });
 });
 
+// Lấy dữ liệu khóa học theo id người tạo 
 app.get("/get-course-author", (req, res) => {
     const { username } = req.query;
 
@@ -189,6 +194,53 @@ app.get("/get-course-author", (req, res) => {
     });
 });
 
+
+// Kiểm tra đã đăng ký hay chưa
+app.get("/check-registration", (req, res) => {
+    const { username, course_id } = req.query;
+    const query = "SELECT * FROM user_courses WHERE username = ? AND course_id = ?";
+    db.query(query, [username, course_id], (err, results) => {
+        if (err) return res.status(500).json({ error: "Lỗi server" });
+        return res.json({ registered: results.length > 0 });
+    });
+});
+
+// Đăng ký khóa học
+app.post("/register-course", (req, res) => {
+    const { username, course_id } = req.body;
+    const query = "INSERT INTO user_courses (username, course_id) VALUES (?, ?)";
+    db.query(query, [username, course_id], (err) => {
+        if (err) return res.status(500).json({ error: "Lỗi khi đăng ký khóa học" });
+        res.json({ success: true });
+    });
+});
+
+// Hủy khóa học
+app.post("/unregister-course", (req, res) => {
+    const { username, course_id } = req.body;
+    const query = "DELETE FROM user_courses WHERE username = ? AND course_id = ?";
+    db.query(query, [username, course_id], (err) => {
+        if (err) return res.status(500).json({ error: "Lỗi khi hủy khóa học" });
+        res.json({ success: true });
+    });
+});
+
+
+// Lấy thông tin khóa học và time đăng kí theo id người đăng kí 
+app.get("/get-course-subscriber", (req, res) => {
+    const { username } = req.query;
+
+    if (!username) return res.status(400).json({ error: "Thiếu username" });
+
+    const query = "SELECT courses.*, user_courses.registered_at FROM user_courses JOIN courses ON user_courses.course_id = courses.course_id WHERE user_courses.username = ?";
+    db.query(query, [username], (err, results) => {
+        if (err) {
+            console.error("SERVER ERR-7:", err);
+            return res.status(500).json({ error: "Lỗi server" });
+        }
+        res.json(results);
+    });
+});
 
 
 

@@ -241,6 +241,18 @@
     cursor: pointer;
 }
 
+.time_of_subscribing {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.timer_a1 {
+    font-family: 'SFPro Regular Italic';
+    font-size: 17px;
+}
+
 /* 
 .progress_course {
     border-radius: 999px;
