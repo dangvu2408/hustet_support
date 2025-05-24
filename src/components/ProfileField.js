@@ -19,6 +19,7 @@ function ProfileField() {
         navigate(`/update-info`);
     }
 
+    const [courses, setCourses] = useState([]);
 
     useEffect(() => {
         const storedUser = localStorage.getItem("user");
@@ -45,6 +46,16 @@ function ProfileField() {
         }
     }, [user]);
       
+    
+    useEffect(() => {
+        if (user?.username) {
+            fetch(`http://localhost:3001/get-course-author?username=${encodeURIComponent(user.username)}`)
+                .then(res => res.json())
+                .then(data => setCourses(data))
+                .catch(err => console.error("Lỗi khi load khóa học:", err));
+        }
+    }, [user]);
+
 
     
     return(
@@ -144,9 +155,23 @@ function ProfileField() {
                             <div>
                                 <span className="main_a_title">Danh sách khóa học đã thêm</span>
                                 <div className="list_subscribed_course">
-                                    <div className="list_child">
-                                        
-                                    </div>
+                                    {courses.slice(0, 3).map(course => (
+                                        <CourseItemVerA
+                                            key={course.course_id}
+                                            course_id={course.course_id}
+                                            course_name={course.course_name}
+                                            english_name={course.english_name}
+                                            child_management={course.child_management}
+                                            managing_department={course.managing_department}
+                                            weight={course.weight}
+                                            description={course.description}
+                                            price={course.price}
+                                            old_price="499.000"
+                                            thumbnail={course.thumbnail}
+                                            author={course.author}
+                                            progress="80"
+                                        />
+                                    ))}
                                     
                                     
                                 </div>

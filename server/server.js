@@ -33,19 +33,17 @@ const db = mysql.createConnection({
 
 
 app.use((req, res, next) => {
-    console.log("Incoming request body:", req.body);
     next();
 });
 
 app.post('/register', (req, res) => {
-    console.log("Request body:", req.body);  // Kiểm tra dữ liệu nhận được
 
     const { fullname, username, password } = req.body;
     const query = "INSERT INTO users (username, password, fullname) VALUES (?, ?, ?)";
 
     db.query(query, [username, password, fullname], (err, result) => {
         if (err) {
-            console.error("Error: ", err);  // Log chi tiết lỗi
+            console.error("SERVER ERR-1: ", err);  // Log chi tiết lỗi
             return res.json({ success: false, message: "Lỗi khi chèn dữ liệu: " + err.sqlMessage });
         }
         return res.json({ success: true });
@@ -58,13 +56,12 @@ app.post('/login', (req, res) => {
     const query = "SELECT * FROM users WHERE username = ? AND password = ?";
     db.query(query, [username, password], (err, results) => {
         if (err) {
-            console.error("Lỗi truy vấn:", err);
+            console.error("SERVER ERR-2:", err);
             return res.status(500).json({ success: false, message: "Lỗi server" });
         }
 
         if (results.length > 0) {
             const user = results[0];
-            console.log("User query result:", user); 
             const userData = {
                 username: user.username,
                 password: user.password,
@@ -75,7 +72,6 @@ app.post('/login', (req, res) => {
                 status: user.status,
                 avatar: user.avatar
             };
-            console.log("Dữ liệu gửi về client:", userData);
             return res.json({ success: true, userData });
         } else {
             return res.json({ success: false, message: "Sai tài khoản hoặc mật khẩu" });
@@ -138,8 +134,8 @@ app.post("/add-course", (req, res) => {
 
     db.query(query, values, (err, result) => {
         if (err) {
-        console.error("Lỗi khi thêm khóa học:", err);
-        return res.status(500).json({ error: "Lỗi khi thêm khóa học." });
+            console.error("SERVER ERR-3:", err);
+            return res.status(500).json({ error: "Lỗi khi thêm khóa học." });
         }
         res.json({ success: true, message: "Đã thêm học phần thành công!", courseId: result.insertId });
     });
@@ -148,7 +144,7 @@ app.post("/add-course", (req, res) => {
 app.get("/courses", (req, res) => {
     db.query("SELECT * FROM courses", (err, results) => {
         if (err) {
-            console.error("Lỗi truy vấn courses:", err);
+            console.error("SERVER ERR-4:", err);
             return res.status(500).json({ error: "Lỗi server" });
         }
         res.json(results);
@@ -178,7 +174,20 @@ app.get("/get-userinfo", (req, res) => {
     });
 });
 
+app.get("/get-course-author", (req, res) => {
+    const { username } = req.query;
 
+    if (!username) return res.status(400).json({ error: "Thiếu username" });
+
+    const query = "SELECT * FROM courses WHERE author = ?";
+    db.query(query, [username], (err, results) => {
+        if (err) {
+            console.error("SERVER ERR-5:", err);
+            return res.status(500).json({ error: "Lỗi server" });
+        }
+        res.json(results);
+    });
+});
 
 
 
@@ -188,7 +197,3 @@ app.get("/get-userinfo", (req, res) => {
 app.listen(3001, () => {
     console.log("Server is running on port 3001");
 });
-
-
-  
-  
