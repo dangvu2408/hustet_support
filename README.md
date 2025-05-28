@@ -1,4 +1,4 @@
-## HUST Electronics & Telecommunications Support System
+# HUST Electronics & Telecommunications Support System
 
 <p align="center">
     <img src="https://img.shields.io/badge/version-1.0.0-blue" />
@@ -9,6 +9,7 @@
 
 
 This website is developed to support students in learning core and fundamental courses in Electronics and Telecommunications. It is built using [ReactJS](https://github.com/facebook/create-react-app) and designed to provide a user-friendly and efficient learning experience. The website is currently under development and has not been commercialized.
+
 <img src="./public/assets/banner.png">
 
 ## About ReactJS
@@ -34,8 +35,6 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ## About the project
 
 This website was originally built for the **Project I** (***ET3290***). It may be further developed and expanded in the future.
-
-### 1. How to use this project
 
 To run this project locally, follow these steps
 
@@ -76,7 +75,6 @@ node server.js
 ```
 
 This will start the backend server, typically at: [http://localhost:3001](http://localhost:3001).
-
 
 
 
