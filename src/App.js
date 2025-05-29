@@ -10,6 +10,7 @@ import AddCourse from "./pages/AddCourse";
 import Profile from "./pages/ProfiePage";
 import CourseDetails from "./pages/CourseDetails";
 import Account from "./pages/UpdateUserInfo";
+import SubsCourse from "./pages/SubscribedCourse";
 
 // 👉 import component menu chuột phải
 import CustomContextMenu from "./components/CustomContextMenu";
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/add-course" element={<AddCourse />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/update-info" element={<Account />} />
+                <Route path="/subscribed-course" element={<SubsCourse />} />
                 <Route path="/courses/:course_id" element={<CourseDetails />} />
             </Routes>
         </Router>
