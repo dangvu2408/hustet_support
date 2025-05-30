@@ -242,6 +242,18 @@ app.get("/get-course-subscriber", (req, res) => {
     });
 });
 
+app.get("/count-course-registrations", (req, res) => {
+    const { course_id } = req.query;
+    const sql = "SELECT COUNT(*) AS count FROM user_courses WHERE course_id = ?";
+    db.query(sql, [course_id], (err, result) => {
+        if (err) {
+            console.error("Lỗi truy vấn đếm số đăng ký:", err);
+            return res.status(500).json({ error: "Lỗi server" });
+        }
+        res.json({ count: result[0].count }); // Chỗ này rất quan trọng
+    });
+});
+ 
 
 
 

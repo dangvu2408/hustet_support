@@ -1,0 +1,6 @@
+.display_status_a {
+    display: flex;
+    gap: 10px;
+    font-size: 16px;
+    font-family: 'SFPro Regular Italic';
+}

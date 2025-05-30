@@ -16,7 +16,7 @@ export default function CourseListItem({
         old_price,
         thumbnail,
         progress = 0, // % tiến độ học
-        subtime,
+        counter,
     }) {
     return (
         <div className="table__body">
@@ -47,11 +47,11 @@ export default function CourseListItem({
                 <div className="ahead_right_item">
                     <div className="display_status_a">
                         <img width={"20px"} height={"20px"} src={icon}></img>
-                        <span className="text_status_a">Công khai (mặc định)</span>
+                        <span className="text_status_a">Công khai</span>
                     </div>
                 </div>
-                <div className="ahead_right_item">{subtime}</div>
-                <div className="ahead_right_item">Tiến độ</div>
+                <div className="ahead_right_item">{counter}</div>
+                <div className="ahead_right_item">0</div>
             </div>
         </div>
     );

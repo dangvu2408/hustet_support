@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import CourseListItem from "./CourseListItemVerA";
+import CourseListItemVerB from "./CourseListItemVerB";
 
 function CourseManagementComp() {
     const [user, setUser] = useState(null);
     const [coursesList, setCoursesList] = useState([]);
+    const [courseCounts, setCourseCounts] = useState({}); // object lưu count cho từng course_id
+
+
     useEffect(() => {
         const storedUser = localStorage.getItem("user");
         if (storedUser) {
@@ -17,16 +20,36 @@ function CourseManagementComp() {
         }
     }, []);
 
-    const formatDateTimeCustom = (datetimeString) => {
-        const date = new Date(datetimeString);
-        const yyyy = date.getFullYear();
-        const mm = String(date.getMonth() + 1).padStart(2, '0');
-        const dd = String(date.getDate()).padStart(2, '0');
-        const hh = String(date.getHours()).padStart(2, '0');
-        const min = String(date.getMinutes()).padStart(2, '0');
-        const ss = String(date.getSeconds()).padStart(2, '0');
-        return `${yyyy}-${mm}-${dd}, ${hh}:${min}:${ss}`;
-    };
+    useEffect(() => {
+        if (user?.username) {
+            fetch(`http://localhost:3001/get-course-author?username=${encodeURIComponent(user.username)}`)
+                .then(res => res.json())
+                .then(data => setCoursesList(data))
+                .catch(err => console.error("Lỗi khi load khóa học:", err));
+        }
+    }, [user]);
+
+    useEffect(() => {
+        const fetchCounts = async () => {
+            const counts = {};
+            for (const course of coursesList) {
+                try {
+                    const res = await fetch(`http://localhost:3001/count-course-registrations?course_id=${encodeURIComponent(course.course_id)}`);
+                    const data = await res.json();
+                    counts[course.course_id] = data.count;
+                } catch (err) {
+                    console.error(`Lỗi khi lấy số lượng đăng ký cho course ${course.course_id}:`, err);
+                    counts[course.course_id] = 0;
+                }
+            }
+            setCourseCounts(counts);
+        };
+
+        if (coursesList.length > 0) {
+            fetchCounts();
+        }
+    }, [coursesList]);
+
 
     return (
         <main id="main">
@@ -58,6 +81,26 @@ function CourseManagementComp() {
                                 <div className="ahead_right_item">Số lượt thích</div>
                             </div>
                         </div>
+
+                        {coursesList.map((course, index) => (
+                            <CourseListItemVerB
+                                key={course.course_id}
+                                index={index}
+                                course_id={course.course_id}
+                                course_name={course.course_name}
+                                english_name={course.english_name}
+                                child_management={course.child_management}
+                                managing_department={course.managing_department}
+                                weight={course.weight}
+                                description={course.description}
+                                price={course.price}
+                                old_price="499.000"
+                                thumbnail={course.thumbnail}
+                                author={course.author}
+                                progress="80"
+                                counter={courseCounts[course.course_id] ?? 'Đang tải...'}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
