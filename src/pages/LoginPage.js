@@ -10,6 +10,10 @@ export default function LoginPage() {
     const navigate = useNavigate();
 
     useEffect(() => {
+            window.scrollTo(0, 0);
+        }, []);
+
+    useEffect(() => {
         const isValid = username.trim() !== "" && password.trim() !== "";
         setFormValid(isValid);
     }, [username, password]);

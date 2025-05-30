@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import CourseListItemVerA from "./CourseListItemVerA";
+import CourseListItem from "./CourseListItemVerA";
 
-function SubsCourseManagement() {
+function CourseManagementComp() {
     const [user, setUser] = useState(null);
-    const [subCourses, setSubCourses] = useState([]);
+    const [coursesList, setCoursesList] = useState([]);
     useEffect(() => {
         const storedUser = localStorage.getItem("user");
         if (storedUser) {
@@ -17,18 +17,6 @@ function SubsCourseManagement() {
         }
     }, []);
 
-    useEffect(() => {
-        if (user?.username) {
-            fetch(`http://localhost:3001/get-course-subscriber?username=${encodeURIComponent(user.username)}`)
-                .then(res => res.json())
-                .then(data => {
-                    console.log("DEBUG subCourses:", data);
-                    setSubCourses(data);
-                })
-                .catch(err => console.error("Lỗi khi load khóa học:", err));
-        }
-    }, [user]);
-
     const formatDateTimeCustom = (datetimeString) => {
         const date = new Date(datetimeString);
         const yyyy = date.getFullYear();
@@ -40,8 +28,7 @@ function SubsCourseManagement() {
         return `${yyyy}-${mm}-${dd}, ${hh}:${min}:${ss}`;
     };
 
-
-    return(
+    return (
         <main id="main">
             <div className="container_et">
                 <div className="container_heading">
@@ -55,7 +42,7 @@ function SubsCourseManagement() {
 
                 <div className="wrapper_container">
                     <div className="user_heading_title">
-                        <h1 class="course_name_heading">Khóa học đã đăng ký</h1>
+                        <h1 class="course_name_heading">Quản lý khóa học</h1>
                     </div>
 
                     <div className="table_course_container">
@@ -66,36 +53,16 @@ function SubsCourseManagement() {
                             </div>
                             <div className="header_right">
                                 <div className="ahead_right_item">Trạng thái</div>
-                                <div className="ahead_right_item">Trạng thái thanh toán</div>
-                                <div className="ahead_right_item">Ngày đăng ký</div>
-                                <div className="ahead_right_item">Tiến độ</div>
+                                <div className="ahead_right_item">Chế độ hiển thị</div>
+                                <div className="ahead_right_item">Số người đăng ký</div>
+                                <div className="ahead_right_item">Số lượt thích</div>
                             </div>
                         </div>
-                        {subCourses.map((course, index) => (
-                            <CourseListItemVerA
-                                key={course.course_id}
-                                index={index}
-                                course_id={course.course_id}
-                                course_name={course.course_name}
-                                english_name={course.english_name}
-                                child_management={course.child_management}
-                                managing_department={course.managing_department}
-                                weight={course.weight}
-                                description={course.description}
-                                price={course.price}
-                                old_price="499.000"
-                                thumbnail={course.thumbnail}
-                                author={course.author}
-                                progress="80"
-                                subtime={formatDateTimeCustom(course.registered_at)}
-                            />
-                        ))}
                     </div>
                 </div>
             </div>
         </main>
-
     );
 }
 
-export default SubsCourseManagement;
+export default CourseManagementComp;
