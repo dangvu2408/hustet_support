@@ -49,7 +49,9 @@ function Header() {
         }
     }, []);
 
-    const handleChangePassword = async () => {
+    const handleChangePassword = async (event) => {
+        event.preventDefault(); 
+
         const user = JSON.parse(localStorage.getItem("user"));
         if (!user) return;
 
@@ -77,6 +79,7 @@ function Header() {
             console.error("Lỗi đổi mật khẩu:", err);
         }
     };
+
 
 
     return (

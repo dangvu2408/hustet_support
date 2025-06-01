@@ -2,7 +2,6 @@
   "name": "reactdev",
   "version": "1.0.0",
   "private": true,
-  "proxy": "http://localhost:3001",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -16,7 +15,7 @@
     "node": "^16.13.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^7.4.0",
+    "react-router-dom": "^6.22.3",
     "react-scripts": "^5.0.1",
     "reactdev": "file:",
     "web-vitals": "^2.1.4"
@@ -44,5 +43,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-app-rewired": "^2.2.1"
+  },
+  "options": {
+    "allowedHosts": [
+      "localhost",
+      ".localhost"
+    ],
+    "proxy": "https://localhost:3001/"
   }
 }

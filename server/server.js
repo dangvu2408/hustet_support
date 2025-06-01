@@ -83,11 +83,12 @@ app.post('/login', (req, res) => {
 });
 
 app.post('/change-password', async (req, res) => {
-    const { username, oldpass, newpass } = req.body;
+    const { username, oldPass, newPass } = req.body;  // Chữ P hoa, trùng frontend
+
 
     // Truy vấn người dùng
     const sqlCheck = "SELECT * FROM users WHERE username = ? AND password = ?";
-    db.query(sqlCheck, [username, oldpass], (err, results) => {
+    db.query(sqlCheck, [username, oldPass], (err, results) => {
         if (err) {
             console.error("Lỗi truy vấn:", err);
             return res.status(500).json({ success: false, message: "Lỗi server" });
@@ -99,7 +100,7 @@ app.post('/change-password', async (req, res) => {
 
         // Nếu đúng thì cập nhật mật khẩu mới
         const sqlUpdate = "UPDATE users SET password = ? WHERE username = ?";
-        db.query(sqlUpdate, [newpass, username], (err2) => {
+        db.query(sqlUpdate, [newPass, username], (err2) => {
             if (err2) {
                 console.error("Lỗi cập nhật:", err2);
                 return res.status(500).json({ success: false, message: "Cập nhật thất bại" });
