@@ -546,3 +546,58 @@ button {
         padding-right: 20px;
     }
 }
+
+
+/* dialog css */
+
+.form_area__ {
+    display: flex;
+    flex-direction: column;
+}
+
+#pass_label {
+    font-family: 'SFPro Bold';
+    font-size: 18px;
+    margin: 5px 0px;
+}
+
+#oldpass_input, #newpass_input {
+    width: 100%;
+    padding: 10px 0px;
+    font-size: 20px;
+    width: 540px;
+    font-family: 'SFPro Regular', sans-serif;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.update_box {
+    margin: 10px 0px;
+}
+
+.form_update_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.updateform_btn {
+    margin: 12px;
+    padding: 10px 25px;
+    border-radius: 100px;
+    background-color: #CE1628;
+    color: #FFFFFF;
+    border: 2px solid #CE1628;
+    font-size: 18px;
+    font-family: 'SFPro Bold';
+    line-height: 20px;
+    cursor: pointer;
+    letter-spacing: .1px;
+}
+
+.updateform_btn:hover {
+    color: #CE1628;
+    background-color: #FFFFFF;
+    transition: all 0.2s;
+}

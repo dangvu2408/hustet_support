@@ -6,7 +6,7 @@ function CourseManagementComp() {
     const [user, setUser] = useState(null);
     const [coursesList, setCoursesList] = useState([]);
     const [courseCounts, setCourseCounts] = useState({}); // object lưu count cho từng course_id
-
+    const [likeCounts, setLikeCounts] = useState({});
 
     useEffect(() => {
         const storedUser = localStorage.getItem("user");
@@ -43,6 +43,27 @@ function CourseManagementComp() {
                 }
             }
             setCourseCounts(counts);
+        };
+
+        if (coursesList.length > 0) {
+            fetchCounts();
+        }
+    }, [coursesList]);
+
+    useEffect(() => {
+        const fetchCounts = async () => {
+            const counts = {};
+            for (const course of coursesList) {
+                try {
+                    const res = await fetch(`http://localhost:3001/count-course-like?course_id=${encodeURIComponent(course.course_id)}`);
+                    const data = await res.json();
+                    counts[course.course_id] = data.count;
+                } catch (err) {
+                    console.error(`Lỗi khi lấy số lượng đăng ký cho course ${course.course_id}:`, err);
+                    counts[course.course_id] = 0;
+                }
+            }
+            setLikeCounts(counts);
         };
 
         if (coursesList.length > 0) {
@@ -99,6 +120,7 @@ function CourseManagementComp() {
                                 author={course.author}
                                 progress="80"
                                 counter={courseCounts[course.course_id] ?? 'Đang tải...'}
+                                like={likeCounts[course.course_id] ?? 'Đang tải...'}
                             />
                         ))}
                     </div>

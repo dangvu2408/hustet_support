@@ -81,6 +81,35 @@ app.post('/login', (req, res) => {
         }
     });
 });
+
+app.post('/change-password', async (req, res) => {
+    const { username, oldpass, newpass } = req.body;
+
+    // Truy vấn người dùng
+    const sqlCheck = "SELECT * FROM users WHERE username = ? AND password = ?";
+    db.query(sqlCheck, [username, oldpass], (err, results) => {
+        if (err) {
+            console.error("Lỗi truy vấn:", err);
+            return res.status(500).json({ success: false, message: "Lỗi server" });
+        }
+
+        if (results.length === 0) {
+            return res.json({ success: false, message: "Mật khẩu cũ không đúng" });
+        }
+
+        // Nếu đúng thì cập nhật mật khẩu mới
+        const sqlUpdate = "UPDATE users SET password = ? WHERE username = ?";
+        db.query(sqlUpdate, [newpass, username], (err2) => {
+            if (err2) {
+                console.error("Lỗi cập nhật:", err2);
+                return res.status(500).json({ success: false, message: "Cập nhật thất bại" });
+            }
+
+            return res.json({ success: true, message: "Đổi mật khẩu thành công" });
+        });
+    });
+});
+
  
 // Lấy toàn bộ dữ liệu user
 app.get('/users', (req, res) => {

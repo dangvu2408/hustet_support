@@ -1,6 +1,6 @@
 {
   "name": "reactdev",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
@@ -13,10 +13,11 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.9.0",
     "multer": "^1.4.5-lts.2",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "node": "^16.13.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^7.4.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "reactdev": "file:",
     "web-vitals": "^2.1.4"
   },

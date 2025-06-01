@@ -25,7 +25,7 @@ function CourseDialog({show, onClose, title, children}) {
                 <div className="modal_header">
                     <div className="modal_title">
                         <div className="ection_head_modal">
-                            <button type="button" onClick={onClose}>
+                            <button type="button" className="close_dialog_btn" onClick={onClose}>
                                 <span class="ant-btn-icon">
                                     <span role="img" aria-label="close" class="anticon anticon-close">
                                         <svg fill-rule="evenodd" viewBox="64 64 896 896" focusable="false" data-icon="close" width="1em" height="1em" fill="currentColor" aria-hidden="true">

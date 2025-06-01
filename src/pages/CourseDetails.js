@@ -1,5 +1,7 @@
 import { useParams, useLocation } from 'react-router-dom';
 import { useState, useEffect } from "react";
+import React from 'react';
+
 import axios from "axios";
 import Dialog from '../components/dialog/CourseDialog';
 import Header from "../components/Header";

@@ -47,21 +47,21 @@
   
 @font-face {
     font-family: 'LinhAvantgarde';
-    src: url('./assets/fonts/LINH\ AVANTGARDE\ REGULAR.TTF') format('woff2');
+    src: url('./assets/fonts/LINHAVANTGARDEREGULAR.TTF') format('woff2');
     font-weight: 500;
     font-style: normal;
 }
   
 @font-face {
     font-family: 'LinhAvantgarde SemiBold';
-    src: url('./assets/fonts/LINH\ AVANTGARDE\ DEMIBOLD.TTF') format('woff2');
+    src: url('./assets/fonts/LINHAVANTGARDEDEMIBOLD.TTF') format('woff2');
     font-weight: 900;
     font-style: normal;
 }
   
 @font-face {
     font-family: 'LinhAvantgarde Bold';
-    src: url('./assets/fonts/LINH\ AVANTGARDE\ BOLD.TTF') format('woff2');
+    src: url('./assets/fonts/LINHAVANTGARDEBOLD.TTF') format('woff2');
     font-weight: 1200;
     font-style: normal;
 }

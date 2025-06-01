@@ -44,7 +44,7 @@
     color: #CE1628;
 }
   
-.custom-dialog button {
+.custom-dialog .close_dialog_btn {
     width: 32px;
     font-size: 14px;
     height: 32px;

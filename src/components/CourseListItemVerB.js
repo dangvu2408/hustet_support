@@ -17,6 +17,7 @@ export default function CourseListItem({
         thumbnail,
         progress = 0, // % tiến độ học
         counter,
+        like
     }) {
     return (
         <div className="table__body">
@@ -51,7 +52,7 @@ export default function CourseListItem({
                     </div>
                 </div>
                 <div className="ahead_right_item">{counter}</div>
-                <div className="ahead_right_item">0</div>
+                <div className="ahead_right_item">{like}</div>
             </div>
         </div>
     );
