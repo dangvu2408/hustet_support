@@ -24,6 +24,7 @@ function CourseItemVerA({
     const discount = Math.round(((parsePrice(old_price) - parsePrice(price)) / parsePrice(old_price)) * 100);
 
     const [showMenu, setShowMenu] = useState(false);
+    const [liked, setLiked] = useState(false);
     const menuRef = useRef(null);
 
     const toggleMenu = () => {
@@ -63,6 +64,38 @@ function CourseItemVerA({
 
     const toggleBookmark = () => {
         setBookmarked(!bookmarked);
+    };
+
+
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (user && course_id) {
+            fetch(`http://localhost:3001/check-like?username=${user.username}&course_id=${course_id}`)
+                .then(res => res.json())
+                .then(data => setLiked(data.registered))
+                .catch(err => console.error("Lỗi khi kiểm tra đăng ký:", err));
+        }
+    }, [course_id]);
+
+    const handleLikeToggle = () => {
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (!user || !course_id) return;
+
+        const url = liked 
+            ? "http://localhost:3001/unlike-course"
+            : "http://localhost:3001/like-course";
+
+        fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                username: user.username,
+                course_id: course_id
+            })
+        })
+        .then(res => res.json())
+        .then(() => setLiked(!liked))
+        .catch(err => console.error("Lỗi khi đăng ký/hủy khóa học:", err));
     };
 
     return (
@@ -124,8 +157,8 @@ function CourseItemVerA({
                                     <ul className="menu--list">
                                         <div className="group_button_menu">
                                             <div className="group_button_list">
-                                                <button className="button_item" tabIndex={0} onClick={toggleBookmark}>
-                                                    {bookmarked ? (
+                                                <button className="button_item" tabIndex={0} onClick={handleLikeToggle}>
+                                                    {liked ? (
                                                         // Đã bookmark (màu vàng)
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                                             fill="#E5AC1A" stroke="#E5AC1A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"

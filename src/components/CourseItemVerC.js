@@ -23,8 +23,10 @@ function CourseItemVerC({
 }) {
     const parsePrice = (str) => parseFloat(str.replace(/\./g, ''));
     const discount = Math.round(((parsePrice(old_price) - parsePrice(price)) / parsePrice(old_price)) * 100);
-
+    const [liked, setLiked] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
+    const [courseCounts, setCourseCounts] = useState({});
+    const [likeCounts, setLikeCounts] = useState({});
     const menuRef = useRef(null);
 
     const toggleMenu = () => {
@@ -65,6 +67,78 @@ function CourseItemVerC({
     const toggleBookmark = () => {
         setBookmarked(!bookmarked);
     };
+
+
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (user && course_id) {
+            fetch(`http://localhost:3001/check-like?username=${user.username}&course_id=${course_id}`)
+                .then(res => res.json())
+                .then(data => setLiked(data.registered))
+                .catch(err => console.error("Lỗi khi kiểm tra đăng ký:", err));
+        }
+    }, [course_id]);
+    
+    const handleLikeToggle = () => {
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (!user || !course_id) return;
+    
+        const url = liked 
+            ? "http://localhost:3001/unlike-course"
+            : "http://localhost:3001/like-course";
+    
+        fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                username: user.username,
+                    course_id: course_id
+            })
+        })
+        .then(res => res.json())
+        .then(() => setLiked(!liked))
+        .catch(err => console.error("Lỗi khi đăng ký/hủy khóa học:", err));
+    };
+
+
+
+    useEffect(() => {
+        const fetchCounts = async () => {
+            const counts = {};
+            try {
+                const res = await fetch(`http://localhost:3001/count-course-registrations?course_id=${encodeURIComponent(course_id)}`);
+                const data = await res.json();
+                counts[course_id] = data.count;
+            } catch (err) {
+                console.error(`Lỗi khi lấy số lượng đăng ký cho course ${course_id}:`, err);
+                counts[course_id] = 0;
+            }
+            setCourseCounts(counts);
+        };
+    
+        if (course_id != null) {
+            fetchCounts();
+        }
+    }, [course_id]);
+
+    useEffect(() => {
+        const fetchCounts = async () => {
+            const counts = {};
+            try {
+                const res = await fetch(`http://localhost:3001/count-course-like?course_id=${encodeURIComponent(course_id)}`);
+                const data = await res.json();
+                counts[course_id] = data.count;
+            } catch (err) {
+                console.error(`Lỗi khi lấy số lượng đăng ký cho course ${course_id}:`, err);
+                counts[course_id] = 0;
+            }
+            setLikeCounts(counts);
+        };
+    
+        if (course_id != null) {
+            fetchCounts();
+        }
+    }, [course_id]);
 
     return (
         <div className="list_child">
@@ -111,7 +185,7 @@ function CourseItemVerC({
                                                     <div className="course__status">
                                                         <div className="status__item">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A0A0A0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                                                            <span>4.235</span> 
+                                                            <span>{courseCounts[course_id] ?? "Đang tải"}</span> 
                                                         </div>
                                                         <div className="status__item">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
@@ -119,7 +193,7 @@ function CourseItemVerC({
                                                                 className="lucide lucide-bookmark-icon lucide-bookmark">
                                                                 <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/>
                                                             </svg>
-                                                            <span>2.576</span> 
+                                                            <span>{likeCounts[course_id] ?? "Đang tải"}</span> 
                                                         </div>
                                                     </div>
                                                 </div>
@@ -129,8 +203,8 @@ function CourseItemVerC({
                                     <ul className="menu--list">
                                         <div className="group_button_menu">
                                             <div className="group_button_list">
-                                                <button className="button_item" tabIndex={0} onClick={toggleBookmark}>
-                                                    {bookmarked ? (
+                                                <button className="button_item" tabIndex={0} onClick={handleLikeToggle}>
+                                                    {liked ? (
                                                         // Đã bookmark (màu vàng)
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                                             fill="#E5AC1A" stroke="#E5AC1A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"

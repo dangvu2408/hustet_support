@@ -253,8 +253,49 @@ app.get("/count-course-registrations", (req, res) => {
         res.json({ count: result[0].count }); // Chỗ này rất quan trọng
     });
 });
- 
 
+
+// Kiểm tra đã like hay chưa
+app.get("/check-like", (req, res) => {
+    const { username, course_id } = req.query;
+    const query = "SELECT * FROM user_like_courses WHERE username = ? AND course_id = ?";
+    db.query(query, [username, course_id], (err, results) => {
+        if (err) return res.status(500).json({ error: "Lỗi server" });
+        return res.json({ registered: results.length > 0 });
+    });
+});
+
+// Like khóa học
+app.post("/like-course", (req, res) => {
+    const { username, course_id } = req.body;
+    const query = "INSERT INTO user_like_courses (username, course_id) VALUES (?, ?)";
+    db.query(query, [username, course_id], (err) => {
+        if (err) return res.status(500).json({ error: "Lỗi khi thích khóa học" });
+        res.json({ success: true });
+    });
+});
+
+// Unlike khóa học
+app.post("/unlike-course", (req, res) => {
+    const { username, course_id } = req.body;
+    const query = "DELETE FROM user_like_courses WHERE username = ? AND course_id = ?";
+    db.query(query, [username, course_id], (err) => {
+        if (err) return res.status(500).json({ error: "Lỗi khi hủy thích khóa học" });
+        res.json({ success: true });
+    });
+});
+ 
+app.get("/count-course-like", (req, res) => {
+    const { course_id } = req.query;
+    const sql = "SELECT COUNT(*) AS count FROM user_like_courses WHERE course_id = ?";
+    db.query(sql, [course_id], (err, result) => {
+        if (err) {
+            console.error("Lỗi truy vấn đếm số đăng ký:", err);
+            return res.status(500).json({ error: "Lỗi server" });
+        }
+        res.json({ count: result[0].count }); // Chỗ này rất quan trọng
+    });
+});
 
 
 
