@@ -1,0 +1,39 @@
+.add_course_level {
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.add_course {
+    color: #003366;
+    background-color: #E0ECFF;
+    border-radius: 999px;
+    position: relative;
+}
+
+.add_course_btn {
+    display: flex;
+    padding: 10px 24px;
+    align-items: center;
+    font-family: 'SFPro Bold';
+    font-size: 18px;
+    border-radius: 999px;
+    border: 0;
+    text-transform: none;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.add_course_btn svg {
+    margin-right: 10px;
+}
+
+.full_list_gallery {
+    flex-wrap: wrap; /* Cho phép xuống dòng khi đủ 3 phần tử */
+}
+
+.full_list_gallery .single-column {
+    flex: 1 1 calc(33.333% - 20px); /* 3 cột, trừ khoảng cách */
+    box-sizing: border-box;
+    max-width: calc(33.333% - 20px); /* Bảo vệ tránh vượt kích thước */
+}
