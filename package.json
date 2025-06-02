@@ -2,6 +2,7 @@
   "name": "reactdev",
   "version": "1.0.0",
   "private": true,
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -12,7 +13,6 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.9.0",
     "multer": "^1.4.5-lts.2",
-    "node": "^16.13.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
@@ -21,7 +21,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start --no-source-maps",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -46,12 +46,5 @@
   },
   "devDependencies": {
     "react-app-rewired": "^2.2.1"
-  },
-  "options": {
-    "allowedHosts": [
-      "localhost",
-      ".localhost"
-    ],
-    "proxy": "https://localhost:3001/"
   }
 }

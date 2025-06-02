@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'SFPro Regular';
+    src: url('./assets/fonts/SF-Pro-Display-Regular.otf') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'SFPro Regular Italic';
+    src: url('./assets/fonts/SF-Pro-Display-RegularItalic.otf') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+}
+  
+@font-face {
+    font-family: 'SFPro Bold';
+    src: url('./assets/fonts/SF-Pro-Display-Bold.otf') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'SFPro Bold Italic';
+    src: url('./assets/fonts/SF-Pro-Display-BoldItalic.otf') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+}
+  
+@font-face {
+    font-family: 'SFPro Black';
+    src: url('./assets/fonts/SF-Pro-Display-Black.otf') format('woff2');
+    font-weight: 1200;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'SFPro Black Italic';
+    src: url('./assets/fonts/SF-Pro-Display-BlackItalic.otf') format('woff2');
+    font-weight: 1200;
+    font-style: italic;
+}
+  
+@font-face {
+    font-family: 'LinhAvantgarde';
+    src: url('./assets/fonts/LINHAVANTGARDEREGULAR.TTF') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'LinhAvantgarde SemiBold';
+    src: url('./assets/fonts/LINHAVANTGARDEDEMIBOLD.TTF') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'LinhAvantgarde Bold';
+    src: url('./assets/fonts/LINHAVANTGARDEBOLD.TTF') format('woff2');
+    font-weight: 1200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Panton Rust Black';
+    src: url('./assets/fonts/PantonRustBlack-Base.ttf') format('woff2');
+    font-weight: 1200;
+    font-style: normal;
+}
+  
+  
+::-webkit-scrollbar {
+    width: 8px;
+    z-index: 101;
+}
+  
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: #001B4C;;
+    border-radius: 20px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'SFPro Regular', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.text_status {
+    width: fit-content;
+    color: #FFFFFF !important;
+    padding: 2px 6px 2px 8px;
+    border-radius: 4px;
+    font-family: 'Panton Rust Black' !important;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.plus_p {
+    background-color: #9457FF !important;
+}
+
+.premium_p {
+    background-color: #E5AC1A !important;
+}
+
+.basic_p {
+    background-color: #A1A1A1 !important;
+}
+
+.mouse_context_menu {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 101;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 250px;
+}
+
+.menulist_ {
+    padding: 10px 0px !important;
+    list-style: none;
+}
+
+.menulist_ li {
+    color: #32323d;
+    background-color: #fff;
+}
+
+.menulist_ li:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #8d22c3;
+}
+
+.menulist_btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px 10px 15px;
+    font-size: 16px;
+    font-family: 'SFPro Regular';
+    line-height: normal;
+    border: none;
+    background-color: transparent;
+}
+
+.menulist_btn svg {
+    margin-right: 15px;
+}

@@ -1,0 +1,149 @@
+.main_update_container {
+    margin: 20px 100px;
+}
+
+.header_update_child {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+.header_user_flexitem {
+    display: flex !important;
+    margin-bottom: 0 !important;
+}
+
+.avatar_flexitem {
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #ffffff26;
+    display: inline-block;
+    flex-shrink: 0;
+    line-height: 1;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-right: 15px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.flexitem_auto {
+    flex: auto !important;
+}
+
+.headtxt_name_auto {
+    font-family: 'SFPro Bold';
+    font-size: 20px;
+}
+
+.name_color_focus {
+    color: #000;
+}
+
+.id_color_unfocus, .status_color_unfocus {
+    color: rgba(0, 0, 0, 0.6);;
+}
+
+.account_status_auto {
+    flex-wrap: wrap !important;
+}
+
+.margin_top {
+    margin-top: 5px;
+}
+
+.button_to_profile {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #6B00D7;
+    border-radius: 999px;
+    padding: 10px 24px;
+    align-items: center;
+    font-family: 'SFPro Bold';
+    font-size: 18px;
+    border: 0;
+    text-transform: none;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.update_info_form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.radio_flex {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+}
+
+.avatar_update_cont {
+    margin: 0px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.avatar_upload_field {
+    position: relative;
+}
+
+.button_edit_avt {
+    position: absolute !important;
+    bottom: 15px;
+    font-size: 16px;
+    font-family: 'SFPro Bold';
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 6px;
+    border: 1px solid #3d444d;
+    padding: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.dropdown_avt_setting {
+    position: absolute;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    padding: 0.5rem 0;
+    min-width: 150px;
+    transform-origin: top;
+    transform: scaleY(0.8);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.dropdown_avt_setting.show_setting {
+    transform: scaleY(1);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.dropdown_avt_setting ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+  
+.dropdown_avt_setting li {
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'SFPro Bold';
+    color: #000;
+    transition: all 0.2s ease;
+}
+  
+.dropdown_avt_setting li:hover {
+    background-color: #f1f1f1;
+}

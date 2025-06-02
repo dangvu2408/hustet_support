@@ -1,0 +1,359 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'SFPro Regular', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+  
+button {
+    font-family: 'SFPro Bold';
+    cursor: pointer;
+}
+
+.container_et {
+    width: 100%;
+    margin-left: auto;
+    box-sizing: border-box;
+    margin-right: auto;
+    display: block;
+    padding: 20px 110px 10px 110px;
+}
+
+.container_heading {
+    display: flex;
+}
+
+.back_home {
+    cursor: pointer;
+    font-family: 'SFPro Bold';
+    font-size: 18px;
+    color: black;
+    text-transform: uppercase;
+}
+
+.back_home:hover .subtitle_back svg {
+    transform: translate(-8px)
+}
+
+.subtitle_back {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.subtitle_back svg {
+    margin-right: 5px;
+    transition: ease .3s;
+}
+
+.wrapper_container {
+    width: 100%;
+    padding: 10px 0px;
+}
+
+.row_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col_left {
+    flex: 0 0 auto;
+    width: 66.66666666667%;
+}
+
+.col_right {
+    flex: 0 0 auto;
+    width: 33.33333333333%;
+}
+
+.course_content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.course_name_heading {
+    font-family: 'SFPro Black';
+    font-size: 30px;
+    color: black;
+    margin-top: 15px
+}
+
+.course_author_info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.author_avatar {
+    height: auto;
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.author_name {
+    font-family: 'SFPro Regular Italic';
+    font-size: 16px;
+}
+
+.course_description {
+    margin-top: 15px;
+    font-family: 'SFPro Regular';
+    font-size: 20px;
+    color: black;
+    line-height: 36px;
+    text-align: justify;
+}
+
+.header_curriculum {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    background-color: white;
+}
+
+.header_curriculum h2 {
+    font-family: 'SFPro Bold';
+    font-size: 24px;
+}
+
+.sub_header_wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.sub_header_wrapper ul {
+    display: flex;
+}
+
+.sub_header_wrapper li {
+    display: inline-block;
+}
+
+.sub_header_wrapper .dot_sub {
+    padding: 0 8px;
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+.toggle_more {
+    margin-left: auto;
+    font-size: 20px;
+    font-family: 'SFPro Bold';
+    user-select: none;
+    color: #003366;
+    cursor: pointer;
+}
+
+.toggle_more:hover {
+    color: black;
+}
+
+.cirriculum_panel {
+    margin-top: 20px;
+}
+
+.panel_group .panel {
+    margin-bottom: 8px;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.panel_heading {
+    padding: 0;
+    border: 1px solid #e3ecfb;
+    border-radius: 6px;
+    background: #F2F6FC;
+    cursor: pointer;
+}
+
+.panel_title {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+.head_line_title {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px 15px 50px;
+    font-family: 'SFPro Bold';
+    font-size: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.head_line_title::before {
+    content: "+";
+    position: absolute;
+    font-size: 25px;
+    font-family: 'SFPro Bold';
+    left: 20px;
+    top: 45%;
+    transform: translateY(-50%);
+    color: #003366;
+}
+
+.head_line_title.open::before {
+    content: "–";
+  }
+
+.time_section {
+    min-width: 80px;
+    margin-left: auto;
+    text-align: right;
+    font-size: 18px;
+}
+
+.panel_collapse {
+    display: block;
+}
+
+.lesson_item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 50px;
+    padding: 0 30px 0 50px;
+    border-bottom: 1px solid rgba(0, 0, 0, .03);
+    overflow: hidden;
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+
+.icon_link {
+    display: flex;
+    align-items: center;
+}
+
+.icon_link svg {
+    margin-right: 5px;
+}
+
+.lesson_name {
+    display: -webkit-box;
+    padding-left: 5px;
+    font-size: 20px;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.purchase_badge {
+    position: relative;
+    margin-top: 15px;
+    margin-left: 24px;
+    margin-bottom: 60px;
+    background: #fff;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img_preview {
+    width: calc(100% - 2px);
+    margin: 2px 0 20px;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    user-select: none;
+}
+
+.img_preview .background_igm_prv {
+    width: 100%;
+    padding-top: 56.25%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.img_preview .upload_button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    background: #ffffff;
+    border-radius: 25px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.showMoreCourse {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    font-size: 20px;
+    font-family: 'SFPro Bold';
+    font-weight: 600;
+    color: white;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.img_preview::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all .3s linear;
+    background-image: linear-gradient(180deg, #1e1e1c00, #1e1e1ce6);
+}
+
+.purchase_badge h5 {
+    font-size: 28px;
+    font-family: 'SFPro Black';
+    color: #003366;
+    margin: 0 auto;
+    opacity: .8;
+}
+
+.wrapper_button {
+    margin-top: 15px;
+    background: #003366;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 35px;
+    text-transform: uppercase;
+    margin-left: 3px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+

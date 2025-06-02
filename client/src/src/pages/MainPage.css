@@ -1,0 +1,603 @@
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'SFPro Regular', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+  
+a {
+    text-decoration: none;
+}
+  
+p {
+    margin: 0;
+}
+  
+button {
+    font-family: 'SFPro Bold';
+    cursor: pointer;
+}
+  
+
+  
+.page-container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+#hess-header {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 50px;
+    top: 0;
+    z-index: 10;
+    background-color: #003366;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, .12);
+}
+  
+.left-section {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    .logo {
+        margin: 10px;
+    }
+  
+    .title {
+        margin: 20px;
+        .bold-text {
+            font-family: 'LinhAvantgarde Bold'; 
+            font-size: 26px; 
+            color: #fff; 
+            margin-bottom: 10px;
+        }
+  
+        .semi-bold-text {
+            font-family: 'LinhAvantgarde SemiBold'; 
+            font-size: 20px; 
+            color: #fff;
+        }
+    }
+}
+  
+.right-header-section {
+    margin-right: 100px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-family: 'SFPro Bold';
+    font-size: 20px;
+    color: white;
+    flex-grow: 1;
+}
+
+.right-header-section .search {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    margin-right: 20px;
+}
+
+.search_container {
+    position: relative;
+    border-radius: 20px;
+    height: 40px;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    display: flex;
+    align-items: center;
+    padding-left: 12px; /* icon */
+}
+
+
+.search_button {
+    flex: 0 0 auto; /* button co lại đúng kích thước nội dung */
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input_wrapper {
+    flex: 1;
+}
+
+.search_container input {
+    width: 100%;
+    height: 100%;
+    font-family: 'SFPro Regular';
+    font-size: 16px;
+    background-color: transparent;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    color: #FFFFFF;
+    padding-left: 10px; 
+}
+
+
+  
+.btn-login-header {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 35px;
+    text-transform: uppercase;
+    margin-left: 3px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 17px;
+}
+  
+.user-button {
+    font-size: 14px;
+    border-radius: 999px;
+    line-height: normal;
+    border: 0;
+    display: inline-block;
+    text-transform: none;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;       
+    right: 150px;               
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 999;                /* đảm bảo nổi lên trên */
+    padding: 0.5rem 0;
+    min-width: 200px;
+    transform-origin: top;
+    transform: scaleY(0.8);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu.show {
+    transform: scaleY(1);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+  
+.dropdown-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+  
+.dropdown-menu li {
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #000;
+    transition: background 0.2s ease;
+}
+  
+.dropdown-menu li:hover {
+    background-color: #f1f1f1;
+}
+
+.account_info {
+    display: flex;
+    align-items: center;
+}
+
+.user_setting_account {
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.user_setting_account:hover {
+    background-color: #fff !important;
+}
+
+.acc_avt_frame {
+    border-radius: 999px;
+}
+
+.image_acc_avt {
+    width: 60px;
+    height: 60px;
+}
+
+.image_btn_avt {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.image_acc_avt img {
+    height: auto;
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.image_btn_avt img {
+    height: auto;
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.user_setting_account .acc_avt_frame {
+    margin-right: 12px;
+}
+
+.user_setting_account .acc_right p {
+    font-family: 'SFPro Bold';
+    font-size: 18px;
+    line-height: 19px;
+    margin-bottom: 6px;
+    color: #000;
+}
+
+.user_setting_account .acc_right .text_status {
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.line_separator {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: calc(100% - 24px);
+    margin: 10px auto;
+}
+  
+.container {
+    width: 100%;
+    margin-top: -150px;
+    margin-left: auto;
+    box-sizing: border-box;
+    margin-right: auto;
+    display: block;
+}
+  
+.banner-page {
+    position: relative;
+}
+  
+.about-page {
+    padding-top: 48px;
+    position: relative;
+    margin-bottom: 20px;
+}
+  
+.toplist-title {
+    font-size: 25px;
+    font-family: 'SFPro Bold';
+    font-weight: 400;
+    line-height: 36.05px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 0 15px 0;
+}
+
+.toplist-title svg {
+    margin-left: 10px;
+}
+  
+.columns-listcourse {
+    display: flex;
+    position: relative;
+    gap: 20px;
+    padding: 20px 0 20px 0;
+    
+}
+  
+.single-column {
+    position: relative;
+    min-height: 1px;
+    border-radius: 15px;
+    background-color: #E0ECFF;
+    height: 100%;
+    overflow: hidden;
+    width: 33.333333333333333333333333%;
+    cursor: pointer;
+}
+  
+.image-course-course {
+    position: relative;
+    z-index: 0;
+}
+
+.course_thumb_img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    border-radius: 15px 15px 0 0;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out;
+}
+
+.course_thumb_img:hover {
+    transform: scale(1.05);
+}
+
+.image-course-course .text_status {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 10px;
+}
+
+
+  
+.title-course {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    background-color: #E0ECFF;
+    border-radius: 0px 0px 15px 15px;
+    z-index: 2;
+    position: relative;
+    /*  */
+}
+
+.title_context_verB {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 10px;
+}
+  
+.text-course-title {
+    display: -webkit-box;
+    font-family: 'SFPro Bold';
+    font-size: 20px;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    flex-grow: 1;
+}
+
+.course-title_verB {
+    display: flex;
+    align-items: end;
+    gap: 10px;
+}
+  
+.is-premium {
+    height: 18px;
+    padding-left: 10px;
+}
+  
+  /* .column-left {
+    margin-right: 10px;
+  }
+  
+  .column-center {
+    margin: 0 10px;
+  }
+  
+  .column-right {
+    margin-left: 10px;
+  } */
+  
+.about-page .absolute-img {
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+  
+.about-page .img01 {
+    width: 290px;
+    height: 664px;
+    top: 37%;
+    left: 0;
+}
+  
+.about-page .img02 {
+    width: 310px;
+    height: 570px;
+    top: 5%;
+    right: 0;
+}
+  
+.banner {
+    width: 100%;
+}
+  
+.mui-style {
+    margin-left: auto;
+    box-sizing: border-box;
+    margin-right: auto;
+    display: block;
+    padding: 10px 110px 10px 110px;
+}
+  
+#hess-footer {
+    margin: 0;
+    padding: 10px 100px;
+    background-color: #F2F6FC;
+  
+    .footer-container {
+        padding-top: 48px;
+        padding-bottom: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+    }
+}
+  
+.footer-row {
+    display: flex;
+    flex-flow: row wrap;
+    min-width: 0;
+    padding: 10px;
+}
+  
+.footer-left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 0 0 75%;
+    max-width: 75%;
+    .footer-logo-seee {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        .text-slogan {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            .text-modile {
+                font-family: 'LinhAvantgarde Bold';
+                font-size: 24px;
+                color: #AA1D2B;
+            }
+            .text-sub-slogan {
+                font-family: 'LinhAvantgarde SemiBold';
+                font-size: 20px;
+                color: #AA1D2B;
+            }
+        }
+    }
+}
+  
+.info-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    .item-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .content-info {
+            font-family: 'SFPro Bold';
+            font-size: 18px;
+        }
+    }
+}
+  
+.footer-right-col {
+    display: flex;
+    justify-content: flex-end;
+    flex: 0 0 25%;
+    max-width: 25%;
+    .column-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+        .title-column-panel {
+            font-size: 20px;
+            font-family: 'LinhAvantgarde Bold';
+            color: #000;
+        }
+        .column-panel-divider {
+            margin-top: 10px;
+            width: 100%;
+            height: 3px;
+            background-color: #CE1628;
+        }
+    }
+}
+  
+.field-app-install {
+    display: flex; 
+    flex-direction: column; 
+    gap: 12px;
+    .app-install {
+      max-height: 50px;
+    }
+}
+  
+.bottom-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    border-top: 1px solid #CCCCCC;
+    .copyright-bottom {
+        font-size: 17px;
+        font-family: 'SFPro Regular';
+        color: #646a7c;
+        text-align: justify;
+        padding-right: 20px;
+    }
+}
+
+
+/* dialog css */
+
+.form_area__ {
+    display: flex;
+    flex-direction: column;
+}
+
+#pass_label {
+    font-family: 'SFPro Bold';
+    font-size: 18px;
+    margin: 5px 0px;
+}
+
+#oldpass_input, #newpass_input {
+    width: 100%;
+    padding: 10px 0px;
+    font-size: 20px;
+    width: 540px;
+    font-family: 'SFPro Regular', sans-serif;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.update_box {
+    margin: 10px 0px;
+}
+
+.form_update_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.updateform_btn {
+    margin: 12px;
+    padding: 10px 25px;
+    border-radius: 100px;
+    background-color: #CE1628;
+    color: #FFFFFF;
+    border: 2px solid #CE1628;
+    font-size: 18px;
+    font-family: 'SFPro Bold';
+    line-height: 20px;
+    cursor: pointer;
+    letter-spacing: .1px;
+}
+
+.updateform_btn:hover {
+    color: #CE1628;
+    background-color: #FFFFFF;
+    transition: all 0.2s;
+}

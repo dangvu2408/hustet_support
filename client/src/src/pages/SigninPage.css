@@ -1,0 +1,166 @@
+label {
+    display: inline-block;
+}
+
+.fullPageLogin {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; 
+    display: flex;
+}
+
+.branding {
+    flex: 1; 
+    width: 100%;
+    height: 100%; 
+}
+
+.branding-bgr {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.branding-bgr::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/images/c7_building.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Hiệu ứng mờ */
+    filter: blur(10px);
+    z-index: -1; /* Đảm bảo lớp mờ nằm phía sau */
+}
+
+.content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 10px !important;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.header_content {
+    padding: 0px 0px 0px 0px;
+    margin: 0px;
+    background-color: transparent;
+}
+
+.workArea {
+    margin-bottom: 4%;
+    margin-top: 16px;
+    background-color: transparent;
+}
+
+.loginMessage {
+    display: block;
+    width: 540px;
+    font-family: 'SFPro Bold', sans-serif;
+    font-size: 24px;
+    line-height: 28px;
+    margin: 15px 0px 30px 0px;
+    padding: 0px;
+    text-align: center;
+    text-size-adjust: 100%;
+    background-color: transparent;
+}
+
+.userFullnameData, 
+.usernameData, 
+.passwordData, 
+.confirmPasswordData {
+    display: block;
+    box-sizing: border-box;
+    color: rgb(38, 38, 38);
+    direction: ltr;
+    font-family: 'SFPro Regular', sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: left;
+    text-size-adjust: 100%;
+    width: 400px;
+}
+
+.userFullnameDataLabel,
+.passwordDataLabel,
+.usernameDataLabel,
+.confirmPassworDataLabel {
+
+    ::after {
+        content: ' *';
+        color: red;
+    }
+}
+
+
+#userFullnameDataInput, 
+#usernameDataInput, 
+#passwordDataInput, 
+#confirmPasswordDataInput {
+    width: 100%;
+    margin: 10px 0px;
+    padding: 10px 0px;
+    font-size: 20px;
+    width: 540px;
+    font-family: 'SFPro Regular', sans-serif;
+    outline: none; border: none; 
+    border-bottom: 1px solid black;
+    
+}
+
+.btn_login {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.form_login_btn {
+    width: 100%;
+    display: block;
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 auto;
+    
+    margin: 15px 0px 0px 0px;
+}
+
+.form_btn {
+    font-size: 20px;
+    font-family: 'SFPro Bold', sans-serif;
+    background-color: #CD1628;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 50px;
+}
+
+.txt1 {
+    text-align: center;
+    font-size: 20px;
+    margin: 15px 0px;
+    a {
+        font-family: 'SFPro Bold';
+        color: #CD1628;
+    }
+}
