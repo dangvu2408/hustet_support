@@ -1,0 +1,140 @@
+\documentclass{article}
+\usepackage[utf8]{vietnam}
+\usepackage[OT1]{fontenc}
+\usepackage[fontsize=13pt]{scrextend}
+\usepackage[paperheight=29.7cm,paperwidth=21cm,right=2cm,left=3cm,top=2cm,bottom=2.5cm,twoside]{geometry}% Chuẩn A4, căn lề phải, trái, trên, dưới.
+\usepackage{mathptmx}
+\usepackage{amsmath}
+\usepackage{graphicx} % Thư viện chèn ảnh
+\usepackage{float} % Set vị trí chèn ảnh
+\usepackage{tikz} % Thư viện tạo khung bìa
+\usepackage{fontspec}
+\setmonofont{Courier New}
+\usetikzlibrary{calc} % Thư viện tikz
+\usepackage{indentfirst} % Thư viện thụt đầu dòng
+\usepackage{booktabs} % To thicken table lines
+\usepackage{amssymb}
+
+\renewcommand{\baselinestretch}{1.2} % Giãn dòng 1.2
+\setlength{\parskip}{6pt} % Spacing after
+\setlength{\parindent}{1cm} % Set khoảng cách thụt đầu dòng mỗi đoạn
+\usepackage{titlesec} % Thư viện để set up các kiểu chữ
+\usepackage{listings}
+\usepackage{matlab-prettifier}
+\setcounter{secnumdepth}{4} % 4 Heading
+\titlespacing*{\section}{0pt}{0pt}{30pt} % Heading 1
+\titleformat*{\section}{\fontsize{16pt}{0pt}\selectfont \bfseries \centering}
+
+\titlespacing*{\subsection}{0pt}{10pt}{0pt} % Heading 2
+\titleformat*{\subsection}{\fontsize{14pt}{0pt}\selectfont \bfseries}
+
+\titlespacing*{\subsubsection}{0pt}{10pt}{0pt} % Heading 3
+\titleformat*{\subsubsection}{\fontsize{13pt}{0pt}\selectfont \bfseries \itshape}
+
+\titlespacing*{\paragraph}{0pt}{10pt}{0pt} % Heading 4
+\titleformat*{\paragraph}{\fontsize{13pt}{0pt}\selectfont \itshape}
+
+\renewcommand{\figurename}{\fontsize{12pt}{0pt}\selectfont \bfseries Figure}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\usepackage[font=bf]{caption}
+\captionsetup[figure]{labelsep=space}
+
+\renewcommand{\tablename}{\fontsize{12pt}{0pt}\selectfont \bfseries Table}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\captionsetup[table]{labelsep=space}
+
+\usepackage{tabularx}
+\newcolumntype{s}{>{\hsize=.3\hsize}X}
+\newcolumntype{y}{>{\hsize=.4\hsize}X}
+\newcolumntype{d}{>{\hsize=.1\hsize}X}
+\newcolumntype{a}{>{\hsize=1.1\hsize}X}
+\newcolumntype{g}{>{\hsize=5\hsize}X}
+\renewcommand{\tabularxcolumn}[1]{>{\small}m{#1}}
+
+\renewcommand{\theequation}{\thesection.\arabic{equation}} % Thay đổi đánh số phương trình mặc định
+\newtheorem{theorem}{Định lý}[section]
+\newtheorem{defn}[theorem]{Định nghĩa}
+\newtheorem{corollary}[theorem]{Hệ quả}
+\newtheorem{lemma}[theorem]{Bổ đề}
+\usepackage{lipsum} % Thư viện tạo chữ linh tinh.
+
+\usepackage[unicode]{hyperref}
+\usepackage{colortbl}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\usepackage{forloop}
+\newcounter{loopcntr}
+\newcommand{\rpt}[2][1]{\forloop{loopcntr}{0}{\value{loopcntr}<#1}{#2}}
+
+\begin{document}
+	\setmainfont{Times New Roman}
+	\thispagestyle{empty}
+	\begin{center}
+		\vspace{-12pt}  \fontsize{14pt}{0pt}\selectfont ĐẠI HỌC BÁCH KHOA HÀ NỘI \\[6pt]
+		\textbf{\fontsize{16pt}{0pt}\selectfont TRƯỜNG ĐIỆN - ĐIỆN TỬ}
+		\vspace{1.75cm}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[height=4.25cm]{logoHUST.png}
+		\end{figure}
+		\vspace{1cm}
+		\textbf{\fontsize{25pt}{0pt}\selectfont ĐỒ ÁN THIẾT KẾ I} 
+		\vspace{0.5cm}
+	\end{center}
+	\begin{center}
+		\textbf{\fontsize{22pt}{0pt}\selectfont Xây dựng website bán khóa học} \\
+		\vspace{2.5cm}
+		
+		\textbf{\fontsize{18pt}{0pt}\selectfont ĐẶNG QUANG VŨ} \\[6pt]
+		\fontsize{16pt}{0pt}\selectfont vu.dq223830@sis.hust.edu.vn \\[6pt]
+		\vspace{0.75cm}
+		\textbf{\fontsize{16pt}{0pt}\selectfont Ngành Điện tử - Viễn thông} \\[6pt]
+		\textbf{\fontsize{16pt}{0pt}\selectfont Chuyên ngành Kỹ thuật Điện tử - Viễn thông} 
+		\vspace{0.75cm}
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{l l l}
+				\fontsize{16pt}{0pt}\selectfont \textbf{Giảng viên hướng dẫn:}    & \fontsize{16pt}{0pt}\selectfont ThS. Đinh Thị Nhung \vspace{6pt} & \_\_\_\_\_\_\_\_\_\_\_ \\ 
+			\end{tabular}
+		\end{table}
+		\vspace{2.5cm}
+		\fontsize{14pt}{0pt}\selectfont \textbf{Hà Nội, 6/2025}
+	\end{center}
+	\cleardoublepage
+	\thispagestyle{empty}
+	\begin{center}
+		\vspace{-12pt}  \fontsize{14pt}{0pt}\selectfont ĐẠI HỌC BÁCH KHOA HÀ NỘI \\[6pt]
+		\textbf{\fontsize{16pt}{0pt}\selectfont TRƯỜNG ĐIỆN - ĐIỆN TỬ}
+		\vspace{1.75cm}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[height=4.25cm]{logoHUST.png}
+		\end{figure}
+		\vspace{1cm}
+		\textbf{\fontsize{25pt}{0pt}\selectfont ĐỒ ÁN THIẾT KẾ I} 
+		\vspace{0.5cm}
+	\end{center}
+	\begin{center}
+		\textbf{\fontsize{22pt}{0pt}\selectfont Xây dựng website bán khóa học} \\
+		\vspace{2.5cm}
+		
+		\textbf{\fontsize{18pt}{0pt}\selectfont ĐẶNG QUANG VŨ} \\[6pt]
+		\fontsize{16pt}{0pt}\selectfont vu.dq223830@sis.hust.edu.vn \\[6pt]
+		\vspace{0.75cm}
+		\textbf{\fontsize{16pt}{0pt}\selectfont Ngành Điện tử - Viễn thông} \\[6pt]
+		\textbf{\fontsize{16pt}{0pt}\selectfont Chuyên ngành Kỹ thuật Điện tử - Viễn thông} 
+		\vspace{0.75cm}
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{l l l}
+				\fontsize{16pt}{0pt}\selectfont \textbf{Giảng viên hướng dẫn:}    & \fontsize{16pt}{0pt}\selectfont ThS. Đinh Thị Nhung \vspace{6pt} &  \\ 
+			\end{tabular}
+		\end{table}
+		\vspace{2.5cm}
+		\fontsize{14pt}{0pt}\selectfont \textbf{Hà Nội, 6/2025}
+	\end{center}
+	\cleardoublepage
+	\section*{LỜI NÓI ĐẦU}
+	\thispagestyle{empty}
+	Trong bối cảnh cuộc cách mạng công nghiệp lần thứ tư đang diễn ra mạnh mẽ, công nghệ số đã và đang tác động sâu rộng đến mọi lĩnh vực của đời sống, đặc biệt là giáo dục. Hình thức học trực tuyến (e-learning) ngày càng phát triển, trở thành một trong những phương pháp học tập phổ biến nhờ khả năng linh hoạt, tiếp cận nhanh chóng và tiết kiệm chi phí. Từ sau đại dịch COVID-19, nhu cầu học tập online gia tăng đột biến. Các nền tảng giáo dục như Coursera, Udemy, Khan Academy... đã chứng minh được hiệu quả và tầm ảnh hưởng rộng lớn của mô hình học tập này. Tuy nhiên, tại Việt Nam, việc xây dựng các hệ thống bán khóa học trực tuyến một cách bài bản, thân thiện với người dùng, và tối ưu trải nghiệm vẫn còn nhiều hạn chế, đặc biệt với các đơn vị nhỏ lẻ, cá nhân hoặc tổ chức giáo dục tư nhân.
+	\cleardoublepage
+\end{document}
