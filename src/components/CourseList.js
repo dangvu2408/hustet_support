@@ -40,7 +40,7 @@ function CourseList() {
                             weight={course.weight}
                             description={course.description}
                             price={course.price}
-                            old_price="499.000"
+                            old_price="49.000"
                             thumbnail={course.thumbnail}
                             author={course.author}
                             progress="80"

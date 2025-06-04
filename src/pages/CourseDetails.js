@@ -6,6 +6,7 @@ import axios from "axios";
 import Dialog from '../components/dialog/CourseDialog';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import CourseDocumentField from "../components/CourseDocumentField";
 import "./CourseDetails.css";
 
 function DigitScroller({ digit, delay }) {
@@ -209,6 +210,8 @@ function CourseDetails() {
                                         <div className="course_description">
                                             {courseData.description}
                                         </div>
+
+                                        {registered && <CourseDocumentField />}
                                     </div>
                                 </div>
                             </div>

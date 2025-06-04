@@ -356,4 +356,49 @@ button {
     font-size: 18px;
 }
 
+/* course document */
 
+.document_field {
+    display: flex;
+    margin: 10px 0px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.course_doc_title {
+    font-family: 'SFPro Bold';
+    font-size: 24px;
+    word-spacing: 2px;
+}
+
+.upload_doc_level {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add_doc {
+    background-color: #E0ECFF;
+    border-radius: 999px;
+    position: relative;
+}
+
+.add_doc_btn {
+    display: flex;
+    padding: 10px 24px;
+    align-items: center;
+    font-family: 'SFPro Bold';
+    background-color: transparent;
+    color: #003366;
+    font-size: 18px;
+    border-radius: 999px;
+    border: 0;
+    text-transform: none;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.add_doc_btn svg {
+    margin-right: 10px;
+}

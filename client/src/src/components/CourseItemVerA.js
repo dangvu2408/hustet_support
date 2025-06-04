@@ -147,9 +147,19 @@ function CourseItemVerA({
                 <div className="course_context_main">
                     <span className="course_title">{course_name} - {course_id}</span>
                     <div className="course_price">
-                        <span className="new_course_price">{price}đ</span>
-                        <span className="old_course_price">{old_price}đ</span>
-                        <p className="expense_price">Tiết kiệm {discount}%</p>
+                        {price === "Miễn phí" ? (
+                            <>
+                                <span className="new_course_price">Miễn phí</span>
+                                <span className="old_course_price">{old_price}đ</span>
+                                <p className="expense_price">Ưu đãi 100%</p>
+                            </>
+                        ) : (
+                            <>
+                                <span className="new_course_price">{price}đ</span>
+                                <span className="old_course_price">{old_price}đ</span>
+                                <p className="expense_price">Tiết kiệm {discount}%</p>
+                            </>
+                        )}
                     </div>
                 </div>
                 <div className="more_of_course">
