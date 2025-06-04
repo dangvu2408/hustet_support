@@ -3,6 +3,7 @@ const mysql = require('mysql2');
 const cors = require('cors');
 const multer = require("multer");
 const path = require("path");
+const iconv = require('iconv-lite');
 
 const app = express();
 app.use(cors());
@@ -29,7 +30,8 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'hust_et_support_system'
+    database: 'hust_et_support_system',
+    charset: 'utf8mb4'
 });
 
 
@@ -324,6 +326,40 @@ app.get("/count-course-like", (req, res) => {
             return res.status(500).json({ error: "Lỗi server" });
         }
         res.json({ count: result[0].count }); // Chỗ này rất quan trọng
+    });
+});
+
+// Upload tài liệu và lưu vào bảng `documents`
+app.post("/upload-document", upload.single("file"), (req, res) => {
+    if (!req.file) {
+        return res.status(400).json({ error: "Không có file nào được upload." });
+    }
+
+    const fileUrl = `http://localhost:3001/uploads/${req.file.filename}`;
+
+    // Chuyển tên file từ latin1 sang utf8
+    const originalNameBuffer = Buffer.from(req.file.originalname, 'latin1');
+    const originalName = iconv.decode(originalNameBuffer, 'utf8');
+
+    const extension = path.extname(originalName).replace(".", ""); // ex: pdf
+
+    // Nhận thông tin bổ sung từ req.body
+    const { course, doc_author } = req.body;
+
+    const sql = `INSERT INTO documents (course, title, file_url, upload_date, type_doc, doc_author) VALUES (?, ?, ?, NOW(), ?, ?)`;
+    const values = [course, originalName, fileUrl, extension, doc_author || "admin"];
+
+    db.query(sql, values, (err, result) => {
+        if (err) {
+            console.error("Lỗi khi chèn vào bảng documents:", err);
+            return res.status(500).json({ error: "Lỗi server khi lưu thông tin tài liệu." });
+        }
+
+        res.json({
+            message: "Upload và lưu tài liệu thành công!",
+            file_url: fileUrl,
+            doc_id: result.insertId
+        });
     });
 });
 

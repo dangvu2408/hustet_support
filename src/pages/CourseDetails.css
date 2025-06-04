@@ -402,3 +402,18 @@ button {
 .add_doc_btn svg {
     margin-right: 10px;
 }
+
+.upload_document_btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.queue_doc_upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}

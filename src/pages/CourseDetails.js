@@ -112,7 +112,7 @@ function CourseDetails() {
     const { course_id } = useParams();
     const courseData = location.state;
     const [authorInfo, setAuthorInfo] = useState(null);
-
+    const [user, setUser] = useState(null);
     const[showDialog, setShowDialog] = useState(false);
     const openDialog = () => setShowDialog(true);
     const closeDialog = () => setShowDialog(false);
@@ -122,6 +122,18 @@ function CourseDetails() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
+    }, []);
+
+    useEffect(() => {
+        const storedUser = localStorage.getItem("user");
+        if (storedUser) {
+            try {
+                const parsedUser = JSON.parse(storedUser);  // dòng gây lỗi nếu storedUser là undefined hoặc chuỗi sai định dạng
+                setUser(parsedUser);
+            } catch (error) {
+                console.error("ERR-4:", error);
+            }
+        }
     }, []);
 
     useEffect(() => {
@@ -211,7 +223,7 @@ function CourseDetails() {
                                             {courseData.description}
                                         </div>
 
-                                        {registered && <CourseDocumentField />}
+                                        {registered && <CourseDocumentField course_id={courseData.course_id} username={user.username}/>}
                                     </div>
                                 </div>
                             </div>
