@@ -369,18 +369,28 @@ button {
     font-family: 'SFPro Bold';
     font-size: 24px;
     word-spacing: 2px;
+    position: relative;
+    margin-right: 16px;
 }
 
 .upload_doc_level {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 10px;
 }
 
 .add_doc {
     background-color: #E0ECFF;
     border-radius: 999px;
     position: relative;
+}
+
+.spread_line {
+    height: 1px;
+    background-color: #003366;
+    width: 100%;
+    margin: 0px 10px;
+    flex: 1;
 }
 
 .add_doc_btn {
@@ -416,4 +426,64 @@ button {
     align-items: center;
     justify-content: center;
     gap: 10px;
+}
+
+.list_of_doc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.document_item_50 {
+    display: flex;
+    flex: 0 0 calc(50% - 7.5px); /* đúng 2 cột */
+    max-width: calc(50% - 7.5px); /* giới hạn bề ngang */
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #E0ECFF;
+    padding: 10px;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+}
+
+.doc_info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.document_title {
+    display: flex;
+    align-items: center;
+    font-family: 'SFPro Regular';
+    font-size: 18px;
+}
+
+.document_title span {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    flex-grow: 1;
+}
+
+.document_item_50 svg {
+    width: 24px !important;
+    height: 24px !important;
+    flex-shrink: 0;
+}
+
+.document_author_time {
+    font-family: 'SFPro Regular';
+    font-size: 16px;
+    color: #707070;
+}
+
+.download_btn {
+    display: flex;
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
 }
