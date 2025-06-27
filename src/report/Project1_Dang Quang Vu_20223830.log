@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.4.20)  27 JUN 2025 17:14
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.4.20)  27 JUN 2025 19:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1083,7 +1083,10 @@ hiên cứu, lý do chọn đề tài,phương
 ] [2]
 File: mvc_fig21.pdf Graphic file (type pdf)
 <use mvc_fig21.pdf>
- [3] [4] (Project1_Dang Quang Vu_20223830.aux)
+ [3] [4] [5] [6] [7]
+File: fhd_fig31.pdf Graphic file (type pdf)
+<use fhd_fig31.pdf>
+ [8] [9] (Project1_Dang Quang Vu_20223830.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -1093,12 +1096,12 @@ ot changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 28123 strings out of 409617
- 551620 string characters out of 5778276
+ 28134 strings out of 409617
+ 551824 string characters out of 5778276
  1931191 words of memory out of 5000000
- 49742 multiletter control sequences out of 15000+600000
+ 49752 multiletter control sequences out of 15000+600000
  579197 words of font info for 98 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  108i,11n,107p,934b,469s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Project1_Dang Quang Vu_20223830.pdf (16 pages).
+Output written on Project1_Dang Quang Vu_20223830.pdf (21 pages).
