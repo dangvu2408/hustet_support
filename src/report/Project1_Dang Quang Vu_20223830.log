@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.4.20)  3 JUN 2025 19:04
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.4.20)  27 JUN 2025 17:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1055,7 +1055,35 @@ File: logoHUST.png Graphic file (type bmp)
 [6
 
 
-] (Project1_Dang Quang Vu_20223830.aux)
+] (Project1_Dang Quang Vu_20223830.toc)
+\tf@toc=\write5
+\openout5 = `"Project1_Dang Quang Vu_20223830.toc"'.
+
+ [7] [8
+
+
+] [1]
+(Project1_Dang Quang Vu_20223830.lof)
+\tf@lof=\write6
+\openout6 = `"Project1_Dang Quang Vu_20223830.lof"'.
+
+ [2] (Project1_Dang Quang Vu_20223830.lot)
+\tf@lot=\write7
+\openout7 = `"Project1_Dang Quang Vu_20223830.lot"'.
+
+[3] [4]
+Overfull \hbox (1.63954pt too wide) in paragraph at lines 199--200
+[]\TU/TimesNewRoman(0)/m/n/13 Chương này sẽ trình bày về tổng quan tình hình ng
+hiên cứu, lý do chọn đề tài,phương
+ []
+
+[1
+
+
+] [2]
+File: mvc_fig21.pdf Graphic file (type pdf)
+<use mvc_fig21.pdf>
+ [3] [4] (Project1_Dang Quang Vu_20223830.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -1065,12 +1093,12 @@ ot changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 28070 strings out of 409617
- 550229 string characters out of 5778276
- 1923191 words of memory out of 5000000
- 49701 multiletter control sequences out of 15000+600000
- 579181 words of font info for 96 fonts, out of 8000000 for 9000
+ 28123 strings out of 409617
+ 551620 string characters out of 5778276
+ 1931191 words of memory out of 5000000
+ 49742 multiletter control sequences out of 15000+600000
+ 579197 words of font info for 98 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 108i,11n,107p,652b,408s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,11n,107p,934b,469s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Project1_Dang Quang Vu_20223830.pdf (6 pages).
+Output written on Project1_Dang Quang Vu_20223830.pdf (16 pages).
