@@ -15,3 +15,13 @@
 \contentsline {subsection}{\numberline {2.5}ReactJS}{6}{subsection.2.5}%
 \contentsline {section}{\hbox to\@tempdima {\hfil }CHƯƠNG 3. PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG}{8}{subsection.2.5}%
 \contentsline {subsection}{\numberline {3.1}Sơ đồ phân cấp chức năng (FHD)}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Sơ đồ luồng dữ liệu (DFD)}{9}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Mức ngữ cảnh}{9}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Mức đỉnh}{9}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Mức dưới đỉnh}{10}{subsubsection.3.2.3}%
+\contentsline {paragraph}{\numberline {3.2.3.1}Chức năng quản trị hệ thống}{10}{paragraph.3.2.3.1}%
+\contentsline {paragraph}{\numberline {3.2.3.2}Chức năng quản lý CSDL về môn học}{10}{paragraph.3.2.3.2}%
+\contentsline {paragraph}{\numberline {3.2.3.3}Chức năng quản lý CSDL về tài liệu môn học}{11}{paragraph.3.2.3.3}%
+\contentsline {subsection}{\numberline {3.3}Sơ đồ kịch bản sử dụng (Use Case)}{11}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Danh sách Use Case}{12}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Sơ đồ Use Case}{12}{subsubsection.3.3.2}%

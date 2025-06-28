@@ -336,11 +336,11 @@
 	
 	\subsection{Sơ đồ phân cấp chức năng (FHD)}
 	
-	Dựa vào các yêu cầu chức năng, ta lập được sơ đồ phân cấp chức năng của hệ thống như sau
+	Dựa vào các yêu cầu chức năng, ta lập được sơ đồ phân cấp chức năng của hệ thống như Hình \ref{fig31}.
 	
 	\begin{figure}[!ht]
 		\centering
-		\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=15cm]{fhd_fig31.pdf}
+		\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=16cm]{fhd_fig31_2.pdf}
 		\caption [Sơ đồ phân cấp chức năng hệ thống]{\bfseries \fontsize{12pt}{0pt}\selectfont Sơ đồ phân cấp chức năng hệ thống}
 		\label{fig31}
 	\end{figure}
@@ -352,4 +352,107 @@
 	\textbf{Quản lý cơ sở dữ liệu về môn học:} Cho phép người dùng quản lý danh sách các môn học, bao gồm thêm mới, chỉnh sửa hoặc xóa thông tin học phần. Hệ thống hỗ trợ tính năng tìm kiếm theo từ khóa và mã môn học nhằm thuận tiện cho việc tra cứu. Ngoài ra, còn có chức năng thống kê số lượng người dùng đã đăng ký học phần và thống kê người dùng đã tạo môn học.
 	
 	\textbf{Quản lý cơ sở dữ liệu về tài liệu học tập:} Hỗ trợ người dùng quản lý và khai thác hệ thống tài liệu liên quan đến các môn học. Người dùng có thể đăng tải tài liệu mới, chỉnh sửa thông tin tài liệu đã có hoặc tìm kiếm tài liệu theo tên, loại tài liệu hoặc khóa học liên quan. Hệ thống cũng thống kê được số lượng người dùng đã đóng góp tài liệu nhằm đánh giá mức độ tương tác và chia sẻ trong cộng đồng.
+	
+	\subsection{Sơ đồ luồng dữ liệu (DFD)}
+	
+	\subsubsection{Mức ngữ cảnh}
+	
+	Sơ đồ mức ngữ cảnh của hệ thống được mô tả như trên Hình \ref{fig32}. Tiến trình của hệ thống nằm trong mối quan hệ hai thực thể ngoài là: quản trị viên và người dùng. Cụ thể các luồng dữ liệu như sau:
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=15cm]{dfd_fig32.pdf}
+		\caption [Sơ đồ luồng dữ liệu mức ngữ cảnh]{\bfseries \fontsize{12pt}{0pt}\selectfont Sơ đồ luồng dữ liệu mức ngữ cảnh}
+		\label{fig32}
+	\end{figure}
+	
+	(1) Thông tin các cơ sở dữ liệu liên quan đến người dùng, môn học và tài liệu.
+
+	(2) Tra cứu, quản lý các cơ sở dữ liệu người dùng, môn học và tài liệu.
+	
+	(3) Thông tin người dùng.
+	
+	(4) Tra cứu, quản lý người dùng qua các thao tác như thay đổi họ tên, ngày sinh và thay đổi mật khẩu.
+	
+	\subsubsection{Mức đỉnh}
+	
+	Sơ đồ luồng dữ liệu mức đỉnh được thể hiện trên Hình \ref{fig33}. Mô hình này có:
+	
+	\begin{itemize}
+		\item Chức năng: Quản trị hệ thống; Quản lý cơ sở dữ liệu về môn học; Quản lý cơ sở dữ liệu về tài liệu học tập.
+		\item Tác nhân bên ngoài: Quản trị viên, người dùng.
+		\item Kho dữ liệu: a, b.
+	\end{itemize}
+	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=15cm]{mucdinh_fig33.pdf}
+		\caption [Sơ đồ luồng dữ liệu mức đỉnh]{\bfseries \fontsize{12pt}{0pt}\selectfont Sơ đồ luồng dữ liệu mức đỉnh}
+		\label{fig33}
+	\end{figure}
+	
+	\subsubsection{Mức dưới đỉnh}
+	\paragraph{Chức năng quản trị hệ thống} \mbox{}
+	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=15cm]{mucduoidinh_fig34.pdf}
+		\caption [Sơ đồ luồng dữ liệu mức dưới đỉnh của chức năng quản trị hệ thống]{\bfseries \fontsize{12pt}{0pt}\selectfont Sơ đồ luồng dữ liệu mức dưới đỉnh của chức năng quản trị hệ thống}
+		\label{fig34}
+	\end{figure}
+	
+	Sơ đồ mức dưới đỉnh của chức năng quản trị hệ thống được mô tả trên Hình \ref{fig34}.
+	
+	\paragraph{Chức năng quản lý CSDL về môn học} \mbox{}
+	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=16.25cm]{mucduoidinh_fig35.pdf}
+		\caption [Sơ đồ luồng dữ liệu mức dưới đỉnh của chức năng quản lý CSDL về môn học]{\bfseries \fontsize{12pt}{0pt}\selectfont Sơ đồ luồng dữ liệu mức dưới đỉnh của chức năng quản lý CSDL về môn học}
+		\label{fig35}
+	\end{figure}
+	
+	Sơ đồ mức dưới đỉnh của chức năng quản lý CSDL về môn học được mô tả trên Hình \ref{fig35}.
+	
+	\paragraph{Chức năng quản lý CSDL về tài liệu môn học} \mbox{}
+	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=16.25cm]{mucduoidinh_fig36.pdf}
+		\caption [Sơ đồ luồng dữ liệu mức dưới đỉnh của chức năng quản lý CSDL về tài liệu]{\bfseries \fontsize{12pt}{0pt}\selectfont Sơ đồ luồng dữ liệu mức dưới đỉnh của chức năng quản lý CSDL về tài liệu}
+		\label{fig36}
+	\end{figure}
+	
+	Sơ đồ mức dưới đỉnh của chức năng quản lý CSDL về tài liệu học tập được mô tả trên Hình \ref{fig36}.
+	
+	\subsection{Sơ đồ kịch bản sử dụng (Use Case)}
+	
+	Hệ thống sẽ bao gồm 3 tác nhân sử dụng hệ thống:
+	
+	\textbf{Admin:} Là người quản trị toàn hệ thống, có quyền truy cập và thao tác với tất cả các chức năng. Admin có thể quản lý người dùng (xem, tìm kiếm, thêm, chỉnh sửa, xóa tài khoản), phân quyền truy cập, quản lý các môn học, tài liệu và thống kê toàn hệ thống.
+	
+	\textbf{User:} Có quyền truy cập vào các chức năng cơ bản của hệ thống như xem và tìm kiếm tài liệu, tra cứu thông tin môn học, xem mô tả khóa học, và quản lý thông tin cá nhân của chính mình.
+	
+	\subsubsection{Danh sách Use Case}
+	
+		(1) Đăng nhập/Đăng xuất.
+		
+		(2) Đăng kí (dành cho người dùng mới).
+		
+		(3) Đăng kí môn học.
+		
+		(4) Xem thông tin môn học.
+		
+		(5) Lưu môn học.
+		
+		(6) Hiển thị và tải tài liệu.
+		
+		(7) Hiển thị các môn học đã đăng kí.
+		
+		(8) Hiển thị các môn học đã lưu.
+		
+		(9) Hiển thị danh sách người dùng (dành cho quản trị viên).
+		
+		(10) Xóa người dùng (dành cho quản trị viên).
+	
+	\subsubsection{Sơ đồ Use Case}
 \end{document}
