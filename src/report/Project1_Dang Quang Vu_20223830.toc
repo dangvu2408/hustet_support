@@ -1,3 +1,4 @@
+\babel@toc {vietnamese}{}\relax 
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {\hfil } DANH MỤC KÝ HIỆU VÀ CHỮ VIẾT TẮT}{i}{section*.5}%
 \contentsline {section}{\hbox to\@tempdima {\hfil } DANH MỤC HÌNH VẼ}{ii}{section*.6}%
@@ -25,3 +26,7 @@
 \contentsline {subsection}{\numberline {3.3}Sơ đồ kịch bản sử dụng (Use Case)}{11}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Danh sách Use Case}{12}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}Sơ đồ Use Case}{12}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Đặc tả Use Case}{13}{subsubsection.3.3.3}%
+\contentsline {paragraph}{\numberline {3.3.3.1}Đặc tả đăng nhập}{13}{paragraph.3.3.3.1}%
+\contentsline {paragraph}{\numberline {3.3.3.2}Đặc tả đăng ký}{13}{paragraph.3.3.3.2}%
+\contentsline {paragraph}{\numberline {3.3.3.3}Đặc tả đăng ký môn học}{14}{paragraph.3.3.3.3}%

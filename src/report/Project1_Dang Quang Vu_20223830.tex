@@ -1,20 +1,22 @@
 \documentclass{article}
-\usepackage[utf8]{vietnam}
-\usepackage[OT1]{fontenc}
+%\usepackage[utf8]{vietnam}
+%\usepackage[OT1]{fontenc}
 \usepackage[fontsize=13pt]{scrextend}
 \usepackage[paperheight=29.7cm,paperwidth=21cm,right=2cm,left=3cm,top=2cm,bottom=2.5cm,twoside]{geometry}% Chuẩn A4, căn lề phải, trái, trên, dưới.
 \usepackage{mathptmx}
+\usepackage[vietnamese]{babel}
 \usepackage{amsmath}
 \usepackage{graphicx} % Thư viện chèn ảnh
 \usepackage{float} % Set vị trí chèn ảnh
 \usepackage{tikz} % Thư viện tạo khung bìa
 \usepackage{fontspec}
+\setmainfont{Times New Roman}
 \setmonofont{Courier New}
 \usetikzlibrary{calc} % Thư viện tikz
 \usepackage{indentfirst} % Thư viện thụt đầu dòng
 \usepackage{booktabs} % To thicken table lines
 \usepackage{amssymb}
-
+\usepackage{caption}
 \renewcommand{\baselinestretch}{1.2} % Giãn dòng 1.2
 \setlength{\parskip}{6pt} % Spacing after
 \setlength{\parindent}{1cm} % Set khoảng cách thụt đầu dòng mỗi đoạn
@@ -34,12 +36,12 @@
 \titlespacing*{\paragraph}{0pt}{10pt}{0pt} % Heading 4
 \titleformat*{\paragraph}{\fontsize{13pt}{0pt}\selectfont \itshape}
 
-\renewcommand{\figurename}{\fontsize{12pt}{0pt}\selectfont \bfseries Figure}
+\renewcommand{\figurename}{\fontsize{12pt}{0pt}\selectfont \bfseries Hình}
 \renewcommand{\thefigure}{\thesection.\arabic{figure}}
 \usepackage[font=bf]{caption}
 \captionsetup[figure]{labelsep=space}
 
-\renewcommand{\tablename}{\fontsize{12pt}{0pt}\selectfont \bfseries Table}
+\renewcommand{\tablename}{\fontsize{12pt}{0pt}\selectfont \bfseries Bảng}
 \renewcommand{\thetable}{\thesection.\arabic{table}}
 \captionsetup[table]{labelsep=space}
 
@@ -66,7 +68,7 @@
 \newcommand{\rpt}[2][1]{\forloop{loopcntr}{0}{\value{loopcntr}<#1}{#2}}
 
 \begin{document}
-	\setmainfont{Times New Roman}
+	
 	\thispagestyle{empty}
 	\begin{center}
 		\vspace{-12pt}  \fontsize{14pt}{0pt}\selectfont ĐẠI HỌC BÁCH KHOA HÀ NỘI \\[6pt]
@@ -455,4 +457,145 @@
 		(10) Xóa người dùng (dành cho quản trị viên).
 	
 	\subsubsection{Sơ đồ Use Case}
+	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=16.5cm]{usecase_fig38.pdf}
+		\caption [Sơ đồ kịch bản sử dụng (Use Case) chính của hệ thống]{\bfseries \fontsize{12pt}{0pt}\selectfont Sơ đồ kịch bản sử dụng (Use Case) chính của hệ thống}
+		\label{fig37}
+	\end{figure}
+	
+	\subsubsection{Đặc tả Use Case}
+	
+	\paragraph{Đặc tả đăng nhập} \mbox{}
+	
+	Chức năng Đăng nhập là điểm bắt đầu để người dùng truy cập vào hệ thống hỗ trợ học tập. Đặc tả Use Case của chức năng đăng nhập được thể hiện ở Bảng \ref{tab31}. Thông qua giao diện đăng nhập, người dùng nhập tên đăng nhập (mã số sinh viên) và mật khẩu để xác thực danh tính. Sau khi thông tin được kiểm tra hợp lệ, hệ thống sẽ phân quyền truy cập và chuyển đến giao diện chức năng tương ứng với vai trò của người dùng (quản trị viên, người dùng). Nếu thông tin đăng nhập không chính xác, hệ thống sẽ hiển thị thông báo lỗi và yêu cầu người dùng nhập lại.
+	
+	\begin{table}[H]
+		\centering
+		\caption [Đặc tả Use Case Đăng nhập]{\bfseries \fontsize{12pt}{0pt}\selectfont Đặc tả Use Case Đăng nhập}
+		\label{tab31}
+		\begin{tabular}{|p{4cm}|p{10cm}|}
+			\hline
+			\textbf{Tên use case} & DangNhap \\
+			\hline
+			\textbf{Tác nhân chính} & Quản trị viên, Người dùng \\
+			\hline
+			\textbf{Tiền điều kiện} & Người dùng đã có tài khoản trên hệ thống. \\
+			\hline
+			\textbf{Đảm bảo tối thiểu} & Hiển thị thông báo lỗi khi đăng nhập thất bại, quay lại giao diện đăng nhập. \\
+			\hline
+			\textbf{Đảm bảo thành công} & Đăng nhập thành công, chuyển đến giao diện chức năng phù hợp với vai trò. \\
+			\hline
+			\textbf{Kích hoạt} & Người dùng nhấn nút “Đăng nhập” trên giao diện hệ thống. \\
+			\hline
+			\textbf{Chuỗi sự kiện chính} &
+			- Người dùng nhập username và password.
+			
+			- Nhấn nút “Đăng nhập”.
+			
+			- Hệ thống kiểm tra thông tin đăng nhập.
+			
+			- Nếu hợp lệ, chuyển hướng tới giao diện tương ứng theo phân quyền.
+			\\
+			\hline
+			\textbf{Ngoại lệ} &
+			- Tài khoản không tồn tại.
+			
+			- Mật khẩu không đúng.
+			
+			- Hệ thống báo lỗi và giữ lại giao diện đăng nhập.
+			\\
+			\hline
+		\end{tabular}
+	\end{table}
+
+	\paragraph{Đặc tả đăng ký} \mbox{}
+	
+	Đặc tả Use Case của chức năng đăng ký được thể hiện ở Bảng \ref{tab32}. Thông qua biểu mẫu đăng ký, người dùng nhập các thông tin cá nhân cơ bản như họ tên, mã số sinh viên và mật khẩu. Hệ thống sẽ kiểm tra tính hợp lệ và đảm bảo rằng các thông tin như email hoặc tên đăng nhập chưa bị trùng lặp. Sau khi đăng ký thành công, người dùng sẽ được chuyển đến giao diện đăng nhập để bắt đầu sử dụng hệ thống.
+	
+	\begin{table}[H]
+		\centering
+		\caption [Đặc tả Use Case Đăng ký]{\bfseries \fontsize{12pt}{0pt}\selectfont Đặc tả Use Case Đăng ký}
+		\label{tab32}
+		\begin{tabular}{|p{4cm}|p{10.5cm}|}
+			\hline
+			\textbf{Tên use case} & DangKy \\
+			\hline
+			\textbf{Tác nhân chính} & Người dùng \\
+			\hline
+			\textbf{Tiền điều kiện} & Người dùng chưa có tài khoản trên hệ thống. \\
+			\hline
+			\textbf{Đảm bảo tối thiểu} & Hệ thống thông báo lỗi nếu thiếu hoặc sai định dạng thông tin. \\
+			\hline
+			\textbf{Đảm bảo thành công} & Tạo tài khoản thành công, chuyển hướng đến giao diện đăng nhập. \\
+			\hline
+			\textbf{Kích hoạt} & Người dùng truy cập trang đăng ký và nhấn nút “Đăng ký”. \\
+			\hline
+			\textbf{Chuỗi sự kiện chính} &
+			- Người dùng truy cập giao diện đăng ký.
+			
+			- Nhập đầy đủ thông tin: họ tên, email, tên đăng nhập, mật khẩu.
+			
+			- Nhấn nút "Đăng ký".
+			
+			- Hệ thống kiểm tra hợp lệ và tạo tài khoản mới.
+			
+			- Chuyển đến giao diện đăng nhập.
+			\\
+			\hline
+			\textbf{Ngoại lệ} &
+			- Thiếu thông tin bắt buộc (họ tên, mã số sinh viên, mật khẩu).
+			
+			- Email hoặc tên đăng nhập đã tồn tại.
+			
+			- Hệ thống hiển thị thông báo lỗi và giữ lại thông tin đã nhập.
+			\\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\paragraph{Đặc tả đăng ký môn học} \mbox{}
+	
+	Đặc tả Use Case của chức năng đăng ký môn học được thể hiện ở Bảng \ref{tab33}. Người dùng có thể tìm học phần tỏng danh sách học phần, sau đó thực hiện đăng ký chỉ với một thao tác. Hệ thống sẽ kiểm tra tính hợp lệ (tránh đăng ký trùng lặp) trước khi lưu vào cơ sở dữ liệu cá nhân của người dùng.
+	
+	\begin{table}[H]
+		\centering
+		\caption [Đặc tả Use Case Đăng ký môn học]{\bfseries \fontsize{12pt}{0pt}\selectfont Đặc tả Use Case Đăng ký môn học}
+		\label{tab33}
+		\begin{tabular}{|p{4cm}|p{10.5cm}|}
+			\hline
+			\textbf{Tên use case} & DangKyMonHoc \\
+			\hline
+			\textbf{Tác nhân chính} & Người dùng \\
+			\hline
+			\textbf{Tiền điều kiện} & Người dùng đã đăng nhập thành công vào hệ thống. \\
+			\hline
+			\textbf{Đảm bảo tối thiểu} & Hiển thị đăng ký thành công \\
+			\hline
+			\textbf{Đảm bảo thành công} & Môn học được lưu vào danh sách đăng ký cá nhân của người dùng. \\
+			\hline
+			\textbf{Kích hoạt} & Người dùng truy cập giao diện đăng ký môn học. \\
+			\hline
+			\textbf{Chuỗi sự kiện chính} &
+			- Người dùng vào trang danh sách học phần.
+			
+			- Chọn môn học cần đăng ký.
+			
+			- Nhấn nút "Đăng ký học phần".
+			
+			- Hệ thống kiểm tra môn học đã được đăng ký hay chưa.
+			
+			- Nếu chưa, lưu thông tin vào cơ sở dữ liệu người dùng.
+			\\
+			\hline
+			\textbf{Ngoại lệ} &
+			- Người dùng chưa chọn môn nào.
+			
+			- Môn học đã được đăng ký từ trước.
+			\\
+			\hline
+		\end{tabular}
+	\end{table}
+	
 \end{document}
