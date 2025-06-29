@@ -30,3 +30,14 @@
 \contentsline {paragraph}{\numberline {3.3.3.1}Đặc tả đăng nhập}{13}{paragraph.3.3.3.1}%
 \contentsline {paragraph}{\numberline {3.3.3.2}Đặc tả đăng ký}{13}{paragraph.3.3.3.2}%
 \contentsline {paragraph}{\numberline {3.3.3.3}Đặc tả đăng ký môn học}{14}{paragraph.3.3.3.3}%
+\contentsline {paragraph}{\numberline {3.3.3.4}Đặc tả xem thông tin môn học}{15}{paragraph.3.3.3.4}%
+\contentsline {paragraph}{\numberline {3.3.3.5}Đặc tả lưu môn học}{16}{paragraph.3.3.3.5}%
+\contentsline {paragraph}{\numberline {3.3.3.6}Đặc tả hiển thị và tải tài liệu}{16}{paragraph.3.3.3.6}%
+\contentsline {paragraph}{\numberline {3.3.3.7}Đặc tả hiển thị các môn học đã đăng kí}{17}{paragraph.3.3.3.7}%
+\contentsline {paragraph}{\numberline {3.3.3.8}Đặc tả hiển thị các môn học đã lưu}{18}{paragraph.3.3.3.8}%
+\contentsline {paragraph}{\numberline {3.3.3.9}Đặc tả hiển thị danh sách người dùng (dành cho quản trị viên)}{19}{paragraph.3.3.3.9}%
+\contentsline {paragraph}{\numberline {3.3.3.10}Đặc tả xóa người dùng (dành cho quản trị viên)}{20}{paragraph.3.3.3.10}%
+\contentsline {subsection}{\numberline {3.4}Biểu đồ Activity Diagram}{21}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Chức năng đăng nhập}{21}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Chức năng đăng ký}{21}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Chức năng đăng ký}{22}{subsubsection.3.4.3}%

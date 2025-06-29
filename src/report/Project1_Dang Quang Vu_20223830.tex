@@ -598,4 +598,315 @@
 		\end{tabular}
 	\end{table}
 	
+	\paragraph{Đặc tả xem thông tin môn học} \mbox{}
+	
+	\begin{table}[H]
+		\centering
+		\caption [Đặc tả Use Case Xem thông tin môn học]{\bfseries \fontsize{12pt}{0pt}\selectfont Đặc tả Use Case Xem thông tin môn học}
+		\label{tab34}
+		\begin{tabular}{|p{4cm}|p{10.5cm}|}
+			\hline
+			\textbf{Tên use case} & XemThongTinMonHoc \\
+			\hline
+			\textbf{Tác nhân chính} & Người dùng \\
+			\hline
+			\textbf{Tiền điều kiện} & Người dùng đã đăng nhập vào hệ thống. \\
+			\hline
+			\textbf{Đảm bảo tối thiểu} & Nếu mã môn học không tồn tại, hệ thống hiển thị thông báo lỗi. \\
+			\hline
+			\textbf{Đảm bảo thành công} & Thông tin chi tiết của môn học được hiển thị chính xác và đầy đủ. \\
+			\hline
+			\textbf{Kích hoạt} & Người dùng nhấn chọn một môn học bất kỳ từ danh sách môn học. \\
+			\hline
+			\textbf{Chuỗi sự kiện chính} &
+			- Người dùng truy cập danh sách các môn học.
+			
+			- Chọn một môn cụ thể muốn xem chi tiết.
+			
+			- Hệ thống lấy thông tin môn học từ cơ sở dữ liệu.
+			
+			- Hiển thị thông tin chi tiết như tên môn, mã, mô tả, số tín chỉ, đơn vị quản lý,...
+			\\
+			\hline
+			\textbf{Ngoại lệ} &
+			- Mã môn học không tồn tại trong cơ sở dữ liệu.
+			
+			- Có lỗi khi truy xuất thông tin từ backend hoặc API không phản hồi.
+			\\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	Đặc tả Use Case của chức năng xem thông tin môn học được thể hiện ở Bảng \ref{tab34}. Chức năng Xem thông tin môn học cho phép người dùng truy cập chi tiết vào nội dung của một học phần cụ thể. Tính năng này giúp người học nắm được các thông tin quan trọng như tên môn, mã môn, mô tả, số tín chỉ, v.v ... 
+	
+	\paragraph{Đặc tả lưu môn học} \mbox{}
+	
+	Đặc tả Use Case của chức năng lưu môn học được thể hiện ở Bảng \ref{tab35}. Chức năng Lưu môn học cho phép người dùng đánh dấu những môn học mà họ quan tâm đặc biệt hơn. Mục đích của chức năng này là giúp người dùng thuận tiện hơn trong việc quay lại xem môn học, đồng thời tạo ra danh sách các học phần được theo dõi riêng.
+	
+	\begin{table}[H]
+		\centering
+		\caption [Đặc tả Use Case Lưu môn học]{\bfseries \fontsize{12pt}{0pt}\selectfont Đặc tả Use Case Lưu môn học}
+		\label{tab35}
+		\begin{tabular}{|p{4cm}|p{10.5cm}|}
+			\hline
+			\textbf{Tên use case} & LuuMonHoc \\
+			\hline
+			\textbf{Tác nhân chính} & Người dùng \\
+			\hline
+			\textbf{Tiền điều kiện} & Người dùng đã đăng nhập và đang xem thông tin chi tiết một môn học. \\
+			\hline
+			\textbf{Đảm bảo tối thiểu} & Hệ thống hiển thị thông báo nếu môn học đã được lưu trước đó. \\
+			\hline
+			\textbf{Đảm bảo thành công} & Môn học được thêm vào danh sách môn học đã lưu của người dùng. \\
+			\hline
+			\textbf{Kích hoạt} & Người dùng nhấn nút “Lưu môn học” tại trang thông tin chi tiết môn học. \\
+			\hline
+			\textbf{Chuỗi sự kiện chính} &
+			- Người dùng truy cập danh sách môn học.
+			
+			- Nhấn nút “Lưu môn học”.
+			
+			- Hệ thống kiểm tra xem môn đã được lưu chưa.
+			
+			- Nếu chưa, lưu mã môn vào danh sách cá nhân trong cơ sở dữ liệu.
+			
+			- Hiển thị thông báo lưu thành công.
+			\\
+			\hline
+			\textbf{Ngoại lệ} &
+			- Môn học đã tồn tại trong danh sách lưu.
+			
+			- Lỗi kết nối cơ sở dữ liệu hoặc backend không phản hồi.
+			\\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\paragraph{Đặc tả hiển thị và tải tài liệu} \mbox{}
+	
+	Đặc tả Use Case của chức năng hiển thị và tải tài liệu được thể hiện ở Bảng \ref{tab36}. Chức năng Hiển thị và Tải tài liệu cho phép người dùng truy cập danh sách tài liệu liên quan đến các môn học mà họ đã đăng ký hoặc lưu trước đó. Hệ thống cung cấp tên tài liệu, mô tả ngắn, người đóng góp và liên kết tải xuống. Người dùng có thể dễ dàng duyệt qua các tài liệu sẵn có và lựa chọn những tài liệu phù hợp để tải về máy.
+	
+	\begin{table}[H]
+		\centering
+		\caption [Đặc tả Use Case Hiển thị và tải tài liệu]{\bfseries \fontsize{12pt}{0pt}\selectfont Đặc tả Use Case Hiển thị và tải tài liệu}
+		\label{tab36}
+		\begin{tabular}{|p{4cm}|p{10.5cm}|}
+			\hline
+			\textbf{Tên use case} & HienThiVaTaiTaiLieu \\
+			\hline
+			\textbf{Tác nhân chính} & Người dùng \\
+			\hline
+			\textbf{Tiền điều kiện} & Người dùng đã đăng nhập và có quyền truy cập vào tài liệu theo cấp độ tài khoản. \\
+			\hline
+			\textbf{Đảm bảo tối thiểu} & Hệ thống vẫn hiển thị nếu không có tài liệu nào (hiển thị thông báo "Không có tài liệu phù hợp"). \\
+			\hline
+			\textbf{Đảm bảo thành công} & Danh sách tài liệu hiển thị chính xác, người dùng có thể tải xuống file tương ứng. \\
+			\hline
+			\textbf{Kích hoạt} & Người dùng truy cập trang tài liệu hoặc mục tài liệu trong thông tin môn học. \\
+			\hline
+			\textbf{Chuỗi sự kiện chính} &
+			- Người dùng truy cập vào danh sách môn học, hoặc tìm kiếm theo tên.
+			
+			- Hệ thống truy vấn các tài liệu theo môn học.
+			
+			- Hiển thị thông tin tài liệu: tên, người đăng, ngày đăng,...
+			
+			- Người dùng chọn tài liệu để tải.
+			
+			- Hệ thống cung cấp liên kết tải file về máy.
+			\\
+			\hline
+			\textbf{Ngoại lệ} &
+			- Không có tài liệu phù hợp với môn học.
+			
+			- Lỗi kết nối cơ sở dữ liệu hoặc file bị lỗi không thể tải.
+			\\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\paragraph{Đặc tả hiển thị các môn học đã đăng kí} \mbox{}
+	
+	Đặc tả Use Case của chức năng hiển thị các môn học đã đăng kí được thể hiện ở Bảng \ref{tab37}. Chức năng Hiển thị các môn học đã đăng ký giúp người dùng dễ dàng theo dõi danh sách các học phần mà họ đã chọn trước đó. Tính năng này hỗ trợ việc truy cập nhanh vào các môn học đang quan tâm, từ đó người dùng có thể xem tài liệu, cập nhật thông tin hoặc hủy đăng ký nếu cần. Danh sách được cá nhân hóa theo tài khoản và được hệ thống lưu trữ liên tục trong quá trình sử dụng.
+	
+	\begin{table}[H]
+		\centering
+		\caption [Đặc tả Use Case Hiển thị các môn học đã đăng kí]{\bfseries \fontsize{12pt}{0pt}\selectfont Đặc tả Use Case Hiển thị các môn học đã đăng kí}
+		\label{tab37}
+		\begin{tabular}{|p{4cm}|p{10.5cm}|}
+			\hline
+			\textbf{Tên use case} & HienThiMonHocDaDangKy \\
+			\hline
+			\textbf{Tác nhân chính} & Người dùng \\
+			\hline
+			\textbf{Tiền điều kiện} & Người dùng đã đăng nhập và có ít nhất một môn học đã đăng ký. \\
+			\hline
+			\textbf{Đảm bảo tối thiểu} & Nếu chưa đăng ký môn học nào, hệ thống hiển thị thông báo tương ứng. \\
+			\hline
+			\textbf{Đảm bảo thành công} & Hiển thị đúng danh sách môn học đã đăng ký theo tài khoản người dùng. \\
+			\hline
+			\textbf{Kích hoạt} & Người dùng truy cập mục “Môn học đã đăng ký” trên giao diện hệ thống. \\
+			\hline
+			\textbf{Chuỗi sự kiện chính} &
+			- Người dùng truy cập mục “Môn học đã đăng ký”.
+			
+			- Hệ thống truy vấn các môn học từ cơ sở dữ liệu dựa theo ID người dùng.
+			
+			- Hiển thị danh sách các môn đã đăng ký: tên môn, mã môn, ...
+			\\
+			\hline
+			\textbf{Ngoại lệ} &
+			- Người dùng chưa đăng ký môn học nào.
+			
+			- Lỗi truy xuất dữ liệu từ cơ sở dữ liệu hoặc API.
+			\\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\paragraph{Đặc tả hiển thị các môn học đã lưu} \mbox{}
+	
+	Đặc tả Use Case của chức năng hiển thị các môn học đã lưu được thể hiện ở Bảng \ref{tab38}. Chức năng Hiển thị các môn học đã lưu giúp người dùng dễ dàng theo dõi các học phần mà họ đã đánh dấu quan tâm. Tính năng này hỗ trợ người học trong việc ghi nhớ các môn quan trọng, đồng thời cho phép truy cập nhanh đến thông tin chi tiết. Danh sách được lưu trữ cá nhân hóa cho từng tài khoản và có thể cập nhật liên tục trong quá trình sử dụng.
+	
+	\begin{table}[H]
+		\centering
+		\caption [Đặc tả Use Case Hiển thị các môn học đã lưu]{\bfseries \fontsize{12pt}{0pt}\selectfont Đặc tả Use Case Hiển thị các môn học đã lưu}
+		\label{tab38}
+		\begin{tabular}{|p{4cm}|p{10.5cm}|}
+			\hline
+			\textbf{Tên use case} & HienThiMonHocDaDangKy \\
+			\hline
+			\textbf{Tác nhân chính} & Người dùng \\
+			\hline
+			\textbf{Tiền điều kiện} & Người dùng đã đăng nhập và có ít nhất một môn học đã lưu. \\
+			\hline
+			\textbf{Đảm bảo tối thiểu} & Nếu chưa lưu môn học nào, hệ thống hiển thị thông báo tương ứng. \\
+			\hline
+			\textbf{Đảm bảo thành công} & Hiển thị đúng danh sách môn học đã lưu theo tài khoản người dùng. \\
+			\hline
+			\textbf{Kích hoạt} & Người dùng truy cập mục “Môn học đã lưu” trên giao diện hệ thống. \\
+			\hline
+			\textbf{Chuỗi sự kiện chính} &
+			- Người dùng truy cập mục “Môn học đã lưu”.
+			
+			- Hệ thống truy vấn các môn học từ cơ sở dữ liệu dựa theo ID người dùng.
+			
+			- Hiển thị danh sách các môn đã lưu: tên môn, mã môn, ...
+			\\
+			\hline
+			\textbf{Ngoại lệ} &
+			- Người dùng chưa lưu môn học nào.
+			
+			- Lỗi truy xuất dữ liệu từ cơ sở dữ liệu hoặc API.
+			\\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\paragraph{Đặc tả hiển thị danh sách người dùng (dành cho quản trị viên)} \mbox{}
+	
+	\begin{table}[H]
+		\centering
+		\caption [Đặc tả Use Case Hiển thị danh sách người dùng]{\bfseries \fontsize{12pt}{0pt}\selectfont Đặc tả Use Case Hiển thị danh sách người dùng}
+		\label{tab39}
+		\begin{tabular}{|p{4cm}|p{10.5cm}|}
+			\hline
+			\textbf{Tên use case} & HienThiDanhSachNguoiDung \\
+			\hline
+			\textbf{Tác nhân chính} & Quản trị viên (Admin) \\
+			\hline
+			\textbf{Tiền điều kiện} & Quản trị viên đã đăng nhập vào hệ thống bằng tài khoản hợp lệ. \\
+			\hline
+			\textbf{Đảm bảo tối thiểu} & Nếu không có người dùng nào, hệ thống hiển thị danh sách trống với thông báo phù hợp. \\
+			\hline
+			\textbf{Đảm bảo thành công} & Hiển thị đầy đủ danh sách người dùng, bao gồm thông tin cơ bản và phân quyền. \\
+			\hline
+			\textbf{Kích hoạt} & Quản trị viên chọn mục “Quản lý người dùng”. \\
+			\hline
+			\textbf{Chuỗi sự kiện chính} &
+			- Quản trị viên chọn mục “Quản lý người dùng”.
+			
+			- Hệ thống truy vấn danh sách người dùng từ cơ sở dữ liệu.
+			
+			- Hiển thị danh sách bao gồm: username, họ tên, giới tính, ngày sinh, quyền truy cập, trạng thái tài khoản.
+			\\
+			\hline
+			\textbf{Ngoại lệ} &
+			- Lỗi truy vấn cơ sở dữ liệu.
+			
+			- Danh sách không hiển thị do lỗi phân quyền hoặc mất phiên đăng nhập.
+			\\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	Đặc tả Use Case của chức năng hiển thị danh sách người dùng được thể hiện ở Bảng \ref{tab39}. Chức năng Hiển thị danh sách người dùng cho phép quản trị viên truy cập toàn bộ thông tin người dùng đang sử dụng hệ thống. Tính năng này hỗ trợ việc giám sát, theo dõi hoạt động người dùng, kiểm tra phân quyền truy cập và thực hiện các thao tác quản lý như chỉnh sửa hoặc vô hiệu hóa tài khoản. Giao diện được thiết kế đơn giản, rõ ràng, cung cấp các thông tin cơ bản như tên đăng nhập, họ tên, email, loại tài khoản, ngày đăng ký,… để quản trị viên thao tác hiệu quả.
+	
+	\paragraph{Đặc tả xóa người dùng (dành cho quản trị viên)} \mbox{}
+	
+	Đặc tả Use Case của chức năng xóa người dùng được thể hiện ở Bảng \ref{tab310}. Chức năng Xóa người dùng cho phép quản trị viên loại bỏ một tài khoản khỏi hệ thống trong trường hợp tài khoản đó vi phạm quy định, không còn sử dụng hoặc theo yêu cầu quản lý. Trước khi xóa, hệ thống có thể hiển thị hộp thoại xác nhận nhằm đảm bảo tính chính xác và tránh thao tác nhầm. Việc xóa tài khoản sẽ đồng thời loại bỏ quyền truy cập của người dùng và đảm bảo dữ liệu liên quan được xử lý phù hợp theo chính sách hệ thống.
+	
+	\begin{table}[H]
+		\centering
+		\caption [Đặc tả Use Case Xóa người dùng]{\bfseries \fontsize{12pt}{0pt}\selectfont Đặc tả Use Case Xóa người dùng}
+		\label{tab310}
+		\begin{tabular}{|p{4cm}|p{10.5cm}|}
+			\hline
+			\textbf{Tên use case} & XoaNguoiDung \\
+			\hline
+			\textbf{Tác nhân chính} & Quản trị viên (Admin) \\
+			\hline
+			\textbf{Tiền điều kiện} & Quản trị viên đã đăng nhập và đang ở trong giao diện quản lý người dùng. \\
+			\hline
+			\textbf{Đảm bảo tối thiểu} & Nếu không chọn người dùng, hệ thống không thực hiện thao tác xóa và hiển thị cảnh báo. \\
+			\hline
+			\textbf{Đảm bảo thành công} & Tài khoản người dùng được xóa khỏi hệ thống, và không còn quyền truy cập. \\
+			\hline
+			\textbf{Kích hoạt} & Quản trị viên chọn người dùng cụ thể và nhấn nút “Xóa tài khoản”. \\
+			\hline
+			\textbf{Chuỗi sự kiện chính} &
+			- Quản trị viên truy cập danh sách người dùng.
+			
+			- Chọn một người dùng cụ thể muốn xóa.
+			
+			- Nhấn “Xóa” và xác nhận thao tác.
+			
+			- Hệ thống kiểm tra và thực hiện xóa tài khoản khỏi cơ sở dữ liệu.
+			
+			- Hiển thị thông báo “Xóa thành công”.
+			\\
+			\hline
+			\textbf{Ngoại lệ} &
+			- Không chọn người dùng hoặc thao tác bị hủy.
+			
+			- Lỗi kết nối đến cơ sở dữ liệu hoặc không đủ quyền xóa.
+			\\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\subsection{Biểu đồ Activity Diagram}
+	\subsubsection{Chức năng đăng nhập}
+	
+	Biểu đồ hoạt động luồng xử lý chức năng đăng nhập trong hệ thống được biểu diễn trên Hình \ref{fig39}. Khi người dùng truy cập và nhập thông tin đăng nhập (gồm tên đăng nhập và mật khẩu), hệ thống sẽ tiến hành kiểm tra tính hợp lệ của các thông tin này. Nếu tài khoản tồn tại và thông tin là chính xác, hệ thống sẽ chuyển người dùng đến trang chủ hoặc giao diện chức năng phù hợp với vai trò (ví dụ: người dùng thường hoặc quản trị viên). Ngược lại, nếu thông tin đăng nhập không hợp lệ, hệ thống sẽ thông báo lỗi và yêu cầu người dùng đăng nhập lại. Quy trình này giúp đảm bảo tính bảo mật, chỉ cho phép truy cập đối với những tài khoản hợp lệ.
+	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=6.5cm]{activity_fig39.pdf}
+		\caption [Biểu đồ Activity Diagram luồng đăng nhập]{\bfseries \fontsize{12pt}{0pt}\selectfont Biểu đồ Activity Diagram luồng đăng nhập}
+		\label{fig39}
+	\end{figure}
+	
+	\subsubsection{Chức năng đăng ký}
+	
+	Biểu đồ hoạt động luồng xử lý chức năng đăng ký trong hệ thống được biểu diễn trên Hình \ref{fig310}. Quá trình bắt đầu khi người dùng truy cập trang đăng ký và tiến hành điền đầy đủ các thông tin yêu cầu trong biểu mẫu (form). Sau đó, hệ thống thực hiện bước kiểm tra tính hợp lệ của thông tin đầu vào như: độ dài mật khẩu, xác thực lại mật khẩu, kiểm tra trùng tên người dùng, v.v. Nếu thông tin không hợp lệ, người dùng được yêu cầu nhập lại. Trường hợp tất cả thông tin đều hợp lệ, tài khoản sẽ được tạo thành công và người dùng được chuyển hướng đến trang đăng nhập để tiếp tục sử dụng hệ thống. 
+	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=6.5cm]{activity_fig310.pdf}
+		\caption [Biểu đồ Activity Diagram luồng đăng ký]{\bfseries \fontsize{12pt}{0pt}\selectfont Biểu đồ Activity Diagram luồng đăng ký}
+		\label{fig310}
+	\end{figure}
+	
+	\subsubsection{Chức năng đăng ký}
 \end{document}

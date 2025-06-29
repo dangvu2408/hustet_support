@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.4.20)  28 JUN 2025 21:51
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.4.20)  29 JUN 2025 09:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1049,11 +1049,11 @@ File: logoHUST.png Graphic file (type bmp)
 [6
 
 
-] (Project1_Dang Quang Vu_20223830.toc)
+] (Project1_Dang Quang Vu_20223830.toc [7])
 \tf@toc=\write5
 \openout5 = `"Project1_Dang Quang Vu_20223830.toc"'.
 
- [7] [8] [1
+ [8] [1
 
 
 ]
@@ -1110,7 +1110,13 @@ Overfull \hbox (14.22635pt too wide) in paragraph at lines 463--464
  [][] 
  []
 
-[12] [13] [14] [15] (Project1_Dang Quang Vu_20223830.aux)
+[12] [13] [14] [15] [16] [17] [18] [19] [20]
+File: activity_fig39.pdf Graphic file (type pdf)
+<use activity_fig39.pdf>
+File: activity_fig310.pdf Graphic file (type pdf)
+<use activity_fig310.pdf>
+ [21] [22]
+(Project1_Dang Quang Vu_20223830.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -1120,12 +1126,12 @@ ot changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 28859 strings out of 409617
- 566790 string characters out of 5778276
- 1935191 words of memory out of 5000000
- 50482 multiletter control sequences out of 15000+600000
+ 28889 strings out of 409617
+ 567368 string characters out of 5778276
+ 1936191 words of memory out of 5000000
+ 50510 multiletter control sequences out of 15000+600000
  568063 words of font info for 96 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  108i,11n,107p,934b,468s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Project1_Dang Quang Vu_20223830.pdf (27 pages).
+Output written on Project1_Dang Quang Vu_20223830.pdf (34 pages).
