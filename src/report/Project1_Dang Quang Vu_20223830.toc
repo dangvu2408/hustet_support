@@ -40,4 +40,17 @@
 \contentsline {subsection}{\numberline {3.4}Biểu đồ Activity Diagram}{21}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}Chức năng đăng nhập}{21}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Chức năng đăng ký}{21}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Chức năng đăng ký}{22}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.3}Chức năng đăng ký môn học}{22}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Chức năng lưu môn học}{23}{subsubsection.3.4.4}%
+\contentsline {subsubsection}{\numberline {3.4.5}Chức năng hiển thị danh sách người dùng}{23}{subsubsection.3.4.5}%
+\contentsline {subsubsection}{\numberline {3.4.6}Chức năng xóa người dùng}{24}{subsubsection.3.4.6}%
+\contentsline {subsection}{\numberline {3.5}Biểu đồ tuần tự (Sequence Diagram)}{24}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Biểu đồ tuần tự chức năng đăng nhập}{24}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Biểu đồ tuần tự chức năng đăng ký}{25}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}Biểu đồ tuần tự chức năng đăng ký môn học}{26}{subsubsection.3.5.3}%
+\contentsline {subsubsection}{\numberline {3.5.4}Biểu đồ tuần tự chức năng lưu môn học}{27}{subsubsection.3.5.4}%
+\contentsline {subsubsection}{\numberline {3.5.5}Biểu đồ tuần tự chức năng hiển thị danh sách người dùng}{27}{subsubsection.3.5.5}%
+\contentsline {subsubsection}{\numberline {3.5.6}Biểu đồ tuần tự chức năng xóa người dùng}{28}{subsubsection.3.5.6}%
+\contentsline {subsection}{\numberline {3.6}Sơ đồ thực thể liên kết (ERD)}{30}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Các thực thể, thuộc tính}{30}{subsubsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.7}Xây dựng sơ đồ lớp (Class Diagram)}{30}{subsection.3.7}%

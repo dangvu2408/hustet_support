@@ -908,5 +908,146 @@
 		\label{fig310}
 	\end{figure}
 	
-	\subsubsection{Chức năng đăng ký}
+	\subsubsection{Chức năng đăng ký môn học}
+	
+	Biểu đồ hoạt động luồng xử lý chức năng đăng ký môn học trong hệ thống được biểu diễn trên Hình \ref{fig311}. Quá trình bắt đầu khi người dùng lựa chọn thao tác “Đăng ký môn học”. Hệ thống sẽ kiểm tra trạng thái đăng nhập: nếu người dùng chưa đăng nhập, hệ thống sẽ điều hướng họ về trang đăng nhập để xác thực. Sau khi đăng nhập thành công, hệ thống tiến hành tra cứu danh sách các môn học mà người dùng đã đăng ký. Nếu môn học đã tồn tại trong danh sách đăng ký, quá trình sẽ kết thúc và không thực hiện thao tác lặp lại. Ngược lại, nếu môn học chưa được đăng ký, hệ thống sẽ thêm môn học đó vào danh sách đã đăng ký của người dùng.
+		
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=16cm]{activity_fig311.pdf}
+		\caption [Biểu đồ Activity Diagram luồng đăng ký môn học]{\bfseries \fontsize{12pt}{0pt}\selectfont Biểu đồ Activity Diagram luồng đăng ký môn học}
+		\label{fig311}
+	\end{figure}
+	
+	\subsubsection{Chức năng lưu môn học}
+	
+	Biểu đồ hoạt động luồng xử lý chức năng lưu môn học trong hệ thống được biểu diễn trên Hình \ref{fig312}. Quá trình bắt đầu khi người dùng lựa chọn thao tác “Lưu môn học”. Hệ thống sẽ kiểm tra trạng thái đăng nhập: nếu người dùng chưa đăng nhập, hệ thống sẽ điều hướng họ về trang đăng nhập để xác thực. Sau khi đăng nhập thành công, hệ thống tiến hành tra cứu danh sách các môn học mà người dùng đã lưu. Nếu môn học đã tồn tại trong danh sách đã lưu, quá trình sẽ kết thúc và không thực hiện thao tác lặp lại. Ngược lại, nếu môn học chưa được lưu, hệ thống sẽ thêm môn học đó vào danh sách đã lưu của người dùng.
+	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=16cm]{activity_fig312.pdf}
+		\caption [Biểu đồ Activity Diagram luồng lưu môn học]{\bfseries \fontsize{12pt}{0pt}\selectfont Biểu đồ Activity Diagram luồng lưu môn học}
+		\label{fig312}
+	\end{figure}
+	
+	\subsubsection{Chức năng hiển thị danh sách người dùng}
+	
+	Biểu đồ hoạt động luồng xử lý chức năng hiển thị danh sách người dùng trong hệ thống được biểu diễn trên Hình \ref{fig313}. Quy trình bắt đầu khi quản trị viên truy cập vào chức năng tương ứng từ giao diện quản trị. Hệ thống sau đó tiến hành xác thực quyền truy cập, đảm bảo rằng chỉ những người dùng có quyền quản trị mới có thể xem được danh sách này. Sau khi xác thực thành công, hệ thống sẽ truy vấn cơ sở dữ liệu và hiển thị danh sách tất cả người dùng hiện có, bao gồm các thông tin cơ bản như: họ tên, email, vai trò, trạng thái tài khoản,…
+	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=16cm]{activity_fig313.pdf}
+		\caption [Biểu đồ Activity Diagram luồng hiển thị danh sách người dùng]{\bfseries \fontsize{12pt}{0pt}\selectfont Biểu đồ Activity Diagram luồng hiển thị danh sách người dùng}
+		\label{fig313}
+	\end{figure}
+	
+	\subsubsection{Chức năng xóa người dùng}
+	
+	Biểu đồ hoạt động luồng xử lý chức năng xóa người dùng trong hệ thống được biểu diễn trên Hình \ref{fig314}. Quá trình bắt đầu khi người quản trị chọn chức năng "Quản lý người dùng" trên giao diện quản trị. Hệ thống tiến hành kiểm tra trạng thái đăng nhập: nếu người dùng chưa đăng nhập, hệ thống sẽ điều hướng đến trang đăng nhập. Sau khi xác thực thành công, hệ thống tiếp tục kiểm tra quyền của người dùng. Chỉ những tài khoản có quyền quản trị (Admin) mới có thể tiếp tục thực hiện chức năng này.
+	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=16cm]{activity_fig314.pdf}
+		\caption [Biểu đồ Activity Diagram luồng xóa người dùng]{\bfseries \fontsize{12pt}{0pt}\selectfont Biểu đồ Activity Diagram luồng xóa người dùng}
+		\label{fig314}
+	\end{figure}
+	
+	Nếu quyền hợp lệ, hệ thống sẽ hiển thị danh sách người dùng hiện tại, cho phép quản trị viên lựa chọn đối tượng cần xóa. Sau đó, hệ thống tiến hành kiểm tra sự tồn tại của tài khoản được chọn. Nếu người dùng tồn tại, hệ thống sẽ thực hiện thao tác xóa khỏi cơ sở dữ liệu. Nếu không tồn tại, quá trình bị hủy bỏ và kết thúc. Việc kiểm tra quyền và sự tồn tại trước khi xóa nhằm đảm bảo tính an toàn và toàn vẹn dữ liệu hệ thống.
+	
+	\subsection{Biểu đồ tuần tự (Sequence Diagram)}
+	
+	Sequence diagram (biểu đồ tuần tự) là biểu đồ xác định trình tự diễn ra các sự kiện của một đối tượng hay một nhóm đối tượng. Nó miêu tả chi tiết thông tin gửi và nhận giữa các đối tượng, đồng thời chú trọng đến trình tự thời gian gửi và nhận của các thông tin đó.
+	
+	\subsubsection{Biểu đồ tuần tự chức năng đăng nhập}
+	
+	Biểu đồ tuần tự cho chức năng đăng nhập được biểu diễn trên Hình \ref{fig315}. Đầu tiên, người dùng nhập thông tin đăng nhập (tên đăng nhập và mật khẩu) thông qua giao diện View. Giao diện này gửi yêu cầu chứa thông tin đăng nhập đến Controller. Tại đây, Controller tiếp nhận và chuyển yêu cầu kiểm tra tính hợp lệ của thông tin đến Model (thường là service hoặc database access layer).
+	
+	Model kiểm tra dữ liệu người dùng và trả về kết quả xác thực:
+	
+	- Nếu thông tin hợp lệ, Controller điều hướng người dùng đến trang chủ, View sẽ hiển thị giao diện chính sau khi đăng nhập thành công.
+	
+	- Nếu thông tin không hợp lệ, Controller trả về thông báo lỗi, và View sẽ hiển thị thông báo này cho người dùng, yêu cầu nhập lại.
+	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=16cm]{sequence_fig315.pdf}
+		\caption [Biểu đồ tuần tự chức năng đăng nhập]{\bfseries \fontsize{12pt}{0pt}\selectfont Biểu đồ tuần tự chức năng đăng nhập}
+		\label{fig315}
+	\end{figure}
+	
+	\subsubsection{Biểu đồ tuần tự chức năng đăng ký}
+	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=16cm]{sequence_fig316_1.pdf}
+		\caption [Biểu đồ tuần tự chức năng đăng ký]{\bfseries \fontsize{12pt}{0pt}\selectfont Biểu đồ tuần tự chức năng đăng ký}
+		\label{fig316}
+	\end{figure}
+	
+	Biểu đồ tuần tự cho chức năng đăng ký được biểu diễn trên Hình \ref{fig316}. Người dùng bắt đầu bằng cách nhập thông tin đăng ký cơ bản (họ tên, tên đăng nhập, mật khẩu...) vào giao diện (View). Sau đó, View gửi toàn bộ dữ liệu đăng ký đến Controller để xử lý. Tại Controller, dữ liệu này được xác minh sơ bộ (như kiểm tra định dạng, độ dài mật khẩu...) và được chuyển tiếp sang Model để thực hiện các kiểm tra sâu hơn như: tài khoản đã tồn tại hay chưa, username có trùng không, v.v.
+	
+	Tùy thuộc vào kết quả từ Model:
+	
+	- Nếu thông tin đăng ký hợp lệ và chưa từng tồn tại, hệ thống sẽ tiến hành lưu thông tin người dùng mới vào cơ sở dữ liệu, và Controller sẽ chuyển hướng người dùng đến trang đăng nhập kèm theo thông báo đăng ký thành công.
+	
+	- Ngược lại, nếu có lỗi (ví dụ: tài khoản đã tồn tại), Controller sẽ trả về thông báo lỗi, và View sẽ hiển thị để người dùng biết và nhập lại.
+	
+	\subsubsection{Biểu đồ tuần tự chức năng đăng ký môn học}
+	
+	Biểu đồ tuần tự cho chức năng đăng ký môn học được biểu diễn trên Hình \ref{fig317}. 
+	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=16cm]{sequence_fig317.pdf}
+		\caption [Biểu đồ tuần tự chức năng đăng ký môn học]{\bfseries \fontsize{12pt}{0pt}\selectfont Biểu đồ tuần tự chức năng đăng ký môn học}
+		\label{fig317}
+	\end{figure}
+	
+	 Khi người dùng chọn chức năng đăng ký môn học, hệ thống sẽ kiểm tra trạng thái đăng nhập. Nếu người dùng chưa đăng nhập, giao diện sẽ hiển thị thông báo yêu cầu đăng nhập. Ngược lại, nếu đã đăng nhập, Controller sẽ gửi yêu cầu đến Model để tra cứu danh sách các môn học mà người dùng đã đăng ký. Kết quả sau đó được trả về giao diện và hiển thị cho người dùng. Biểu đồ này phản ánh quá trình xử lý hợp lý và đảm bảo kiểm tra quyền truy cập trước khi truy xuất dữ liệu học phần.
+	 
+	 \subsubsection{Biểu đồ tuần tự chức năng lưu môn học}
+	 
+	 Biểu đồ tuần tự cho chức năng lưu môn học được biểu diễn trên Hình \ref{fig318}. Khi người dùng chọn thao tác lưu môn học, View sẽ gửi yêu cầu đến Controller để xử lý. Controller tiến hành kiểm tra trạng thái đăng nhập của người dùng. Nếu người dùng chưa đăng nhập, hệ thống sẽ phản hồi bằng thông báo yêu cầu đăng nhập. Nếu đã đăng nhập, Controller sẽ gửi yêu cầu lưu môn học đến Model. Sau khi Model xử lý và xác nhận lưu thành công, kết quả sẽ được phản hồi về Controller rồi chuyển đến View để thông báo cho người dùng. Biểu đồ thể hiện rõ tính bảo mật và trình tự hợp lý trong thao tác lưu trữ dữ liệu người dùng.
+	 
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=16cm]{sequence_fig318_1.pdf}
+	 	\caption [Biểu đồ tuần tự chức năng lưu môn học]{\bfseries \fontsize{12pt}{0pt}\selectfont Biểu đồ tuần tự chức năng lưu môn học}
+	 	\label{fig318}
+	 \end{figure}
+	 
+	 \subsubsection{Biểu đồ tuần tự chức năng hiển thị danh sách người dùng}
+	 
+	 Biểu đồ tuần tự cho chức năng hiển thị danh sách người dùng được biểu diễn trên Hình \ref{fig319}. Khi người dùng chọn thao tác hiển thị danh sách người dùng, View sẽ gửi yêu cầu đến Controller để xử lý. Controller tiến hành kiểm tra trạng thái đăng nhập của người dùng. Nếu người dùng chưa đăng nhập, Controller sẽ thông báo cho View, và View sẽ hiển thị thông báo yêu cầu đăng nhập đến người dùng.
+	 
+	 Nếu người dùng đã đăng nhập, Controller tiếp tục kiểm tra quyền hạn của người dùng. Trong trường hợp người dùng không phải là quản trị viên, Controller sẽ gửi kết quả về View, và View sẽ thông báo rằng không thể hiển thị danh sách người dùng. Chỉ khi người dùng đã đăng nhập và có quyền quản trị viên, Controller mới gửi yêu cầu đến Model để lấy danh sách người dùng. Sau khi Model xử lý và trả về danh sách, kết quả sẽ được phản hồi về Controller rồi chuyển đến View để hiển thị cho người dùng.
+	 
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=16cm]{sequence_fig319_1.pdf}
+	 	\caption [Biểu đồ tuần tự chức năng hiển thị danh sách người dùng]{\bfseries \fontsize{12pt}{0pt}\selectfont Biểu đồ tuần tự chức năng hiển thị danh sách người dùng}
+	 	\label{fig319}
+	 \end{figure}
+	 
+	 \subsubsection{Biểu đồ tuần tự chức năng xóa người dùng}
+	 
+	 Biểu đồ tuần tự cho chức năng xóa người dùng được biểu diễn trên Hình \ref{fig320}. Khi người dùng chọn thao tác xóa người dùng, View sẽ gửi yêu cầu đến Controller để xử lý. Controller tiến hành kiểm tra trạng thái đăng nhập của người dùng. Nếu người dùng chưa đăng nhập, Controller sẽ thông báo cho View, và View sẽ hiển thị thông báo yêu cầu đăng nhập đến người dùng.
+	 
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=16cm]{sequence_fig320.pdf}
+	 	\caption [Biểu đồ tuần tự chức năng xóa người dùng]{\bfseries \fontsize{12pt}{0pt}\selectfont Biểu đồ tuần tự chức năng xóa người dùng}
+	 	\label{fig320}
+	 \end{figure}
+	 
+	 Nếu người dùng đã đăng nhập, Controller tiếp tục kiểm tra quyền hạn của người dùng. Trong trường hợp người dùng không phải là quản trị viên, Controller sẽ gửi kết quả về View, và View sẽ thông báo rằng không thể hiển thị danh sách người dùng (theo như văn bản trên biểu đồ). Chỉ khi người dùng đã đăng nhập và có quyền quản trị viên, Controller sẽ tiếp tục các bước xử lý. Đầu tiên, Controller có thể lấy danh sách người dùng từ Model (hoặc đây là bước chuẩn bị để xác định người dùng cần xóa). Sau đó, Controller sẽ kiểm tra xem người dùng cần xóa có tồn tại hay không. Nếu người dùng không tồn tại, Controller sẽ gửi kết quả về View, và View sẽ hiển thị thông báo rằng không tồn tại người dùng.
+	 
+	 Trong trường hợp người dùng tồn tại, Controller sẽ gửi yêu cầu xóa người dùng đến Model. Sau khi Model xử lý và xác nhận xóa thành công, kết quả sẽ được phản hồi về Controller rồi chuyển đến View để hiển thị thông báo xóa người dùng đến người dùng.
+	 
+	 \subsection{Sơ đồ thực thể liên kết (ERD)}
+	 \subsubsection{Các thực thể, thuộc tính}
+	 
+	 \subsection{Xây dựng sơ đồ lớp (Class Diagram)}
+	 
+	 Class diagram (sơ đồ lớp) là khối xây dựng chính trong thiết kế hệ thống hướng đối tượng. Sơ đồ biểu diễn các lớp trong hệ thống, các thuộc tính và tính năng của mỗi lớp và mối quan hệ giữa các lớp. Hầu hết khi thiết kế hệ thống, một lớp có ba phần: tên lớp, các thuộc tính của lớp, các tính năng của lớp đó.
 \end{document}
