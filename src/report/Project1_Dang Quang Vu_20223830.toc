@@ -1,9 +1,9 @@
 \babel@toc {vietnamese}{}\relax 
 \thispagestyle {empty}
 \contentsline {section}{\hbox to\@tempdima {\hfil } DANH MỤC KÝ HIỆU VÀ CHỮ VIẾT TẮT}{i}{section*.5}%
-\contentsline {section}{\hbox to\@tempdima {\hfil } DANH MỤC HÌNH VẼ}{ii}{section*.6}%
-\contentsline {section}{\hbox to\@tempdima {\hfil } DANH MỤC BẢNG BIỂU}{iii}{section*.7}%
-\contentsline {section}{\hbox to\@tempdima {\hfil }TÓM TẮT ĐỒ ÁN}{iv}{section*.8}%
+\contentsline {section}{\hbox to\@tempdima {\hfil } DANH MỤC HÌNH VẼ}{iii}{section*.6}%
+\contentsline {section}{\hbox to\@tempdima {\hfil } DANH MỤC BẢNG BIỂU}{iv}{section*.7}%
+\contentsline {section}{\hbox to\@tempdima {\hfil }TÓM TẮT ĐỒ ÁN}{v}{section*.8}%
 \contentsline {section}{\hbox to\@tempdima {\hfil }CHƯƠNG 1. TỔNG QUAN ĐỀ TÀI}{1}{section*.8}%
 \contentsline {subsection}{\numberline {1.1}Đặt vấn đề}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Mục đích nghiên cứu}{1}{subsection.1.2}%
@@ -54,4 +54,7 @@
 \contentsline {subsection}{\numberline {3.6}Sơ đồ thực thể liên kết (ERD)}{30}{subsection.3.6}%
 \contentsline {subsubsection}{\numberline {3.6.1}Các thực thể, thuộc tính}{30}{subsubsection.3.6.1}%
 \contentsline {subsubsection}{\numberline {3.6.2}Mô hình quan hệ}{30}{subsubsection.3.6.2}%
-\contentsline {subsection}{\numberline {3.7}Xây dựng sơ đồ lớp (Class Diagram)}{32}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.7}Kết luận chương}{32}{subsection.3.7}%
+\contentsline {section}{\hbox to\@tempdima {\hfil }CHƯƠNG 4. THIẾT KẾ GIAO DIỆN}{33}{subsection.3.7}%
+\contentsline {subsection}{\numberline {4.1}Giao diện chức năng đăng ký, đăng nhập}{33}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Giao diện trang chủ, danh sách các môn học}{34}{subsection.4.2}%

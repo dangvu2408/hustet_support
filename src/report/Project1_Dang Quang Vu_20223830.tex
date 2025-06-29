@@ -1105,7 +1105,100 @@
 	 
 	 Hình \ref{fig324} thể hiện mối quan hệ giữa các thực thể: người dùng, môn học và danh sách môn học đã lưu. Cụ thể: Một người dùng có thể lưu nhiều khóa học, và một khóa học có thể lưu bởi nhiều người.
 	 
-	 \subsection{Xây dựng sơ đồ lớp (Class Diagram)}
+	 \subsection{Kết luận chương}
 	 
-	 Class diagram (sơ đồ lớp) là khối xây dựng chính trong thiết kế hệ thống hướng đối tượng. Sơ đồ biểu diễn các lớp trong hệ thống, các thuộc tính và tính năng của mỗi lớp và mối quan hệ giữa các lớp. Hầu hết khi thiết kế hệ thống, một lớp có ba phần: tên lớp, các thuộc tính của lớp, các tính năng của lớp đó.
+	 Phân tích hệ thống là công đoạn quan trọng để hiểu rõ luồng hoạt động của các chức năng. Việc phân tích hệ thống hợp lý giúp cho công đoạn thiết kế và quản lý đơn giản, tiết kiệm thời gian và chi phí hơn. Chương tiếp theo sẽ đề cập đến phần thiết kế hệ thống (bao gồm thiết kế cơ sở dữ liệu, xử lý logic và hiển thị giao diện website).
+	 \newpage
+	 
+	 \section*{CHƯƠNG 4. THIẾT KẾ GIAO DIỆN}
+	 \addcontentsline{toc}{section}{\numberline{}CHƯƠNG 4. THIẾT KẾ GIAO DIỆN}
+	 \setcounter{section}{4}
+	 \setcounter{subsection}{0}
+	 \setcounter{figure}{0}
+	 \setcounter{table}{0}
+	 
+	 Trong chương này, hệ thống được thiết kế giao diện theo hướng đơn giản, dễ sử dụng, phù hợp với nhu cầu và thói quen thao tác của người dùng. Các màn hình chức năng chính như đăng nhập, đăng ký, quản lý môn học, tài liệu và quản trị hệ thống sẽ được trình bày chi tiết, kèm theo mô tả chức năng và ý tưởng thiết kế.
+	 
+	 \subsection{Giao diện chức năng đăng ký, đăng nhập}
+	 
+	 Tại giao diện đăng kí như Hình \ref{fig41}, người dùng sẽ nhập họ tên đầy đủ, tên đăng nhập, mật khẩu là xác nhận lại mật khẩu. Tên đăng nhập đối với mỗi người dùng là duy nhất và là mã số sinh viên. Hệ thống sẽ kiểm tra thông tin mật khẩu và xác nhận mật khẩu, nếu trùng nhau, sẽ chuyển đến trang đăng nhập.
+	 
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=14cm]{localhost_3000_signin.png}
+	 	\caption [Giao diện màn hình đăng ký tài khoản]{\bfseries \fontsize{12pt}{0pt}\selectfont Giao diện màn hình đăng ký tài khoản}
+	 	\label{fig41}
+	 \end{figure}
+	 
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=14cm]{localhost_3000_login.png}
+	 	\caption [Giao diện màn hình đăng nhập]{\bfseries \fontsize{12pt}{0pt}\selectfont Giao diện màn hình đăng nhập}
+	 	\label{fig42}
+	 \end{figure}
+	 
+	 Tại giao diện đăng nhập như Hình \ref{fig42}, người dùng nhập tên đăng nhập và mật khẩu, sau đó bấm nút "Đăng nhập". Hệ thống sẽ thực hiện kiểm tra thông tin người dùng vừa nhập; nếu thông tin không hợp lệ, hệ thống sẽ báo lỗi đăng nhập cho người dùng. Sau khi đăng nhập thành công, người dùng sẽ được điều hướng đến trang chủ chính.
+	 
+	 \subsection{Giao diện trang chủ, danh sách các môn học}
+	 
+	 Sau khi đăng nhập thành công, hệ thống sẽ chuyển đến trang chủ. Tại giao diện trang chủ như Hình \ref{fig43}, người dùng có thể tìm kiếm thông qua thanh tìm kiếm phía trên, cùng ảnh đại diện cá nhân với những lựa chọn cài đặt. Người dùng cũng có thể thấy được sơ qua danh sách các môn học hiện có trên hệ thống. Người dùng có thế chọn một môn bất kì để xem.
+	 
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=14cm]{localhost_3000.png}
+	 	\caption [Giao diện màn hình trang chủ]{\bfseries \fontsize{12pt}{0pt}\selectfont Giao diện màn hình trang chủ}
+	 	\label{fig43}
+	 \end{figure}
+	 
+	 Ở màn hình trang chủ, khu người dùng ấn vào "Danh sách môn học", màn hình danh sách các môn học sẽ hiện ra như Hình \ref{fig44}. Tại giao diện này, người dùng có thể nhìn thấy toàn bộ các khóa học đang có trên hệ thống, đồng thời có thể ấn xem một môn học bất kì.
+	 
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=14cm]{localhost_3000_courses.png}
+	 	\caption [Giao diện màn hình hiển thị các khóa học]{\bfseries \fontsize{12pt}{0pt}\selectfont Giao diện màn hình hiển thị các khóa học}
+	 	\label{fig44}
+	 \end{figure}
+	 
+	 Khi chọn vào một môn bất kì (chẳng hạn như Điện tử số - ET3220), khi đó người dùng sẽ chuyển sang màn hình hiển thị thông tin của môn học đó như trên Hình \ref{fig45}. Ở đây người dùng có thể xem thông tin về học phần bằng cách ấn "Xem thông tin học phần", khi đó một hộp thoại hiện lên, nêu về các thông tin của học phần như tên học phần, đơn vị quản lý, khối lượng như trong Hình \ref{fig46}.
+	 
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=14cm]{localhost_3000_courses_ET3220.png}
+	 	\caption [Giao diện màn hình hiển thị một môn học (Điện tử số - ET3220)]{\bfseries \fontsize{12pt}{0pt}\selectfont Giao diện màn hình hiển thị một môn học (Điện tử số - ET3220)}
+	 	\label{fig45}
+	 \end{figure}
+	 
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=14cm]{localhost_3000_courses_ET3220_dialog.png}
+	 	\caption [Giao diện màn hình hiển thị thông tin một môn học (Điện tử số - ET3220)]{\bfseries \fontsize{12pt}{0pt}\selectfont Giao diện màn hình hiển thị thông tin một môn học (Điện tử số - ET3220)}
+	 	\label{fig46}
+	 \end{figure}
+	 
+	 Sau khi ấn "Đăng kí khóa học", giao diện có sự thay đổi, khi đó các file liên quan đến môn học sẽ hiện lên, và cũng có nút giúp người dùng có thể đóng góp tài liệu như trên Hình \ref{fig47}.
+	 
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=14cm]{localhost_3000_courses_ET3220_subed.png}
+	 	\caption [Giao diện màn hình hiển thị thông tin một môn học sau khi đăng ký (Điện tử số - ET3220)]{\bfseries \fontsize{12pt}{0pt}\selectfont Giao diện màn hình hiển thị thông tin một môn học sau khi đăng ký (Điện tử số - ET3220)}
+	 	\label{fig47}
+	 \end{figure}
+	 
+	 Người dùng muốn đóng góp tài liệu thì ấn vào nút "Thêm tài liệu" khi đó sẽ có một hộp thoại hiện lên để người dùng có thể tải tài liệu từ trên máy lên hệ thống như Hình \ref{fig48}.
+	 
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=14cm]{localhost_3000_courses_ET3220_doc.png}
+	 	\caption [Giao diện màn hình thêm tài liệu môn học (Điện tử số - ET3220)]{\bfseries \fontsize{12pt}{0pt}\selectfont Giao diện màn hình thêm tài liệu môn học (Điện tử số - ET3220)}
+	 	\label{fig48}
+	 \end{figure}
+	 
+	 Đối với những người dùng được phân quyền quản trị viên, người dùng đó có thể thêm một khóa học mới bằng cách nhấn vào "Thêm môn học" ở màn hình danh sách môn học, khi đó giao diện màn hình thêm môn học sẽ hiển thị như Hình \ref{fig49}. Ở màn hình này người dùng sẽ cần nhập tất cả những thông tin liên quan đến môn học như tên, mã học phần, tên tiếng anh, mô tả học phần, đơn vị con, khối lượng, ảnh khóa học...
+	 
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=14cm]{localhost_3000_add-course.png}
+	 	\caption [Giao diện màn hình thêm môn học]{\bfseries \fontsize{12pt}{0pt}\selectfont Giao diện màn hình thêm môn học}
+	 	\label{fig49}
+	 \end{figure}
 \end{document}
