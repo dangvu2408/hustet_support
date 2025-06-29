@@ -1047,6 +1047,64 @@
 	 \subsection{Sơ đồ thực thể liên kết (ERD)}
 	 \subsubsection{Các thực thể, thuộc tính}
 	 
+	 \begin{table}[H]
+	 	\centering
+	 	\caption [Bảng thực thể và thuộc tính của hệ thống]{\bfseries \fontsize{12pt}{0pt}\selectfont Bảng thực thể và thuộc tính của hệ thống}
+	 	\label{tab311}
+	 	\begin{tabular}{|p{6cm}|p{8.5cm}|}
+	 		\hline
+	 		\textbf{Thực thể} & \textbf{Thuộc tính} \\
+	 		\hline
+	 		users & username, password, fullname, dob, gender, role, status, avatar \\
+	 		\hline
+	 		courses & course\_id, course\_name, english\_name, child\_management, managing\_department, weight, description, price, thumbnail, author \\
+	 		\hline
+	 		documents & doc\_id, course, title, file\_url, upload\_date, type\_doc, doc\_author \\
+	 		\hline
+	 		user\_courses & id, username, course\_id, registered\_at \\
+	 		\hline
+	 		user\_like\_courses & id, username, course\_id, liked\_at \\
+	 		\hline
+	 	\end{tabular}
+	 \end{table}
+	 
+	 \subsubsection{Mô hình quan hệ}
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=14cm]{edr_fig321_1.pdf}
+	 	\caption [Quan hệ giữa người dùng và môn học]{\bfseries \fontsize{12pt}{0pt}\selectfont Quan hệ giữa người dùng và môn học}
+	 	\label{fig321}
+	 \end{figure}
+	 
+	 Hình \ref{fig321} thể hiện mối quan hệ giữa các thực thể: người dùng và môn học. Cụ thể: Một người dùng có thể là tác giả của nhiều khóa học. Một khóa học chỉ được tạo ra bởi một người dùng.
+	 
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=15.5cm]{edr_fig322_1.pdf}
+	 	\caption [Quan hệ giữa người dùng, môn học và tài liệu]{\bfseries \fontsize{12pt}{0pt}\selectfont Quan hệ giữa người dùng, môn học và tài liệu}
+	 	\label{fig322}
+	 \end{figure}
+	 
+	 Hình \ref{fig322} thể hiện mối quan hệ giữa các thực thể: người dùng, môn học và tài liệu. Cụ thể: Một người dùng là tác giả của một tài liệu, và một tài liệu chỉ có một người là tác giả. Một khóa học có thể có nhiều tài liệu, nhưng một tài liệu nhất định chỉ thuộc về một môn học.
+	 
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=15.5cm]{edr_fig323.pdf}
+	 	\caption [Quan hệ giữa người dùng, môn học và danh sách môn học đã đăng ký]{\bfseries \fontsize{12pt}{0pt}\selectfont Quan hệ giữa người dùng, môn học và danh sách môn học đã đăng ký}
+	 	\label{fig323}
+	 \end{figure}
+	 
+	 Hình \ref{fig323} thể hiện mối quan hệ giữa các thực thể: người dùng, môn học và danh sách môn học đã đăng ký. Cụ thể: Một người dùng có thể đăng ký nhiều khóa học, và một khóa học có thể đăng ký bởi nhiều người.
+	 
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=15.5cm]{edr_fig324.pdf}
+	 	\caption [Quan hệ giữa người dùng, môn học và danh sách môn học đã lưu]{\bfseries \fontsize{12pt}{0pt}\selectfont Quan hệ giữa người dùng, môn học và danh sách môn học đã lưu}
+	 	\label{fig324}
+	 \end{figure}
+	 
+	 Hình \ref{fig324} thể hiện mối quan hệ giữa các thực thể: người dùng, môn học và danh sách môn học đã lưu. Cụ thể: Một người dùng có thể lưu nhiều khóa học, và một khóa học có thể lưu bởi nhiều người.
+	 
 	 \subsection{Xây dựng sơ đồ lớp (Class Diagram)}
 	 
 	 Class diagram (sơ đồ lớp) là khối xây dựng chính trong thiết kế hệ thống hướng đối tượng. Sơ đồ biểu diễn các lớp trong hệ thống, các thuộc tính và tính năng của mỗi lớp và mối quan hệ giữa các lớp. Hầu hết khi thiết kế hệ thống, một lớp có ba phần: tên lớp, các thuộc tính của lớp, các tính năng của lớp đó.

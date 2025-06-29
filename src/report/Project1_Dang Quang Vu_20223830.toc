@@ -53,4 +53,5 @@
 \contentsline {subsubsection}{\numberline {3.5.6}Biểu đồ tuần tự chức năng xóa người dùng}{28}{subsubsection.3.5.6}%
 \contentsline {subsection}{\numberline {3.6}Sơ đồ thực thể liên kết (ERD)}{30}{subsection.3.6}%
 \contentsline {subsubsection}{\numberline {3.6.1}Các thực thể, thuộc tính}{30}{subsubsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.7}Xây dựng sơ đồ lớp (Class Diagram)}{30}{subsection.3.7}%
+\contentsline {subsubsection}{\numberline {3.6.2}Mô hình quan hệ}{30}{subsubsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.7}Xây dựng sơ đồ lớp (Class Diagram)}{32}{subsection.3.7}%

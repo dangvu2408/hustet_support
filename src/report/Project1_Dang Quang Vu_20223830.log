@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.4.20)  29 JUN 2025 17:27
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.4.20)  29 JUN 2025 19:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1143,7 +1143,31 @@ File: sequence_fig319_1.pdf Graphic file (type pdf)
 <use sequence_fig319_1.pdf>
 File: sequence_fig320.pdf Graphic file (type pdf)
 <use sequence_fig320.pdf>
- [28] [29] [30] (Project1_Dang Quang Vu_20223830.aux)
+ [28] [29]
+Underfull \hbox (badness 10000) in paragraph at lines 1060--1061
+[]|\TU/TimesNewRoman(0)/m/n/13 course_id, course_name, english_name,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1060--1061
+\TU/TimesNewRoman(0)/m/n/13 child_management, managing_department,
+ []
+
+
+Underfull \hbox (badness 3492) in paragraph at lines 1062--1063
+[]|\TU/TimesNewRoman(0)/m/n/13 doc_id, course, title, file_url, upload_date,
+ []
+
+File: edr_fig321_1.pdf Graphic file (type pdf)
+<use edr_fig321_1.pdf>
+[30]
+File: edr_fig322_1.pdf Graphic file (type pdf)
+<use edr_fig322_1.pdf>
+File: edr_fig323.pdf Graphic file (type pdf)
+<use edr_fig323.pdf>
+File: edr_fig324.pdf Graphic file (type pdf)
+<use edr_fig324.pdf>
+ [31] [32] (Project1_Dang Quang Vu_20223830.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -1153,12 +1177,12 @@ ot changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 28992 strings out of 409617
- 569904 string characters out of 5778276
+ 29034 strings out of 409617
+ 570756 string characters out of 5778276
  1936191 words of memory out of 5000000
- 50603 multiletter control sequences out of 15000+600000
+ 50641 multiletter control sequences out of 15000+600000
  568063 words of font info for 96 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  108i,11n,107p,934b,468s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Project1_Dang Quang Vu_20223830.pdf (42 pages).
+Output written on Project1_Dang Quang Vu_20223830.pdf (44 pages).
