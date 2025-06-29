@@ -156,12 +156,26 @@
 	\section*{DANH MỤC KÝ HIỆU VÀ CHỮ VIẾT TẮT}
 	\phantomsection \addcontentsline{toc}{section}{\numberline {} DANH MỤC KÝ HIỆU VÀ CHỮ VIẾT TẮT}
 	
-	\begin{tabular}{ l l }
-		\hspace{1cm} AWGN & \hspace{4cm} Additive White Gaussian Noise \\  
-		\hspace{1cm} BC & \hspace{4cm} Broadcast Channel    \\
-		\hspace{1cm} BS  & \hspace{4cm} Base Station\\
-		\hspace{1cm} CSI & \hspace{4cm} Channel State Information \\  
-	\end{tabular}  
+	\begin{table}[H]
+		\centering
+		\renewcommand{\arraystretch}{1.3}
+		\begin{tabular}{|p{4.5cm}|p{4.5cm}|p{4.5cm}|}
+			\hline
+			\textbf{Từ viết tắt} & \textbf{Tên tiếng Anh} & \textbf{Nghĩa tiếng Việt} \\ \hline
+			\textbf{MVC} & Model-View-Controller & Mô hình Phân tách Dữ liệu - Giao diện - Điều khiển \\ \hline
+			\textbf{HTML} & HyperText Markup Language & Ngôn ngữ đánh dấu siêu văn bản \\ \hline
+			\textbf{CSS} & Cascading Style Sheets & Tập tin định kiểu tầng \\ \hline
+			\textbf{JS} & JavaScript & Ngôn ngữ lập trình JavaScript \\ \hline
+			\textbf{UI} & User Interface & Giao diện người dùng \\ \hline
+			\textbf{API} & Application Programming Interface & Giao diện lập trình ứng dụng \\ \hline
+			\textbf{SQL} & Structured Query Language & Ngôn ngữ truy vấn có cấu trúc \\ \hline
+			\textbf{RDBMS} & Relational Database Management System & Hệ quản trị cơ sở dữ liệu quan hệ \\ \hline
+			\textbf{Virtual DOM} & Virtual Document Object Model & Mô hình đối tượng tài liệu ảo \\ \hline
+			\textbf{FHD} & Function Hierarchy Diagram & Sơ đồ phân cấp chức năng \\ \hline
+			\textbf{DFD} & Data Flow Diagram & Sơ đồ luồng dữ liệu \\ \hline
+			\textbf{EDR} & Entity Relationship Diagram & Sơ đồ thực thể - liên kết \\ \hline
+		\end{tabular}
+	\end{table}
 	
 	\newpage
 	
@@ -1197,8 +1211,107 @@
 	 
 	 \begin{figure}[!ht]
 	 	\centering
-	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=14cm]{localhost_3000_add-course.png}
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=16cm]{localhost_3000_add-course.png}
 	 	\caption [Giao diện màn hình thêm môn học]{\bfseries \fontsize{12pt}{0pt}\selectfont Giao diện màn hình thêm môn học}
 	 	\label{fig49}
 	 \end{figure}
+	 
+	 \subsection{Giao diện thông tin cá nhân người dùng}
+	 
+	 Khi chọn mục "Thông tin cá nhân" trong thanh công cụ cài đặt khi ấn vào ảnh đại diện, người dùng sẽ được dẫn đến màn hình giao diện thông tin tài khoản như Hình \ref{fig410}. Ở đây người dùng sẽ thấy thông tin cơ bản của mình như tên, mã số sinh viên cùng danh sách các môn đã đăng kí. Hơn nữa, với những tài khoản quản trị viên sẽ có thêm 2 mục là danh sách các khóa học đã thêm và danh sách người dùng.
+	 
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=14cm]{localhost_3000_profile.png}
+	 	\caption [Giao diện màn hình thông tin tài khoản]{\bfseries \fontsize{12pt}{0pt}\selectfont Giao diện màn hình thông tin tài khoản}
+	 	\label{fig410}
+	 \end{figure}
+	 
+	 Ngoài ra, người dùng có thể xem kĩ danh sách các môn học đã đăng kí và danh sách các môn học đã thêm như trong Hình \ref{fig411} và \ref{fig412}.
+	 
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=14cm]{localhost_3000_subscribed-course.png}
+	 	\caption [Giao diện màn hình danh sách khóa học đã đăng ký]{\bfseries \fontsize{12pt}{0pt}\selectfont Giao diện màn hình danh sách khóa học đã đăng ký}
+	 	\label{fig411}
+	 \end{figure}
+	 
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=14cm]{localhost_3000_manage-course.png}
+	 	\caption [Giao diện màn hình danh sách khóa học đã thêm]{\bfseries \fontsize{12pt}{0pt}\selectfont Giao diện màn hình danh sách khóa học đã thêm}
+	 	\label{fig412}
+	 \end{figure}
+	 
+	 Hơn nữa, người dùng có thể đổi mật khẩu bằng cách chọn "Đổi mật khẩu" trên thanh công cụ khi ấn vào avatar phía trên, khi đó một hộp thoại thay đổi mật khẩu sẽ hiện ra như Hình \ref{fig413}, người dùng cần nhập mật khẩu cũ và mật khẩu mới để thay đổi mật khẩu. 
+	 
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=14cm]{localhost_3000_changepass.png}
+	 	\caption [Giao diện màn hình thay đổi mật khẩu]{\bfseries \fontsize{12pt}{0pt}\selectfont Giao diện màn hình thay đổi mật khẩu}
+	 	\label{fig413}
+	 \end{figure}
+	 
+	 \begin{figure}[!ht]
+	 	\centering
+	 	\includegraphics[trim= 10pt 10pt 10pt 10pt, clip, width=14cm]{localhost_3000_update-info.png}
+	 	\caption [Giao diện màn hình cập nhật thông tin cá nhân]{\bfseries \fontsize{12pt}{0pt}\selectfont Giao diện màn hình cập nhật thông tin cá nhân}
+	 	\label{fig414}
+	 \end{figure}
+	 
+	 Cuối cùng, người dùng có thể cập nhật thông tin cá nhân bằng cách nhấn "Cập nhật thông tin cá nhân" trong màn hình Thông tin tài khoản, khi đó màn hình cập nhật thông tin sẽ hiện lên như Hình \ref{fig414}. Ở đây người dùng có thể cập nhật tên, ngày sinh, giới tính cũng như ảnh đại diện của mình.
+	 
+	 \subsection{Kết luận chương}
+	 
+	 Trong chương này, các giao diện đã được thiết kế theo hướng đơn giản, rõ ràng và thân thiện với người dùng. Các nguyên tắc về điều hướng, phản hồi, nhất quán và hiển thị trạng thái hệ thống cũng được chú trọng để giúp người dùng thao tác thuận tiện và trực quan hơn. Đây là bước chuẩn bị quan trọng trước khi hệ thống được triển khai và kiểm thử trong thực tế.
+	 
+	 \newpage
+	 
+	 \section*{KẾT LUẬN}
+	 \addcontentsline{toc}{section}{\numberline{}KẾT LUẬN}
+	 
+	 Chương cuối cùng của quyển đồ án trình bày về những những nhận xét, đánh giá chung về kết quả đạt được, những hạn chế và hướng phát triển trong tương lai của đồ án.
+	 
+	 \subsection*{Kết luận chung}
+	 
+	 Trong phạm vi đồ án, em đã trình bày quá trình xây dựng một hệ thống hỗ trợ truy cập và quản lý tài liệu học tập dành cho người dùng theo từng cấp độ truy cập. Hệ thống được phát triển theo mô hình MVC, sử dụng các công nghệ như Node.js, ReactJS, MySQL và được tích hợp đầy đủ các chức năng từ đăng ký, đăng nhập, đăng ký môn học, lưu môn học đến tải và quản lý tài liệu.
+	 
+	 Bên cạnh việc trình bày đầy đủ các cơ sở lý thuyết, em cũng đã tiến hành phân tích, thiết kế hệ thống với các sơ đồ chức năng, sơ đồ luồng dữ liệu, sơ đồ ERD và biểu đồ UML. Giao diện người dùng cũng được thiết kế trực quan, dễ sử dụng, hỗ trợ thao tác hiệu quả.
+	 
+	 Sau khi hoàn thành đồ án này, em đã có thêm nhiều kiến thức thực tế về phát triển ứng dụng web, đặc biệt là quy trình xây dựng một hệ thống từ giai đoạn phân tích đến triển khai. Ngoài ra, em cũng rèn luyện được tư duy hệ thống và nâng cao kỹ năng làm việc với các công nghệ frontend/backend hiện đại, từ đó có thêm kinh nghiệm hữu ích để phục vụ cho công việc sau này.
+	 
+	 Qua đây em rất mong sẽ nhận được những đánh giá, góp ý của thầy cô để em có thể cải thiện, chỉnh sửa, hoàn thiện những vấn đề còn thiếu sót.
+	 
+	 Em xin chân thành cảm ơn!
+	 
+	 \subsection*{Hướng phát triển}
+	 
+	 Mặc dù hệ thống đã đạt được một số kết quả nhất định, tuy nhiên đồ án của em vẫn còn tồn tại một số hạn chế như sau:
+	 
+	 - Giao diện hiện tại mới dừng lại ở mức cơ bản, chưa được tối ưu cho thiết bị di động hoặc giao diện người dùng có trải nghiệm hiện đại hơn.
+	 
+	 - Hệ thống phân quyền hiện tại mới phân chia thành các cấp độ truy cập tĩnh, chưa có cơ chế linh hoạt theo từng tài liệu hoặc vai trò cụ thể hơn.
+	 
+	 - Việc kiểm duyệt và đánh giá tài liệu đóng góp của người dùng chưa được triển khai, dễ dẫn đến thông tin trùng lặp hoặc thiếu chính xác.
+	 
+	 - Chưa có cơ chế đánh giá chất lượng tài liệu hoặc tương tác giữa người dùng như bình luận, đánh giá sao.
+	 
+	 Dựa vào những hạn chế trên, em xin đề xuất một số hướng phát triển trong tương lai như sau:
+	 
+	 - Nâng cấp giao diện theo hướng responsive để tương thích với nhiều loại thiết bị, đồng thời cải thiện trải nghiệm người dùng.
+	 
+	 - Phát triển hệ thống phân quyền linh hoạt theo từng loại tài liệu, cho phép người dùng có quyền khác nhau trong từng học phần.
+	 
+	 - Bổ sung chức năng kiểm duyệt và xác thực tài liệu trước khi hiển thị công khai, đảm bảo chất lượng nội dung được chia sẻ.
+	 
+	 - Tích hợp các tính năng tương tác như bình luận, đánh giá hoặc gợi ý tài liệu dựa trên lịch sử người dùng để tăng tính kết nối và hỗ trợ học tập.
+	 
+	 - Mở rộng kết nối với hệ thống thư viện số hoặc các nền tảng học liệu mở để tăng thêm nguồn tài nguyên cho người học.
+	 
+	 \newpage
+	 \phantomsection\addcontentsline{toc}{section}{\numberline {}TÀI LIỆU THAM KHẢO}
+	 \renewcommand{\refname}{TÀI LIỆU THAM KHẢO}
+	 \nocite{*}
+	 \bibliographystyle{IEEEtran}
+	 \bibliography{MyRef}
 \end{document}

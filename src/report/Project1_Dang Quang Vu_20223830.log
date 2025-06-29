@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.4.20)  29 JUN 2025 22:49
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.4.20)  30 JUN 2025 00:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1053,11 +1053,45 @@ File: logoHUST.png Graphic file (type bmp)
 \tf@toc=\write5
 \openout5 = `"Project1_Dang Quang Vu_20223830.toc"'.
 
- [8] [1
+ [8]
+Underfull \hbox (badness 10000) in paragraph at lines 168--168
+[]|\TU/TimesNewRoman(0)/m/n/13 Ngôn ngữ lập trình
+ []
 
 
-]
-(Project1_Dang Quang Vu_20223830.lof [2])
+Underfull \hbox (badness 10000) in paragraph at lines 170--170
+[]|\TU/TimesNewRoman(0)/m/n/13 Application Program-
+ []
+
+
+Underfull \hbox (badness 3229) in paragraph at lines 171--171
+[]|\TU/TimesNewRoman(0)/m/n/13 Structured Query Lan-
+ []
+
+
+Underfull \hbox (badness 1024) in paragraph at lines 171--171
+[]|\TU/TimesNewRoman(0)/m/n/13 Ngôn ngữ truy vấn có
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
+[]|\TU/TimesNewRoman(0)/m/n/13 Relational Database
+ []
+
+
+Underfull \hbox (badness 4001) in paragraph at lines 173--173
+[]|\TU/TimesNewRoman(0)/m/n/13 Virtual Document Ob-
+ []
+
+
+Underfull \hbox (badness 2707) in paragraph at lines 174--174
+[]|\TU/TimesNewRoman(0)/m/n/13 Sơ đồ phân cấp chức
+ []
+
+[1
+
+
+] (Project1_Dang Quang Vu_20223830.lof [2])
 \tf@lof=\write6
 \openout6 = `"Project1_Dang Quang Vu_20223830.lof"'.
 
@@ -1070,7 +1104,7 @@ File: logoHUST.png Graphic file (type bmp)
 
 
 ]
-Overfull \hbox (1.64063pt too wide) in paragraph at lines 201--202
+Overfull \hbox (1.64063pt too wide) in paragraph at lines 215--216
 []\TU/TimesNewRoman(0)/m/n/13 Chương này sẽ trình bày về tổng quan tình hình ng
 hiên cứu, lý do chọn đề tài,phương
  []
@@ -1092,14 +1126,14 @@ File: mucduoidinh_fig34.pdf Graphic file (type pdf)
 File: mucduoidinh_fig35.pdf Graphic file (type pdf)
 <use mucduoidinh_fig35.pdf>
 
-Overfull \hbox (7.11316pt too wide) in paragraph at lines 411--412
+Overfull \hbox (7.11316pt too wide) in paragraph at lines 425--426
  [][] 
  []
 
 File: mucduoidinh_fig36.pdf Graphic file (type pdf)
 <use mucduoidinh_fig36.pdf>
 
-Overfull \hbox (7.11316pt too wide) in paragraph at lines 422--423
+Overfull \hbox (7.11316pt too wide) in paragraph at lines 436--437
  [][] 
  []
 
@@ -1107,7 +1141,7 @@ Overfull \hbox (7.11316pt too wide) in paragraph at lines 422--423
 File: usecase_fig38.pdf Graphic file (type pdf)
 <use usecase_fig38.pdf>
 
-Overfull \hbox (14.22635pt too wide) in paragraph at lines 463--464
+Overfull \hbox (14.22635pt too wide) in paragraph at lines 477--478
  [][] 
  []
 
@@ -1145,17 +1179,17 @@ File: sequence_fig319_1.pdf Graphic file (type pdf)
 File: sequence_fig320.pdf Graphic file (type pdf)
 <use sequence_fig320.pdf>
  [28] [29]
-Underfull \hbox (badness 10000) in paragraph at lines 1060--1061
+Underfull \hbox (badness 10000) in paragraph at lines 1074--1075
 []|\TU/TimesNewRoman(0)/m/n/13 course_id, course_name, english_name,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1060--1061
+Underfull \hbox (badness 10000) in paragraph at lines 1074--1075
 \TU/TimesNewRoman(0)/m/n/13 child_management, managing_department,
  []
 
 
-Underfull \hbox (badness 3492) in paragraph at lines 1062--1063
+Underfull \hbox (badness 3492) in paragraph at lines 1076--1077
 []|\TU/TimesNewRoman(0)/m/n/13 doc_id, course, title, file_url, upload_date,
  []
 
@@ -1194,7 +1228,28 @@ File: localhost_3000_courses_ET3220_doc.png Graphic file (type bmp)
  [36]
 File: localhost_3000_add-course.png Graphic file (type bmp)
 <localhost_3000_add-course.png>
- [37] (Project1_Dang Quang Vu_20223830.aux)
+File: localhost_3000_profile.png Graphic file (type bmp)
+<localhost_3000_profile.png>
+File: localhost_3000_subscribed-course.png Graphic file (type bmp)
+<localhost_3000_subscribed-course.png>
+File: localhost_3000_manage-course.png Graphic file (type bmp)
+<localhost_3000_manage-course.png>
+ [37]
+File: localhost_3000_changepass.png Graphic file (type bmp)
+<localhost_3000_changepass.png>
+File: localhost_3000_update-info.png Graphic file (type bmp)
+<localhost_3000_update-info.png>
+ [38]
+
+LaTeX Warning: Text page 39 contains only floats.
+
+[39] [40] [41] [42] (Project1_Dang Quang Vu_20223830.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 25--28
+[]\TU/TimesNewRoman(0)/m/n/13 L. V. Thọ, “Tất tần tật về mô hình mvc,” []$[][][
+][][] [] [] [] [][][][][] [] [][][][] [] [] []
+ []
+
+) [43] (Project1_Dang Quang Vu_20223830.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -1204,12 +1259,12 @@ ot changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 29130 strings out of 409617
- 573796 string characters out of 5778276
+ 29201 strings out of 409617
+ 575995 string characters out of 5778276
  1936191 words of memory out of 5000000
- 50728 multiletter control sequences out of 15000+600000
+ 50791 multiletter control sequences out of 15000+600000
  568063 words of font info for 96 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  108i,11n,107p,934b,489s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Project1_Dang Quang Vu_20223830.pdf (51 pages).
+Output written on Project1_Dang Quang Vu_20223830.pdf (57 pages).

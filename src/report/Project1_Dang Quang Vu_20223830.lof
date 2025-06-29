@@ -1,34 +1,39 @@
 \babel@toc {vietnamese}{}\relax 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Mô hình MVC}}{3}{figure.caption.9}%
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Sơ đồ phân cấp chức năng hệ thống}}{8}{figure.caption.10}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Sơ đồ luồng dữ liệu mức ngữ cảnh}}{9}{figure.caption.11}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Sơ đồ luồng dữ liệu mức đỉnh}}{10}{figure.caption.12}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Sơ đồ luồng dữ liệu mức dưới đỉnh của chức năng quản trị hệ thống}}{10}{figure.caption.13}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Sơ đồ luồng dữ liệu mức dưới đỉnh của chức năng quản lý CSDL về môn học}}{11}{figure.caption.14}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Sơ đồ luồng dữ liệu mức dưới đỉnh của chức năng quản lý CSDL về tài liệu}}{11}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Sơ đồ kịch bản sử dụng (Use Case) chính của hệ thống}}{12}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Biểu đồ Activity Diagram luồng đăng nhập}}{21}{figure.caption.27}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Biểu đồ Activity Diagram luồng đăng ký}}{22}{figure.caption.28}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Biểu đồ Activity Diagram luồng đăng ký môn học}}{22}{figure.caption.29}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Biểu đồ Activity Diagram luồng lưu môn học}}{23}{figure.caption.30}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Biểu đồ Activity Diagram luồng hiển thị danh sách người dùng}}{23}{figure.caption.31}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Biểu đồ Activity Diagram luồng xóa người dùng}}{24}{figure.caption.32}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Biểu đồ tuần tự chức năng đăng nhập}}{25}{figure.caption.33}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Biểu đồ tuần tự chức năng đăng ký}}{25}{figure.caption.34}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Biểu đồ tuần tự chức năng đăng ký môn học}}{26}{figure.caption.35}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Biểu đồ tuần tự chức năng lưu môn học}}{27}{figure.caption.36}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Biểu đồ tuần tự chức năng hiển thị danh sách người dùng}}{28}{figure.caption.37}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Biểu đồ tuần tự chức năng xóa người dùng}}{29}{figure.caption.38}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Quan hệ giữa người dùng và môn học}}{30}{figure.caption.40}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Quan hệ giữa người dùng, môn học và tài liệu}}{31}{figure.caption.41}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Quan hệ giữa người dùng, môn học và danh sách môn học đã đăng ký}}{31}{figure.caption.42}%
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Quan hệ giữa người dùng, môn học và danh sách môn học đã lưu}}{32}{figure.caption.43}%
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Giao diện màn hình đăng ký tài khoản}}{33}{figure.caption.44}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Giao diện màn hình đăng nhập}}{33}{figure.caption.45}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Giao diện màn hình trang chủ}}{34}{figure.caption.46}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Giao diện màn hình hiển thị các khóa học}}{35}{figure.caption.47}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Giao diện màn hình hiển thị một môn học (Điện tử số - ET3220)}}{35}{figure.caption.48}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Giao diện màn hình hiển thị thông tin một môn học (Điện tử số - ET3220)}}{35}{figure.caption.49}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Giao diện màn hình hiển thị thông tin một môn học sau khi đăng ký (Điện tử số - ET3220)}}{36}{figure.caption.50}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Giao diện màn hình thêm tài liệu môn học (Điện tử số - ET3220)}}{36}{figure.caption.51}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Giao diện màn hình thêm môn học}}{37}{figure.caption.52}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Mô hình MVC}}{3}{figure.caption.10}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Sơ đồ phân cấp chức năng hệ thống}}{8}{figure.caption.11}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Sơ đồ luồng dữ liệu mức ngữ cảnh}}{9}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Sơ đồ luồng dữ liệu mức đỉnh}}{10}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Sơ đồ luồng dữ liệu mức dưới đỉnh của chức năng quản trị hệ thống}}{10}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Sơ đồ luồng dữ liệu mức dưới đỉnh của chức năng quản lý CSDL về môn học}}{11}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Sơ đồ luồng dữ liệu mức dưới đỉnh của chức năng quản lý CSDL về tài liệu}}{11}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Sơ đồ kịch bản sử dụng (Use Case) chính của hệ thống}}{12}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Biểu đồ Activity Diagram luồng đăng nhập}}{21}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Biểu đồ Activity Diagram luồng đăng ký}}{22}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Biểu đồ Activity Diagram luồng đăng ký môn học}}{22}{figure.caption.30}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Biểu đồ Activity Diagram luồng lưu môn học}}{23}{figure.caption.31}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Biểu đồ Activity Diagram luồng hiển thị danh sách người dùng}}{23}{figure.caption.32}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Biểu đồ Activity Diagram luồng xóa người dùng}}{24}{figure.caption.33}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Biểu đồ tuần tự chức năng đăng nhập}}{25}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Biểu đồ tuần tự chức năng đăng ký}}{25}{figure.caption.35}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Biểu đồ tuần tự chức năng đăng ký môn học}}{26}{figure.caption.36}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Biểu đồ tuần tự chức năng lưu môn học}}{27}{figure.caption.37}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Biểu đồ tuần tự chức năng hiển thị danh sách người dùng}}{28}{figure.caption.38}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Biểu đồ tuần tự chức năng xóa người dùng}}{29}{figure.caption.39}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Quan hệ giữa người dùng và môn học}}{30}{figure.caption.41}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Quan hệ giữa người dùng, môn học và tài liệu}}{31}{figure.caption.42}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Quan hệ giữa người dùng, môn học và danh sách môn học đã đăng ký}}{31}{figure.caption.43}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Quan hệ giữa người dùng, môn học và danh sách môn học đã lưu}}{32}{figure.caption.44}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Giao diện màn hình đăng ký tài khoản}}{33}{figure.caption.45}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Giao diện màn hình đăng nhập}}{33}{figure.caption.46}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Giao diện màn hình trang chủ}}{34}{figure.caption.47}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Giao diện màn hình hiển thị các khóa học}}{35}{figure.caption.48}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Giao diện màn hình hiển thị một môn học (Điện tử số - ET3220)}}{35}{figure.caption.49}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Giao diện màn hình hiển thị thông tin một môn học (Điện tử số - ET3220)}}{35}{figure.caption.50}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Giao diện màn hình hiển thị thông tin một môn học sau khi đăng ký (Điện tử số - ET3220)}}{36}{figure.caption.51}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Giao diện màn hình thêm tài liệu môn học (Điện tử số - ET3220)}}{36}{figure.caption.52}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Giao diện màn hình thêm môn học}}{37}{figure.caption.53}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Giao diện màn hình thông tin tài khoản}}{38}{figure.caption.54}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Giao diện màn hình danh sách khóa học đã đăng ký}}{38}{figure.caption.55}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Giao diện màn hình danh sách khóa học đã thêm}}{39}{figure.caption.56}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Giao diện màn hình thay đổi mật khẩu}}{39}{figure.caption.57}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Giao diện màn hình cập nhật thông tin cá nhân}}{39}{figure.caption.58}%
