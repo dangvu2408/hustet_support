@@ -1,4 +1,7 @@
 import React from "react";
+import Basic from "./Basic";
+import Plus from "./Plus";
+import Premium from "./Premium";
 
 export default function UserListItem({ user }) {
     return (
@@ -12,7 +15,12 @@ export default function UserListItem({ user }) {
             ) : (
                 <p className="user_or_admin">USER</p>
             )}</td>
-            <td>{user.status === 1 ? "Hoạt động" : "Ẩn"}</td>
+            <td>{
+                user.status === 1 ? <Basic />
+                : user.status === 2 ? <Plus />
+                : user.status === 3 ? <Premium />
+                : "Ẩn"
+            }</td>
         </tr>
     );
 }

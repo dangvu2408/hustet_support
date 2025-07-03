@@ -92,6 +92,8 @@ function UpdateUserInfoField() {
             dob: newDOB.trim() || null,
             gender,
             avatar: thumbnail || null, // lấy từ setThumbnail sau khi upload thành công
+            role: user.role,
+            status: user.status
         };
 
         const res = await fetch("http://localhost:3001/update-userinfo", {

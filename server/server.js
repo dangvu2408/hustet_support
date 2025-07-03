@@ -113,6 +113,43 @@ app.post('/change-password', async (req, res) => {
     });
 });
 
+app.post('/update-userinfo', async (req, res) => {
+    const { username, fullname, dob, gender, avatar, role, status } = req.body;
+
+    const sqlCheck = "SELECT * FROM users WHERE username = ?";
+    db.query(sqlCheck, [username], (err, results) => {
+        if (err) {
+            console.error("Lỗi truy vấn:", err);
+            return res.status(500).json({ success: false, message: "Lỗi server" });
+        }
+
+        if (results.length === 0) {
+            return res.json({ success: false, message: "Tài khoản không tồn tại" });
+        }
+
+        const sqlUpdate = `UPDATE users SET fullname = ?, dob = ?, gender = ?, avatar = ?, role = ?, status = ? WHERE username = ?`;
+
+        db.query(sqlUpdate, [fullname, dob, gender, avatar, role, status, username], (err2) => {
+            if (err2) {
+                console.error("Lỗi cập nhật:", err2);
+                return res.status(500).json({ success: false, message: "Cập nhật thất bại" });
+            }
+
+            return res.json({ success: true, message: "Chỉnh sửa dữ liệu thành công" });
+        });
+    });
+});
+
+app.post('/delete-user', (req, res) => {
+    const { username } = req.body;
+
+    const sql = "DELETE FROM users WHERE username = ?";
+    db.query(sql, [username], (err, result) => {
+        if (err) return res.status(500).json({ success: false, message: "Lỗi khi xóa người dùng" });
+        return res.json({ success: true, message: "Đã xóa người dùng" });
+    });
+});
+
  
 // Lấy toàn bộ dữ liệu user
 app.get('/users', (req, res) => {

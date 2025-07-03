@@ -131,7 +131,12 @@ function Header() {
                                             </div>
                                             <div className="acc_right">
                                                 <p>{user.fullname}</p>
-                                                <Plus/>
+                                                {
+                                                    user && user.status === 1 ? <Basic />
+                                                    : user && user.status === 2 ? <Plus />
+                                                    : user && user.status === 3 ? <Premium />
+                                                    : "Ẩn"
+                                                }
                                             </div>
                                         </div>
                                     </li>

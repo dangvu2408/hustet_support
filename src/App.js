@@ -12,6 +12,7 @@ import CourseDetails from "./pages/CourseDetails";
 import Account from "./pages/UpdateUserInfo";
 import SubsCourse from "./pages/SubscribedCourse";
 import ManaCourse from "./pages/CourseManagementPage";
+import ManaUser from "./pages/UserManagement";
 
 // 👉 import component menu chuột phải
 import CustomContextMenu from "./components/CustomContextMenu";
@@ -32,6 +33,7 @@ function App() {
                 <Route path="/update-info" element={<Account />} />
                 <Route path="/subscribed-course" element={<SubsCourse />} />
                 <Route path="/manage-course" element={<ManaCourse />} />
+                <Route path="/manage-user" element={<ManaUser />} />
                 <Route path="/courses/:course_id" element={<CourseDetails />} />
             </Routes>
         </Router>
