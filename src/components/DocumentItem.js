@@ -13,6 +13,7 @@ function DocumentItem({
     upload_date,
     type_doc,
     doc_author, 
+    file_url
 }) {
 
     const [authorInfo, setAuthorInfo] = useState(null);
@@ -39,6 +40,29 @@ function DocumentItem({
         fetchAuthorInfo();
     }, [doc_author]);
 
+    const handleDownload = async () => {
+        try {
+            // Lấy file từ server
+            const response = await fetch(file_url);
+            const blob = await response.blob();
+
+            const extension = file_url.split('.').pop();
+
+            const downloadName = `${title}.${extension}`;
+
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = downloadName;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            window.URL.revokeObjectURL(url);
+        } catch (error) {
+            console.error("Lỗi tải file:", error);
+        }
+    };
+
 
     return (
         <div className="document_item_50">
@@ -61,7 +85,7 @@ function DocumentItem({
                     )}
                 </div>
             </div>
-            <button className="download_btn" type="button">
+            <button className="download_btn" type="button" onClick={handleDownload}>
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24px"  height="24px"  viewBox="0 0 24 24"  fill="none"  stroke="#000"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-download"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" /><path d="M7 11l5 5l5 -5" /><path d="M12 4l0 12" /></svg>
             </button>
         </div>

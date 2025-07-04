@@ -114,6 +114,7 @@ function CourseDocumentField({
                         upload_date={doc.upload_date}
                         type_doc={doc.type_doc}
                         doc_author={doc.doc_author}
+                        file_url={doc.file_url}
                     />
                 ))}
             </div>

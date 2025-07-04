@@ -403,7 +403,7 @@ app.post("/upload-document", upload.single("file"), (req, res) => {
 app.get("/documents/:course_id", (req, res) => {
     const courseId = req.params.course_id;
 
-    const query = `SELECT doc_id, title, upload_date, type_doc, doc_author FROM documents WHERE course = ?`;
+    const query = `SELECT doc_id, title, file_url, upload_date, type_doc, doc_author FROM documents WHERE course = ?`;
     db.query(query, [courseId], (err, result) => {
         if (err) {
             console.error("Lỗi truy vấn:", err);

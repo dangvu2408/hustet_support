@@ -93,7 +93,7 @@ export default function UserListItemComp({
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ username }) // user đang bị xóa
+                body: JSON.stringify({ username }) 
             });
 
             const result = await res.json();
@@ -101,13 +101,11 @@ export default function UserListItemComp({
             if (result.success) {
                 if (username === user.username) {
                     alert("Tài khoản của bạn đã bị xóa. Đang đăng xuất...");
-                    navigate("/login"); // hoặc "/" tùy app
-                    // Thêm xóa token, sessionStorage nếu có
-                    localStorage.removeItem("authToken"); // hoặc tương tự
+                    navigate("/login");
+                    localStorage.removeItem("authToken");
                 } else {
                     alert("Xóa người dùng thành công!");
-                    closeDeleteDialog(); // đóng dialog
-                    // Gọi reload danh sách người dùng nếu cần
+                    closeDeleteDialog(); 
                 }
             } else {
                 alert(result.message || "Xóa thất bại.");
