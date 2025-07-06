@@ -6,6 +6,10 @@ const path = require("path");
 const iconv = require('iconv-lite');
 
 const app = express();
+
+const fs = require('fs');
+
+
 app.use(cors());
 app.use(express.json()); // Để parse JSON body từ fetch()
 
@@ -189,28 +193,53 @@ app.post("/add-course", (req, res) => {
     } = req.body;
 
     const query = `INSERT INTO courses (course_id, course_name, english_name, child_management, managing_department, weight, description, price, thumbnail, author) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
-
-    const values = [
-        course_id,
-        course_name,
-        english_name,
-        child_management,
-        managing_department,
-        weight,
-        description,
-        price,
-        thumbnail,
-        author
-    ];
+    const values = [course_id, course_name, english_name, child_management, managing_department, weight, description, price, thumbnail, author];
 
     db.query(query, values, (err, result) => {
         if (err) {
             console.error("SERVER ERR-3:", err);
             return res.status(500).json({ error: "Lỗi khi thêm khóa học." });
         }
-        res.json({ success: true, message: "Đã thêm học phần thành công!", courseId: result.insertId });
+
+        const suggestPath = path.join(__dirname, "data", "search_suggest.json");
+        fs.readFile(suggestPath, "utf-8", (err, data) => {
+            if (err) {
+                console.error("ERR-reading suggest file:", err);
+                return res.status(500).json({ error: "Không đọc được file gợi ý" });
+            }
+
+            let suggestions = JSON.parse(data);
+            const exists = suggestions.find(item => item.course_id === course_id);
+
+            if (!exists) {
+                suggestions.push({
+                    course_id,
+                    text: [course_name, course_name.toLowerCase()]
+                });
+
+                fs.writeFile(suggestPath, JSON.stringify(suggestions, null, 2), (err) => {
+                    if (err) {
+                        console.error("ERR-writing suggest file:", err);
+                        return res.status(500).json({ error: "Lỗi khi ghi file gợi ý" });
+                    }
+
+                    return res.json({
+                        success: true,
+                        message: "Đã thêm học phần và cập nhật gợi ý",
+                        courseId: result.insertId
+                    });
+                });
+            } else {
+                return res.json({
+                    success: true,
+                    message: "Đã thêm học phần (gợi ý đã tồn tại)",
+                    courseId: result.insertId
+                });
+            }
+        });
     });
 });
+
 
 // Lấy toàn bộ dữ liệu khóa học
 app.get("/courses", (req, res) => {
@@ -246,6 +275,41 @@ app.get("/get-userinfo", (req, res) => {
         });
     });
 });
+
+app.get("/get-courseinfo", (req, res) => {
+    const { course_id } = req.query;
+
+    if (!course_id) {
+        return res.status(400).json({ error: "Thiếu course_id" });
+    }
+
+    const query = "SELECT * FROM courses WHERE course_id = ?";
+    db.query(query, [course_id], (err, results) => {
+        if (err) {
+            console.error("SERVER ERR-COURSE:", err);
+            return res.status(500).json({ error: "Lỗi server" });
+        }
+
+        if (results.length === 0) {
+            return res.status(404).json({ error: "Không tìm thấy khóa học" });
+        }
+
+        const course = results[0];
+        return res.json({
+            course_id: course.course_id,
+            course_name: course.course_name,
+            english_name: course.english_name,
+            child_management: course.child_management,
+            managing_department: course.managing_department,
+            weight: course.weight,
+            description: course.description,
+            price: course.price,
+            thumbnail: course.thumbnail,
+            author: course.author
+        });
+    });
+});
+
 
 // Lấy dữ liệu khóa học theo id người tạo 
 app.get("/get-course-author", (req, res) => {
@@ -412,6 +476,39 @@ app.get("/documents/:course_id", (req, res) => {
         res.json(result);
     });
 });
+
+// file JSON suggest data
+app.get("/search-suggestions", (req, res) => {
+    const filePath = path.join(__dirname, "data", "search_suggest.json");
+
+    fs.readFile(filePath, "utf-8", (err, data) => {
+        if (err) {
+            console.error("ERR-reading JSON:", err);
+            return res.status(500).json({ error: "Không đọc được file gợi ý" });
+        }
+
+        const suggestions = JSON.parse(data);
+        res.json(suggestions);
+    });
+});
+
+app.get("/search-match", (req, res) => {
+    const { q } = req.query;
+    const query = q?.toLowerCase();
+
+    const filePath = path.join(__dirname, "data", "search_suggest.json");
+    fs.readFile(filePath, "utf-8", (err, data) => {
+        if (err) return res.status(500).json({ error: "Không đọc được gợi ý" });
+
+        const suggestions = JSON.parse(data);
+        const filtered = suggestions.filter(item =>
+            item.text.some(t => t.toLowerCase().includes(query))
+        );
+
+        res.json(filtered);
+    });
+});
+
 
 app.listen(3001, () => {
     console.log("Server is running on port 3001");

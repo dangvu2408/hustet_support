@@ -95,6 +95,71 @@ button {
     padding-left: 12px; /* icon */
 }
 
+.search_container.is_collapse {
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2);
+    border: 1px solid transparent;
+}
+
+.suggest_list {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    background-color: #1A4876;
+    z-index: 5;
+    display: block;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 6px 0 rgba(32, 33, 36, .28);
+    padding: 10px 0px;
+    color: #fff;
+}
+
+.suggest_list_content {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.search_title {
+    font-family: 'SFPro Bold';
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0 15px 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.suggest_item {
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    padding: 8px 15px;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.suggest_item:hover {
+    background-color: hsla(0, 0%, 100%, 0.1);;
+}
+
+.suggest_item svg {
+    margin-right: 10px;
+}
+
+.trending_oneline {
+    font-family: 'SFPro Regular';
+    font-size: 16px;
+    width: 100%;
+}
+
+
+
+
 
 .search_button {
     flex: 0 0 auto; /* button co lại đúng kích thước nội dung */
