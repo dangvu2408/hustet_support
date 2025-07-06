@@ -1,4 +1,11 @@
-module.exports = function override(config, env) {
-    // Thêm chỉnh sửa ở đây nếu cần
+module.exports = {
+  webpack: (config, env) => {
+    // Tuỳ chỉnh webpack ở đây nếu cần
     return config;
+  },
+  devServer: (config, env) => {
+    config.allowedHosts = 'all';
+    delete config.onAfterSetupMiddleware;
+    return config;
+  }
 };
